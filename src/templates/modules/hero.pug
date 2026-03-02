@@ -1,0 +1,15 @@
+include ../mixins/popover
+
+.hero
+  .hero__image
+    picture
+      source(media="(min-width:1280px)" srcset="" data-srcset="images/hero_w2000.jpg")
+      img(src="" data-src="images/hero_w2000.jpg" role="presentation")
+  .hero__container
+    .hero__content
+      .hero__info
+        .hero__title E1-Group
+        .hero__description Группа компаний, специализирующихся на производстве и продаже решений для строительства, включая электроинструмент и строительную технику, а также IT-решения для управления парком малой строительной механизации.
+      .hero__controls
+        button(type="button" class="btn btn--secondary" data-toggle="modal" data-target="#contactModal") Предложить сотрудничество
+        button(type="button" class="btn btn--outline-secondary" data-toggle="modal" data-target="#contactModal") О компании

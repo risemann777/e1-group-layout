@@ -1,0 +1,74 @@
+include ../mixins/popover
+
+.hero.hero--has-animation
+  h1.hero__title.visually-hidden Лифты премиум класса с высоким уровнем безопасности
+  .hero__image.hero__image--mobile-only
+    picture
+      source(srcset="" data-srcset="images/hero_background_image_w1200.webp" type="image/webp")
+      img(src="" data-src="images/hero_background_image_w768.jpg")
+  .hero__image.hero__image--desktop-only
+    picture
+      source(media="(min-width:3840px)" srcset="" data-srcset="images/hero_main_image_w4096.webp" type="image/webp")
+      source(media="(min-width:2560px)" srcset="" data-srcset="images/hero_main_image_w3840.webp" type="image/webp")
+      source(media="(min-width:1920px)" srcset="" data-srcset="images/hero_main_image_w2560.webp" type="image/webp")
+      source(media="(min-width:1280px)" srcset="" data-srcset="images/hero_main_image_w1920.webp" type="image/webp")
+      source(media="(min-width:3840px)" srcset="" data-srcset="images/hero_main_image_w4096.jpg")
+      source(media="(min-width:2560px)" srcset="" data-srcset="images/hero_main_image_w3840.jpg")
+      source(media="(min-width:1920px)" srcset="" data-srcset="images/hero_main_image_w2560.jpg")
+      source(media="(min-width:1280px)" srcset="" data-srcset="images/hero_main_image_w1920.jpg")
+      img(src="" data-src="images/hero_main_image_w1280.jpg" role="presentation")
+  .hero__container
+    .scroll-help.hero__help
+      .scroll-help__handle
+      .scroll-help__text Скрольте вниз
+    .hero__content.container
+      .hero__top
+        .hero__title.hero__title--mobile-only
+          div
+            span Лифты
+          div
+            span премиум-
+          div
+            span класса
+        .hero__title.hero__title--desktop-only
+          div
+            span Лифты
+            span премиум-класса
+      .hero__subtitle.hero__subtitle--mobile-only
+        div
+          span с высоким
+          span уровнем
+        div
+          span безопасности
+
+      .hero__subtitle.hero__subtitle--desktop-only
+        div
+          span с высоким
+          span уровнем
+          span безопасности
+    .hero__button
+      .hero__button-wrapper
+        button(type="button" class="btn btn--primary" data-toggle="modal" data-target="#contactModal") Получить консультацию
+  +popover({
+    wrapperClsNames: ['hero__popover', 'hero__popover--1'],
+    containerClsNames: ['popover__container--left'],
+  })
+    p <span>Установка внутри</span> <span>или снаружи дома</span>
+
+  +popover({
+    wrapperClsNames: ['hero__popover', 'hero__popover--2'],
+    containerClsNames: ['popover__container--left'],
+  })
+    p: span Индивидуальный дизайн
+
+  +popover({
+    wrapperClsNames: ['hero__popover', 'hero__popover--3'],
+    containerClsNames: ['popover__container--right'],
+  })
+    p: span Эстетика и технологичность
+
+  +popover({
+    wrapperClsNames: ['hero__popover', 'hero__popover--4'],
+    containerClsNames: ['popover__container--right'],
+  })
+    p <span>Подключение</span> <span>к умному дому</span>

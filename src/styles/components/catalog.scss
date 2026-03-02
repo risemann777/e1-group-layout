@@ -1,0 +1,35 @@
+.catalog {
+  --mi-catalog-description-font-size: 0.875rem;
+  --mi-catalog-banner-margin-top: 3.75rem;
+  --mi-catalog-segment-padding: 1.25rem;
+
+  @media(width >= 1024px) {
+    --mi-catalog-description-font-size: 1.25rem;
+    --mi-catalog-banner-margin-top: 6.25rem;
+    --mi-catalog-segment-padding: 2rem;
+  }
+
+  &__container {
+    width: min(var(--mi-container-width), 100% - var(--mi-container-padding));
+    margin-inline: auto;
+  }
+
+  &__description {
+    max-width: 860px;
+    margin: 0 0 2.5rem;
+    color: var(--mi-color-gray);
+    font-size: var(--mi-catalog-description-font-size);
+    letter-spacing: var(--mi-letter-spacing);
+    line-height: 1.25;
+  }
+
+  &__segment {
+    padding-bottom: var(--mi-catalog-segment-padding);
+    border-bottom: 1px solid #fff;
+    margin-bottom: 2.5rem;
+  }
+
+  &__banner {
+    margin-top: var(--mi-catalog-banner-margin-top);
+  }
+}

@@ -1,0 +1,63 @@
+include ../mixins/popover
+
+section(id="convenience").section.section--image.section--convenience.section--animate
+  h2.section__title.visually-hidden Лифты как искусство
+  .section__intersect.section__intersect--top
+  .section__intersect.section__intersect--bottom
+  .section__image
+    picture
+      source(media="(min-width:3840px)" data-srcset="images/lift_int_close_cam_1_v2_1_w4096.jpg")
+      source(media="(min-width:2560px)" data-srcset="images/lift_int_close_cam_1_v2_1_w3840.jpg")
+      source(media="(min-width:1920px)" data-srcset="images/lift_int_close_cam_1_v2_1_w2560.jpg")
+      source(media="(min-width:1280px)" data-srcset="images/lift_int_close_cam_1_v2_1_w1920.jpg")
+      img(data-src="images/lift_int_close_cam_1_v2_1_w1280.jpg")
+  .section__frame
+    .container.section__container.section__container--double
+      .section__col
+      .section__col
+        .section__content
+          .section__title.animation.animation--text.animation--del100
+            span Лифты как искусство
+          .section__text.animation.animation--text.animation--del300
+            p
+              | Экспертность в области лифтовых решений
+              | <span>и индивидуальный</span> подход раскрывают потенциал Вашего пространства.
+              | <br>Безопасно. Надежно. <span>Со вкусом</span>.
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--1'],
+    containerClsNames: ['popover__container--left'],
+    text: []
+  })
+    p: <span>Плавное и быстрое</span> перемещение
+
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--2'],
+    containerClsNames: ['popover__container--left'],
+    text: []
+  })
+    p: span Контроль доступа
+
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--3'],
+    containerClsNames: ['popover__container--right'],
+    text: []
+  })
+    p: span Без запаха
+
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--4'],
+    containerClsNames: ['popover__container--right'],
+  })
+    p: span Тише кофемашины
+    p: span Уровень шума:
+    p: span FRANZLIFT 45 ДцБ
+    p: span Кофемашина 70 ДцБ
+
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--5'],
+    containerClsNames: ['popover__container--right'],
+    text: [],
+    image: 'images/popover_image_phone_w600.jpg',
+    link: true
+  })
+    p Получить консультацию

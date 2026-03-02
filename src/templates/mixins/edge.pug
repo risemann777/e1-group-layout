@@ -1,0 +1,27 @@
+mixin edge(data)
+  - modifier = data?.modifier || null
+  - title = data?.title || `Edge title`
+  - description = data?.description || null
+  - list = data?.list || null
+  - cta_text = data?.cta_text || null
+
+  .edge(class=modifier)
+    .edge__container
+      .edge__head
+        h2.edge__title=title
+        if description
+          .edge__description=description
+      .edge__list
+        if list && list.length
+          each item, index in list
+            - name = item?.name || `Edge item name #${index+1}`
+            - text = item?.text || null
+            .edge__item
+              .edge__num
+              .edge__info
+                h3.edge__name=name
+                if text
+                  .edge__text!=text
+      if (cta_text && cta_text.length)
+        .edge__bottom
+          .edge__cta-text=cta_text

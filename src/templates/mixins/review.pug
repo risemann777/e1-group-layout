@@ -1,0 +1,20 @@
+mixin review(data)
+  - modifier = data?.modifier || null
+  - title = data?.title || `Review block title`
+  - list = data?.list || null
+
+  .review(class=modifier)
+    .review__container
+      .review__title=title
+      .review__slider.swiper
+        .swiper-wrapper.review__wrapper
+          if list && list.length
+            each item, index in list
+              - text = item?.text || `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
+              - author = item?.author || `John Doe`
+              .swiper-slide.review__slide
+                .review-card.review__card
+                  .review-card
+                    .review-card__text!=text
+                    .review-card__author=author
+        .swiper-pagination

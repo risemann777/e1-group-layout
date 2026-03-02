@@ -1,0 +1,20 @@
+mixin cabin-card(data)
+  - image = data?.image || null
+  - imageWebp = data?.imageWebp || null
+  - title = data?.title || null
+  - link = data?.link || null
+
+  .cabin-card
+    if (link)
+      a(href=link data-smooth-scroll).cabin-card__clickable
+    .cabin-card__image
+      if (image || imageWebp)
+        picture
+          if (imageWebp)
+            source(srcset=imageWebp type="image/webp")
+          if (image)
+            img(src=image alt=title)
+    .cabin-card__info
+      if (title)
+        .cabin-card__title=title
+      .cabin-card__description

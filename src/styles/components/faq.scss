@@ -1,0 +1,44 @@
+.faq {
+  --mi-faq-list-gap: 2rem;
+  --mi-faq-name-margin-bottom: 0.5rem;
+  --mi-faq-name-font-size: 1.25rem;
+
+  @media (width >= 1024px) {
+    --mi-faq-name-margin-bottom: 1.25rem;
+    --mi-faq-name-font-size: 1.5rem;
+  }
+
+  @media (width >= 1280px) {
+    --mi-faq-name-font-size: 1.75rem;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+  &__list {
+    display: flex;
+    max-width: var(--mi-container-size-narrow);
+    flex-direction: column;
+    gap: var(--mi-faq-list-gap);
+  }
+
+  &__name {
+    margin-bottom: var(--mi-faq-name-margin-bottom);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-faq-name-font-size);
+    line-height: 1.3;
+  }
+
+  &__text {
+    color: var(--mi-color-gray);
+    font-size: var(--mi-plane-text-font-size);
+
+    ul, ol, p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

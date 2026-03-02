@@ -1,0 +1,57 @@
+- browserTitle = 'E1 Group | Layout'
+- description = ''
+- pageTitle = 'Главная'
+- pageClass = 'page--main'
+- layoutMofifiers = 'layout--index'
+- headerClass = 'header--sticky header--gradient'
+- isIndexPage = false
+- breadcrumb = []
+- notShowNavChain = "N"
+- notShowHeadline = "N"
+- headlineText = ""
+- pageName = 'home'
+block vars
+
+include ../../mixins/breadcrumb
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title #{browserTitle}
+    meta(name='description', content=description)
+    link(rel='apple-touch-icon' sizes="180x180" href='/images/favicon/apple-touch-icon.png')
+    link(rel='icon' type="image/png" sizes="512x512" href='/images/favicon/android-chrome-512x512.png')
+    link(rel='icon' type="image/png" sizes="192x192" href='/images/favicon/android-chrome-192x192.png')
+    link(rel='icon' type="image/png" sizes="32x32" href='/images/favicon/favicon-32x32.png')
+    link(rel='icon' type="image/png" sizes="16x16" href='/images/favicon/favicon-16x16.png')
+    link(rel='shortcut icon' href='/images/favicon/favicon.ico')
+    link(rel='stylesheet' href='css/main.css')
+  body.page(class=pageClass)
+    include ../../components/svg-icons
+    // include ../../components/loaders/loader-8
+    .layout(class=layoutMofifiers)
+      block header
+        include header
+        .layout__main
+          if notShowNavChain === "N"
+            +breadcrumb({
+              items: breadcrumb
+            })
+          if notShowHeadline === "N"
+            .headline.layout__headline
+              h1.headline__title=pageTitle
+              if headlineText
+                .headline__text=headlineText
+
+          block content
+
+      block footer
+        include footer
+
+    include ../../components/modals
+
+    script(src='js/main.bundle.js')
+    script(src='js/plugins.bundle.js')

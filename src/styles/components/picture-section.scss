@@ -1,0 +1,13 @@
+.picture-section {
+  text-align: center;
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+
+  img {
+    max-width: 100%;
+  }
+}

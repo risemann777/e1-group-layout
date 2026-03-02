@@ -1,0 +1,24 @@
+include ../mixins/popover
+
+.hero-city.hero-city--content-center.hero-city--has-animation
+  h1.hero__title.visually-hidden Продажа и установка лифтов в Санкт-Петербурге
+  .hero-city__image
+    picture
+      source(media="(min-width:2560px)" srcset="" data-srcset="images/hero_city_piter_image_w3840.jpg")
+      source(media="(min-width:1920px)" srcset="" data-srcset="images/hero_city_piter_image_w2560.jpg")
+      source(media="(min-width:1280px)" srcset="" data-srcset="images/hero_city_piter_image_w1920.jpg")
+      img(src="" data-src="images/hero_city_piter_image_w1280.jpg" role="presentation")
+  .hero-city__container
+    .scroll-help.hero-city__help
+      .scroll-help__handle
+      .scroll-help__text Скрольте вниз
+    .hero-city__content.container
+      .hero-city__title
+        div
+          span Продажа и установка лифтов
+        div
+          span в Санкт-Петербурге
+
+    .hero-city__button
+      .hero-city__button-wrapper
+        button(type="button" class="btn btn--primary" data-toggle="modal" data-target="#contactModal") Получить консультацию

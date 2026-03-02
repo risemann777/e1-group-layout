@@ -1,0 +1,38 @@
+mixin catalog-teaser(data)
+  - list = data?.list
+  - title = data?.title || null
+  .catalog-teaser
+    .catalog-teaser__container
+      if (title)
+        .catalog-teaser__head
+          h2.catalog-teaser__title.visually-hidden=title
+          .catalog-teaser__title.animation.animation--text.animation--del100
+            span=title
+      if (list && list.length)
+        .catalog-teaser__list
+          each item, index in list
+            - image = item?.image || null
+            - imageWebp = item?.imageWebp || null
+            - name = item?.name || `Model #${index+1}`
+            - control = item?.control || null
+            - href = item?.href || null
+            .catalog-teaser__item
+              if (control)
+                if (control === 'button')
+                  button(type="button" data-toggle="modal" data-target="#catalogModal").catalog-teaser__clickable
+                if (control === 'link' && href)
+                  a(href=href).catalog-teaser__clickable
+              .catalog-teaser__image
+                if (image || imageWebp)
+                  picture
+                    if (imageWebp)
+                      source(srcset="" data-srcset=imageWebp type="image/webp")
+                    if (image)
+                      img(src="" data-src=image alt=name)
+              .catalog-teaser__info
+                h3.catalog-teaser__name.visually-hidden=name
+                .catalog-teaser__name=name
+                if (control === 'button')
+                  button(type="button" class="catalog-teaser__button" data-toggle="modal" data-target="#catalogModal") Получить каталог
+                if (control === 'link' && href)
+                  a(href=href).catalog-teaser__button Подробнее

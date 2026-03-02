@@ -1,0 +1,153 @@
+.popover {
+  --mi-popover-handle-size: 3rem;
+  --mi-popover-border-color: #fff;
+  --mi-popover-handle-icon-opacity: 1;
+  --mi-popover-handle-icon-rotate: 90deg;
+  --mi-popover-handle-icon-transition: opacity 0.2s, transform 0.3s;
+  --mi-popover-container-padding: 0.75rem;
+  --mi-popover-content-visibility: hidden;
+  --mi-popover-content-opacity: 0;
+  --mi-popover-content-translate-y: -50%;
+  --mi-popover-content-left-translate-x: 20px;
+  --mi-popover-content-right-translate-x: -20px;
+  --mi-popover-content-scale: scaleX(0);
+  --mi-popover-content-left-transform: translateY(var(--mi-popover-content-translate-y)) translateX(var(--mi-popover-content-left-translate-x)) var(--mi-popover-content-scale);
+  --mi-popoper-transform-origin: left;
+  --mi-popover-content-right-transform: translateY(var(--mi-popover-content-translate-y)) translateX(var(--mi-popover-content-right-translate-x)) var(--mi-popover-content-scale);
+  --mi-popover-content-transition: opacity 0.4s ease-in, transform 0.4s ease-out, visibility 0.4s ease-out;
+  --mi-popover-text-opacity: 0;
+  --mi-popover-text-transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+  --mi-popover-text-transition-delay: 0.2s;
+  --mi-popover-text-visibility: hidden;
+
+  position: relative;
+  z-index: 10;
+  display: inline-flex;
+
+  @media(width >= 720px) {
+    &:hover {
+      --mi-popover-content-visibility: visible;
+      --mi-popover-content-opacity: 1;
+      --mi-popover-content-left-translate-x: 0;
+      --mi-popover-content-right-translate-x: 0;
+      --mi-popover-handle-icon-opacity: 0;
+      --mi-popover-handle-icon-rotate: 0deg;
+      --mi-popover-content-scale: scaleX(1);
+      --mi-popover-text-opacity: 1;
+      --mi-popover-text-visibility: visible;
+    }
+  }
+
+  @media (width >= 1920px) {
+    --mi-popover-handle-size: 3.75rem;
+  }
+
+  &__handle {
+    position: relative;
+    width: var(--mi-popover-handle-size);
+    height: var(--mi-popover-handle-size);
+    border: 1px solid var(--mi-popover-border-color);
+    border-radius: 50px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    cursor: pointer;
+    
+    &::before, &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 1px;
+      background: #fff;
+      content: "";
+      pointer-events: none;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      opacity: var(--mi-popover-handle-icon-opacity);
+      transform: translate(-50%, -50%) rotate(var(--mi-popover-handle-icon-rotate));
+      transition: var(--mi-popover-handle-icon-transition);
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    padding-left: var(--mi-popover-container-padding);
+    opacity: var(--mi-popover-content-opacity);
+    transform: var(--mi-popover-content-right-transform);
+    transform-origin: var(--mi-popoper-transform-origin);
+    transition: var(--mi-popover-content-transition);
+    visibility: var(--mi-popover-content-visibility);
+
+    &--left {
+      --mi-popoper-transform-origin: right;
+
+      right: 100%;
+      left: auto;
+      padding-right: var(--mi-popover-container-padding);
+      padding-left: initial;
+      transform: var(--mi-popover-content-left-transform);
+    }
+  }
+  
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--mi-popover-border-color);
+    border-radius: 1.875rem;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    gap: 0.5rem;
+    inset: 0;
+
+    a {
+      cursor: pointer;
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 0 0.675rem rgb(0 0 0 / 50%);
+
+    img {
+      max-width: 240px;
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    line-height: 1.2;
+    opacity: var(--mi-popover-text-opacity);
+    transition: var(--mi-popover-text-transition);
+    transition-delay: var(--mi-popover-text-transition-delay);
+    visibility: var(--mi-popover-text-visibility);
+    
+    p {
+      margin: 0;
+
+      &:first-child {
+        margin: 0 0 0.5rem;
+        font-family: var(--mi-heading-font-family);
+        font-feature-settings: "lnum";
+        font-size: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+}

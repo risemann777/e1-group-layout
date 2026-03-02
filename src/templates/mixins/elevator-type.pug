@@ -1,0 +1,23 @@
+mixin elevator-type(data)
+  - title = data?.title || `Lift types`
+  - description = data?.description || `Lorem ipsum sit amet`
+  - list = data?.list || null
+
+  .elevator-type
+    .elevator-type__container
+      .elevator-type__head
+        h2.elevator-type__title=title
+      .elevator-type__data
+        if list && list.length
+          .elevator-type__list
+            each item, index in list
+              - name = item?.name || `Item #${index+1}`
+              - image = item?.image || null
+              - link = item?.link || `#${index+1}`
+              .elevator-type__item
+                a(href=link data-image-src=image).elevator-type__link
+                  h3=name
+                  svg(class="svg-icon elevator-type__arrow" viewBox="0 0 34 34"): use(xlink:href="#svg-elevator-type-arrow")
+          .elevator-type__image
+            picture.elevator-type__picture
+              img(src=list[0].image)

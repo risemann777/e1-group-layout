@@ -1,0 +1,31 @@
+mixin product-card(data)
+  - card = data?.card || null
+  - index = data?.index || 0o0
+  - modifier = data?.modifier || null
+
+  if card
+    - name = card?.name || `Model-${index + 1}`
+    - image = card?.image || null
+    - props = card?.props || null
+    - link = card?.link || `#${index + 1}`
+    .product-card(class=modifier)
+      .product-card__image
+        a(href=link).product-card__clickable
+        if image
+          picture
+            img(src=image)
+      .product-card__info
+        h3.product-card__name: a(href=link)=name
+        .product-card__middle
+          if props && props.length
+            .product-property
+              .product-property__list
+                each prop in props
+                  .product-property__item
+                    span!=prop
+        .product-card__bottom
+          .product-card__price От 6 500 000 ₽
+          .product-card__link
+            a(href=link).btn-arrow
+              span Подробнее
+              svg(class="svg-icon btn-arrow__icon" viewBox="0 0 20 20" width="20" height="20"): use(xlink:href="#svg-catalog-segment-arrow")

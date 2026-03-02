@@ -1,0 +1,44 @@
+include ../../mixins/engineering-card
+
+.engineering.engineering--head-centered
+  .engineering__container
+    .engineering__head
+      .engineering__title Инженерное превосходство
+      .engineering__description Дом не перестраивается под лифт — лифт подстраивается под дом.
+    .engineering__body
+      .engineering__list
+        .engineering__item
+          +engineering-card({
+            icon: 'shaft-pit',
+            title: 'Минимальный приямок — от 60 мм',
+            image: 'images/models/e_plus/engineering_e_plus_01_w1024.png',
+            description: 'Установка возможна даже без глубокой шахты. Как тонкая подпись архитектора: почти невидимо, но абсолютно необходимо.'
+          })
+        .engineering__item
+          +engineering-card({
+            icon: 'ruler-measure',
+            title: 'Низкая высота верхнего этажа — от 2450 мм',
+            image: 'images/models/e_plus/engineering_e_plus_02_w1024.png',
+            description: 'Даже в компактных пространствах остаётся простор для комфорта.'
+          })
+        .engineering__item
+          +engineering-card({
+            icon: 'dimensions',
+            title: 'Компактный шкаф управления',
+            image: 'images/models/e_plus/engineering_e_plus_03_w1024.png',
+            description: 'Незаметен для глаз, но необходим для движения.'
+          })
+        .engineering__item
+          +engineering-card({
+            icon: 'leaf',
+            title: 'Энергоэффективность',
+            image: 'images/models/e_plus/engineering_e_plus_04_w1024.png',
+            description: 'Лифт потребляет меньше энергии, чем привычная техника в доме.'
+          })
+        .engineering__item
+          +engineering-card({
+            icon: 'ear-off',
+            title: 'Тихая и плавная работа',
+            image: 'images/models/e_plus/engineering_e_plus_05_w1024.png',
+            description: 'Технологичный привод делает движение мягким, плавным и бесшумным.'
+          })

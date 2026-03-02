@@ -1,0 +1,99 @@
+.engineering {
+  --mi-engineering-head-align: initial;
+  --mi-engineering-list-gap: 2rem;
+  --mi-engineering-list-grid-template-columns: initial;
+  --mi-engineering-item-min-height: 400px;
+  --mi-engineering-slide-width: 300px;
+  --mi-engineering-slide-min-height: 400px;
+  --mi-engineering-cta-btn-width: 100%;
+  --mi-engineering-cta-btn-min-width: 250px;
+
+  overflow: hidden;
+  padding: var(--mi-block-padding-y) 0;
+
+  @media(width >= 768px) {
+    --mi-engineering-list-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-engineering-item-min-height: 460px;
+    --mi-engineering-slide-min-height: 460px;
+  }
+
+  @media(width >= 1024px) {
+    --mi-engineering-slide-width: 340px;
+    --mi-engineering-cta-btn-width: auto;
+  }
+
+  @media(width >= 1280px) {
+    --mi-engineering-list-grid-template-columns: repeat(3, minmax(0, 1fr));
+    --mi-engineering-item-min-height: 640px;
+    --mi-engineering-slide-min-height: 640px;
+    --mi-engineering-slide-width: 500px;
+  }
+
+  &--head-centered {
+    --mi-engineering-head-align: center;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: var(--mi-engineering-head-align);
+    margin: 0 0 2.5rem;
+    gap: 1.25rem;
+    text-align: var(--mi-engineering-head-align);
+  }
+
+  &__title {
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-heading-h2-font-size);
+    line-height: var(--mi-heading-line-height);
+  }
+
+  &__description {
+    max-width: 1160px;
+    color: var(--mi-color-gray);
+    font-size: var(--mi-block-description-font-size);
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--mi-engineering-list-gap);
+    grid-template-columns: var(--mi-engineering-list-grid-template-columns);
+  }
+
+  &__item {
+    .engineering-card {
+      width: 100%;
+      min-height: var(--mi-engineering-item-min-height);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+
+    .btn {
+      width: var(--mi-engineering-cta-btn-width);
+      min-width: var(--mi-engineering-cta-btn-min-width);
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+    padding: 0;
+  }
+
+  .swiper-slide {
+    width: var(--mi-engineering-slide-width);
+    height: auto;
+
+    .engineering-card {
+      min-height: var(--mi-engineering-slide-min-height);
+    }
+  }
+}

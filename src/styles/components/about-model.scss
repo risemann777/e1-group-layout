@@ -1,0 +1,47 @@
+.about-model {
+  --mi-about-model-label-font-size: 1.25rem;
+  --mi-about-model-cta-btn-min-width: 250px;
+  --mi-about-model-body-font-size: 1.25rem;
+
+  padding: var(--mi-block-padding-y) 0;
+  text-align: center;
+
+  @media(width >= 728px) {
+    --mi-about-model-body-font-size: 1.75rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-about-model-body-font-size: 2.25rem;
+  }
+
+  &__container {
+    width: var(--mi-container-width-narrow);
+    margin-inline: auto;
+  }
+
+  &__label {
+    margin: 0 0 1rem;
+    color: var(--mi-color-gray);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-about-model-label-font-size);
+  }
+
+  &__text {
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-about-model-body-font-size);
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 2.5rem;
+
+    .btn {
+      min-width: var(--mi-about-model-cta-btn-min-width);
+    }
+  }
+}

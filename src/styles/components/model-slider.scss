@@ -1,0 +1,53 @@
+.model-slider {
+  padding: 0 0 4rem;
+
+  @media (width >= 1024px) {
+    padding: 0 0 3rem;
+
+    .swiper-pagination {
+      text-align: left;
+    }
+  }
+}
+
+.model-slide {
+  --mi-model-slide-name-font-size: 1.75rem;
+  --mi-model-slide-description-font-size: 1rem;
+  --mi-model-slide-image-margin: 2.5rem 0 0;
+  --mi-model-slide-button-width: 100%;
+
+  @media(width >= 1024px) {
+    --mi-model-slide-button-width: auto;
+  }
+
+  @media(width >= 1280px) {
+    --mi-model-slide-description-font-size: 1.25rem;
+  }
+
+  &__name {
+    margin: 0 0 1rem;
+    color: var(--mi-corporate-orange);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-model-slide-name-font-size);
+  }
+
+  &__description {
+    font-size: var(--mi-model-slide-description-font-size);
+  }
+
+  &__image {
+    margin: var(--mi-model-slide-image-margin);
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__cta {
+    margin: 2rem 0 0;
+
+    .btn {
+      width: var(--mi-model-slide-button-width);
+    }
+  }
+}

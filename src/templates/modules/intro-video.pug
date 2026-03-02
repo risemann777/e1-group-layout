@@ -1,0 +1,21 @@
+include ../mixins/popover
+
+.intro
+  .intro__video
+    video(autoplay loop muted)
+      source(src="media/hero_desktop.mp4" type="video/mp4" media="(min-width:1280px)")
+      source(src="media/hero_mobile.mp4")
+  .intro__container
+    .scroll-help.intro__help
+      .scroll-help__handle
+      .scroll-help__text Скрольте вниз
+    .intro__content.container
+      .intro__info
+        // .intro__caption Лифты премиум-класса
+        // .intro__price От 4 590 000 ₽
+        .intro__title Производим и устанавливаем лифты <span>в дома</span> <span>и коттеджи</span>
+        // .intro__subtitle Индивидуальный подход
+      .intro__controls
+        button(type="button" data-toggle="modal" data-target="#contactModal").btn.btn--bronze.btn--xl.btn--desktop-only Позвонить нам
+        a(href="tel:+7340983245").btn.btn--bronze.btn--xl.btn--mobile-only Позвонить нам
+        a(href="tel:+7340983245").btn.btn--bronze.btn--xl Написать в Телеграм

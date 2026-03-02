@@ -1,0 +1,55 @@
+include checkbox
+
+mixin form(data)
+  - title = data?.title || null
+  - subtitle = data?.subtitle || null
+  - fields = data?.fields || null
+  - modifiers = data?.modifiers || null
+  - strModifier = ''
+  - commonErrors = data?.common_errors || null
+
+  if (modifiers && modifiers.length)
+    - strModifier = modifiers.join(" ")
+
+  form.form(class=`${strModifier}`)
+    if (title || subtitle)
+      .form__header
+        if (title)
+          .form__title=title
+        if (subtitle)
+          .form__subtitle=subtitle
+    if (fields)
+      .form__body
+        each field, index in fields
+          - type = field?.type || 'text'
+          - name = field?.name || 'name_example'
+          - label = field?.label || 'Label'
+          - placeholder = field?.placeholder || label || 'Placeholder'
+          - error = field?.error || null
+          - autocomplete = field?.autocomplete || 'off'
+          .form__field
+            .form__input(class=error && `form__input--error`)
+              if (type === 'text' || type === 'tel')
+                label
+                  span.form__label=label
+                  input(type=type name=name placeholder=placeholder autocomplete=autocomplete).form__control
+              if (type === 'textarea')
+                label
+                  span.form__label=label
+                  textarea(name=name placeholder=placeholder).form__control.form__control--textarea
+              .form__input-error=error
+    .form__footer
+      if (commonErrors && commonErrors.length)
+        .form__errors
+          each error in commonErrors
+            p=error
+      button(type="button" class="btn btn--primary") Отправить
+      .form__policy
+        +checkbox({
+          checked: false,
+          text: 'Соглашаюсь с <a target="_blank" href="policy.html">политикой обработки персональных данных</a>',
+          name: "policy",
+          modifier: 'checkbox--policy'
+        })
+        p Данный сайт защищен reCAPTCHA и на него распространяются <a href="https://www.google.com/intl/ru/policies/privacy/" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a> <span>и <a href="https://www.google.com/intl/ru/policies/terms/" target="_blank" rel="noopener noreferrer">Условия обслуживания</a></span> Google.
+        // p This site is protected by reCAPTCHA and the Google <a href="https://www.google.com/intl/ru/policies/privacy/" target="_blank">Privacy Policy</a> and <a href="https://www.google.com/intl/ru/policies/terms/" target="_blank">Terms of Service</a> apply.

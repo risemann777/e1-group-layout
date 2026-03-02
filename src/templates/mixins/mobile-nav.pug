@@ -1,0 +1,21 @@
+mixin mobile-nav(data)
+  - list = data?.list || null
+  .mobile-nav.mobile-menu__nav
+    if list && list.length
+      each rootItem, rootIndex in list
+        - rootItemName = rootItem?.name || `Root item #${rootIndex+1}`
+        - rootItemHref = rootItem?.href || `page.html#${rootIndex+1}`
+        - subList = rootItem?.sublist || null
+        .mobile-nav__item
+          .mobile-nav__head
+            a(href=rootItemHref).mobile-nav__link
+              span=rootItemName
+            if subList
+              .mobile-nav__toggle: svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-mobile-menu-arrow")
+          if subList && subList.length
+            .mobile-nav__sub
+              ul
+                each subItem, subIndex in subList
+                  - subItemName = subItem?.name || `Sub item #${subIndex+1}`
+                  - subItemHref = subItem?.href || `page.html#${subIndex+1}`
+                  li: a(href=subItemHref): span=subItemName

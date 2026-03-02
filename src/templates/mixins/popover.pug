@@ -1,0 +1,29 @@
+mixin popover(data)
+  - text = data?.text
+  - image = data?.image
+  - mClass = 'popover'
+  - wrapperClsNames = data?.wrapperClsNames || null
+  - containerClsNames = data?.containerClsNames || null
+  - text = data?.text || []
+  - strWrapperClassNames = ''
+  - strContentClsNames = ''
+
+  if (wrapperClsNames && wrapperClsNames.length > 0)
+    - strWrapperClassNames = wrapperClsNames.join(` `)
+
+  if (containerClsNames && containerClsNames.length > 0)
+    - strContainerClsNames = containerClsNames.join(` `)
+
+  div(class=`${mClass}${strWrapperClassNames && ` ${strWrapperClassNames}`}`)
+    div(class=`${mClass}__handle`)
+    div(class=`${mClass}__container${strContainerClsNames && ` ${strContainerClsNames}`}`)
+      div(class=`${mClass}__content`)
+        if (image)
+          div(class=`${mClass}__image`): a(href="#"): img(src=image)
+        if (text.length || block)
+          div(class=`${mClass}__text`)
+            if (text.length)
+              each paragraph in text
+                p=paragraph
+            if (block)
+              block

@@ -1,0 +1,94 @@
+.advantage {
+  --mi-advantage-padding: 4.5rem 0;
+  --mi-advantage-container-padding: 0;
+  --mi-advantage-title-font-size: 3rem;
+  --mi-advantage-list-display: grid;
+  --mi-advantage-list-gap: 1rem;
+  --mi-advantage-list-grid-template-columns: initial;
+  --mi-advantage-list-item-padding: 1.25rem;
+  --mi-advantage-list-item-font-size: 1.25rem;
+  --mi-advantage-list-item-bg: var(--mi-color-primary-bg-light, blue);
+  --mi-advantage-list-item-name-font-size: 1.5rem;
+  --mi-advantage-list-item-text-font-size: 1rem;
+
+  padding: var(--mi-advantage-padding);
+
+  @media(width >= 720px) {
+    --mi-advantage-list-grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media(width >= 1024px) {
+    --mi-advantage-container-padding: 0 2.5rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-advantage-padding: 7.5rem 0;
+    --mi-advantage-title-font-size: 4.5rem;
+  }
+
+  @media(width >= 1600px) {
+    --mi-advantage-list-item-text-font-size: 1.25rem;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+    display: grid;
+    gap: 4rem 2rem;
+    grid-template-columns: initial;
+    padding: var(--mi-advantage-container-padding);
+
+    @media(width >= 1280px) {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 1.2;
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-advantage-title-font-size);
+    margin: 0 0 1rem;
+    color: var(--mi-color-primary);
+  }
+
+  &__description {
+    font-size: var(--mi-plane-text-font-size);
+  }
+
+  &__controls {
+    margin: 3.5rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__list {
+    display: var(--mi-advantage-list-display);
+    gap: var(--mi-advantage-list-gap);
+    grid-template-columns: var(--mi-advantage-list-grid-template-columns);
+  }
+
+  &__item {
+    padding: var(--mi-advantage-list-item-padding);
+    background: var(--mi-advantage-list-item-bg);
+    border-radius: var(--mi-card-border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+
+    &-name {
+      font-size: var(--mi-advantage-list-item-name-font-size);
+      font-family: var(--mi-heading-font-family);
+      color: var(--mi-color-primary-light);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    &-text {
+      color: var(--mi-color-primary-light);
+      font-size: var(--mi-advantage-list-item-text-font-size);
+    }
+  }
+}

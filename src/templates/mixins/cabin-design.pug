@@ -1,0 +1,40 @@
+include cabin-design-card
+
+mixin cabin-design(data)
+  - id = data?.id || `defaultID`
+  - title = data?.title || `Title`
+  - description = data?.description || `Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...`
+  - image = data?.image || null
+  - imageWebp = data?.imageWebp || null
+  - details = data?.details || null
+
+  .cabin-design(id=id)
+    .cabin-design__main
+      .cabin-design__media
+        if (image || imageWebp)
+          .cabin-design__image
+            a(href=image data-fancybox=`${id}_img` data-caption=`Общий вид кабины ${title}`)
+              picture
+                if (imageWebp)
+                  source(srcset=imageWebp type="image/webp")
+                if (image)
+                  img(src=image alt=`Общий вид кабины ${title}`)
+        if (details && details.length)
+          each detail in details
+            a(href=detail.image data-fancybox=`${id}_img` data-caption=`${detail.title} кабины ${title}`)
+      .cabin-design__info
+        .cabin-design__head
+          .cabin-design__title=title
+          .cabin-design__description!=description
+          .cabin-design__button
+            button(type="button" data-toggle="modal" data-target="#discussModal").btn.btn--primary.btn--lg Обсудить проект
+        if (details && details.length)
+          .cabin-design__details
+              each detail, index in details
+                +cabin-design-card(detail, id, title)
+    if (details && details.length)
+      .cabin-design__slider.swiper.cabin-design-slider
+        .swiper-wrapper.cabin-design-slider__wrapper
+          each detail, index in details
+            .swiper-slide.cabin-design-slider__slide
+              +cabin-design-card(detail, id, title)

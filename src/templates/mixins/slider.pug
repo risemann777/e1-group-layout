@@ -1,0 +1,17 @@
+mixin slider(data)
+  - slides = data?.slides || null
+
+  .slider.swiper
+    .swiper-wrapper.slider__wrapper
+      if (slides && slides.length)
+        each slide, index in slides
+          - image = slide.image || null
+          - imageWebp = slide.imageWebp || null
+          .swiper-slide.slider__slide
+            .slider__image
+              picture
+                if (imageWebp)
+                  source(srcset=imageWebp type="image/webp")
+                if (image)
+                  img(src=image)
+    .swiper-pagination

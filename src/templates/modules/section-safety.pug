@@ -1,0 +1,48 @@
+section(id="safety").section.section--image.section--safety.section--animate
+  h2.section__title.visually-hidden Ваша безопасность — наш приоритет
+  .section__intersect.section__intersect--top
+  .section__intersect.section__intersect--bottom
+  .section__image
+    picture
+      source(media="(min-width:3840px)" data-srcset="images/lift_int_close_cam_1_v2_6_w4096.jpg")
+      source(media="(min-width:2560px)" data-srcset="images/lift_int_close_cam_1_v2_6_w3840.jpg")
+      source(media="(min-width:1920px)" data-srcset="images/lift_int_close_cam_1_v2_6_w2560.jpg")
+      source(media="(min-width:1280px)" data-srcset="images/lift_int_close_cam_1_v2_6_w1920.jpg")
+      img(data-src="images/lift_int_close_cam_1_v2_6_w1280.jpg")
+  .section__frame
+    .container.section__container.section__container--double
+      .section__col
+      .section__col
+        .section__content
+          .section__title.animation.animation--text.animation--del200
+            span Ваша безопасность<br>— наш приоритет
+          .section__text.animation.animation--text.animation--del400
+            p
+              | Новейшие системы безопасности и сертифицированная команда <span>от проектирования</span> <span>до монтажа</span> <span>и обслуживания</span>.
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--1'],
+    text: ['Ограничитель скорости'],
+    containerClsNames: ['popover__container--left'],
+  })
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--2'],
+    containerClsNames: ['popover__container--left'],
+  })
+    p <span>Система защиты</span> <span>при отключении</span> <span>электропитания</span>
+
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--3'],
+    text: ['Система мониторинга механизмов'],
+    containerClsNames: ['popover__container--right'],
+  })
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--4'],
+    containerClsNames: ['popover__container--right'],
+  })
+    p <span>Экстренная связь</span> <span>из кабины лифта</span>
+
+  +popover({
+    wrapperClsNames: ['section__popover', 'section__popover--5'],
+    containerClsNames: ['popover__container--right'],
+  })
+    p <span>Вызов и управление</span> <span>одной клавишей</span>

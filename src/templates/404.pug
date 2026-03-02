@@ -1,0 +1,16 @@
+extends layouts/main/layout
+include mixins/error-page
+
+block vars
+  - layoutMofifiers = 'layout--inner layout--hidden-title'
+  - browserTitle = 'Страница 404'
+  - description = 'Адрес и телефон компании FranzLift поставщика лифтов по РФ'
+  - pageTitle = 'Страница 404';
+  - breadcrumb = [{name: 'Страница 404'}]
+  - notShowPageTitle = true
+
+block content
+  +error-page({
+    number: '404',
+    description: '<p>К сожалению, запрашиваемая вами страница не найдена. Возможно, вы ввели неправильный адрес, либо страница была удалена. Мы сожалеем об этом. Пожалуйста, проверьте правильность введенного адреса и попробуйте снова.</p><p>Если проблема сохраняется, пожалуйста, свяжитесь с нашей поддержкой. Или перейдите на <a href="/">Главную страницу</a>.</p>'
+  })

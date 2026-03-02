@@ -1,0 +1,31 @@
+include ../../mixins/slider
+
+.textmedia.textmedia--centered(id="showRoom")
+  .textmedia__column.textmedia__column--image-wrapper
+    +slider({
+      slides: [
+        {
+          image: 'images/models/e_plus/e_plus_textmedia_slide_01_w1024.jpg',
+          imageWebp: 'images/models/e_plus/e_plus_textmedia_slide_01_w1024.webp'
+        },
+        {
+          image: 'images/models/e_plus/e_plus_textmedia_slide_02_w1024.jpg',
+          imageWebp: 'images/models/e_plus/e_plus_textmedia_slide_02_w1024.webp'
+        },
+        {
+          image: 'images/models/e_plus/e_plus_textmedia_slide_03_w1024.jpg',
+          imageWebp: 'images/models/e_plus/e_plus_textmedia_slide_03_w1024.webp'
+        }
+      ]
+    })
+  .textmedia__column.textmedia__column--text-wrapper
+    .textmedia__content
+      .textmedia__title: h2 Единственное пространство премиальных лифтов в России
+      .textmedia__text.bd-content
+        p Здесь лифт становится искусством: чистые линии, живая фактура, абсолютная тишина движения.
+        p Здесь можно сравнить модели, почувствовать плавность хода и выбрать решение, которое органично впишется в интерьер.
+      .textmedia__cta
+        p Запишитесь в шоурум — протестируйте премиум-лифты.
+      .textmedia__button
+        button(type="button" class="btn btn--primary" data-toggle="modal" data-target="#contactModal") Записаться на визит
+

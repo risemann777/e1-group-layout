@@ -1,0 +1,63 @@
+.preloader {
+  position: fixed;
+  z-index: 10000;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: var(--mi-background);
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  svg {
+    path, rect {
+      fill: #fff;
+    }
+  }
+
+  &--show {
+    opacity: 1;
+  }
+
+  &--eight {
+    svg {
+      rect {
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-name: loading-rect-eight;
+        transform-origin: center;
+
+        &:nth-child(2) {
+          animation-delay: 0.15s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loading-rect-eight {
+  0%, 100% {
+    height: 10px;
+    opacity: 0.2;
+    transform: translateY(5px) scaleY(1);
+  }
+
+  50% {
+    height: 20px;
+    opacity: 1;
+    transform: translateY(0) scaleY(1.5);
+  }
+}

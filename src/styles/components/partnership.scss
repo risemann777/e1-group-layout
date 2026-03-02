@@ -1,0 +1,87 @@
+.partnership {
+  --mi-partnership-container-gap: 2rem;
+  --mi-partnership-container-grid-template-columns: initial;
+  --mi-partnership-info-padding-y: 0;
+  --mi-partnership-info-order: 2;
+  --mi-partnership-title-font-size: 1.5rem;
+  --mi-partnership-description-font-size: 0.875rem;
+  --mi-partnership-media-order: 1;
+  --mi-partnership-image-position: static;
+  --mi-partnership-image-min-height: auto;
+  --mi-partnership-picture-position: static;
+  --mi-partnership-picture-inset: initial;
+  --mi-partnership-picture-object-fit: initial;
+  --mi-partnership-size: auto;
+
+  @media (width >= 1024px) {
+    --mi-partnership-container-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-partnership-info-order: initial;
+    --mi-partnership-title-font-size: 2.5rem;
+    --mi-partnership-description-font-size: 1.25rem;
+    --mi-partnership-media-order: initial;
+    --mi-partnership-image-min-height: 600px;
+    --mi-partnership-image-position: relative;
+    --mi-partnership-picture-position: absolute;
+    --mi-partnership-picture-inset: 0;
+    --mi-partnership-picture-object-fit: cover;
+    --mi-partnership-size: 100%;
+  }
+
+  @media(width >= 1280px) {
+    --mi-partnership-info-padding-y: 3.75rem;
+    --mi-partnership-title-font-size: 3.25rem;
+    --mi-partnership-image-min-height: 800px;
+  }
+
+  &__container {
+    display: grid;
+    width: var(--mi-container-width);
+    gap: var(--mi-partnership-container-gap);
+    grid-template-columns: var(--mi-partnership-container-grid-template-columns);
+    margin-inline: auto;
+  }
+
+  &__info {
+    order: var(--mi-partnership-info-order);
+    padding-top: var(--mi-partnership-info-padding-y);
+  }
+
+  &__title {
+    margin: 0 0 1.25rem;
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-partnership-title-font-size);
+    line-height: 1.2;
+  }
+
+  &__description {
+    color: var(--mi-color-gray);
+    font-size: var(--mi-partnership-description-font-size);
+
+    strong {
+      color: #fff;
+      font-weight: 200;
+    }
+  }
+  
+  &__media {
+    order: var(--mi-partnership-media-order);
+  }
+
+  &__social {
+    margin: 1rem 0 0;
+  }
+
+  &__image {
+    position: var(--mi-partnership-image-position);
+    height: var(--mi-partnership-image-min-height);
+
+    img {
+      position: var(--mi-partnership-picture-position);
+      width: var(--mi-partnership-size);
+      max-width: 100%;
+      height: var(--mi-partnership-size);
+      inset: var(--mi-partnership-picture-inset);
+      object-fit: var(--mi-partnership-picture-object-fit);
+    }
+  }
+}

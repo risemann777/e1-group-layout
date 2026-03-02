@@ -1,0 +1,73 @@
+:root {
+  --mi-body-font-family: 'Inter', serif;
+  --mi-heading-font-family: 'Tektur', serif;
+  --mi-heading-line-height: 1.2;
+  --mi-font-monospace: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  --mi-plane-text-font-size: 1rem;
+  --mi-heading-h2-font-size: 1.75rem;
+  --mi-heading-h3-font-size: 1.25rem;
+  --mi-block-description-font-size: 1rem;
+  --mi-block-padding-y: 3.75rem;
+  --mi-base-color: #222;
+  --mi-foreground: var(--mi-base-color);
+  --mi-background: var(--mi-color-white);
+  --mi-container-size: 1860px;
+  --mi-container-size-narrow: 1775px;
+  --mi-container-width: min(var(--mi-container-size), 100% - var(--mi-container-padding));
+  --mi-container-width-narrow: min(var(--mi-container-size-narrow), 100% - var(--mi-container-padding));
+  --mi-container-padding: 2rem;
+  --mi-corporate-red: var(--mi-color-carmine);
+  --mi-corporate-orange: var(--mi-color-orange, orange);
+  --mi-body-font-weight: 200;
+  --mi-body-line-height: 1.4;
+  --mi-code-color: #d63384;
+  --mi-highlight-color: #000;
+  --mi-highlight-bg: var(--mi-color-yellow);
+  --mi-link-color: rgb(255 255 255);
+  --mi-link-hover-color: rgb(255 255 255 / 40%);
+  --mi-link-visited-color: #681da8;
+  --mi-link-opacity: 1;
+  --mi-link-decoration: none;
+  --mi-border-radius: 0.375rem;
+  --mi-dt-font-weight: 500;
+  --mi-font-weight-bolder: bolder;
+  --mi-small-font-size: 0.625rem;
+  --mi-letter-spacing: 0.02rem;
+  --mi-mark-padding: .2rem .4rem;
+  --mi-sub-sup-font-size: 0.625rem;
+  --mi-link-hover-decoration: none;
+  --mi-table-cell-padding-y: 4px;
+  --mi-table-caption-color: var(--mi-foreground);
+  --mi-table-th-font-weight: 500;
+  --mi-legend-margin-bottom: 1rem;
+  --mi-legend-font-size: 1rem;
+  --mi-legend-font-weight: 500;
+  --mi-header-border-color: #dfdfdf;
+  --mi-input-border-color: #fff;
+  --mi-border-width: 1px;
+  --mi-box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  --mi-border-color-translucent: rgb(0 0 0 / 17.5%);
+  --mi-border-color: #dee2e6;
+  --mi-backdrop-opacity: 0.5;
+  --mi-viewport-height: 100vh;
+  --mi-card-bg: rgb(255 255 255 / 5%);
+  --mi-card-border-radius: 1.25rem;
+
+  @media(width >= 1024px) {
+    --mi-container-padding: 3rem;
+    --mi-block-description-font-size: 1.25rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-container-padding: 4rem;
+    --mi-heading-h2-font-size: 2.25rem;
+    --mi-heading-h3-font-size: 1.75rem;
+    --mi-plane-text-font-size: 1.25rem;
+    --mi-block-description-font-size: 1.5rem;
+    --mi-block-padding-y: 5rem;
+  }
+
+  @media(width >= 1600px) {
+    --mi-heading-h2-font-size: 2.5rem;
+  }
+}

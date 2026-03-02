@@ -1,0 +1,85 @@
+.info-head {
+  --mi-info-head-min-height: initial;
+  --mi-info-head-gap: 2rem;
+  --mi-info-head-padding-y: 0;
+  --mi-info-head-grid-template-columns: initial;
+  --mi-info-head-info-padding: 0;
+  --mi-info-head-name-max-with: initial;
+  --mi-info-head-description-max-with: initial;
+  --mi-info-head-name-font-size: 1.5rem;
+  --mi-info-head-description-font-size: var(--mi-plane-text-font-size);
+  --mi-info-head-image-position: relative;
+  --mi-info-head-image-padding: 56.25%;
+  --mi-info-head-image-margin: 0 calc(var(--mi-container-padding) / -2);
+
+  overflow: hidden;
+  padding-bottom: var(--mi-info-head-padding-y);
+
+  @media(width >= 1024px) {
+    --mi-info-head-gap: 3rem;
+    --mi-info-head-padding-y: 2.5rem;
+    --mi-info-head-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-info-head-name-font-size: 2.5rem;
+    --mi-info-head-min-height: 600px;
+    --mi-info-head-image-padding: 0;
+    --mi-info-head-image-margin: 0 calc(var(--mi-container-padding) * -1) 0 0;
+  }
+
+  @media(width >= 1280px) {
+    --mi-info-head-gap: 3.75rem;
+    --mi-info-head-padding-y: 5rem;
+    --mi-info-head-name-font-size: 3.25rem;
+    --mi-info-head-name-max-with: 700px;
+    --mi-info-head-description-max-with: 800px;
+  }
+  
+  &__container {
+    display: grid;
+    width: var(--mi-container-width);
+    min-height: var(--mi-info-head-min-height);
+    gap: var(--mi-info-head-gap);
+    grid-template-columns: var(--mi-info-head-grid-template-columns);
+    margin-inline: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.25rem;
+  }
+
+  &__name {
+    max-width: var(--mi-info-head-name-max-with);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-info-head-name-font-size);
+    line-height: 1.2;
+  }
+
+  &__description {
+    max-width: var(--mi-info-head-description-max-with);
+    color: var(--mi-color-gray);
+    font-size: var(--mi-info-head-description-font-size);
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    position: var(--mi-info-head-image-position);
+    padding-bottom: var(--mi-info-head-image-padding);
+    margin: var(--mi-info-head-image-margin);
+
+    img {
+      position: absolute;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      inset: 0;
+      object-fit: cover;
+    }
+  }
+}

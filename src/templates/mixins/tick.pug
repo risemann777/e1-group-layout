@@ -1,0 +1,23 @@
+mixin tick(data)
+  - title = data?.title || `Tick title`
+  - description = data?.description || null
+  - list = data?.list || null
+
+  .tick
+    .tick__container
+      .tick__head
+        h2.tick__title=title
+        if description
+          .tick__description=description
+      .tick__list
+        if list && list.length
+          each item, index in list
+            - name = item?.name || `Tick item name #${index+1}`
+            - text = item?.text || null
+            .tick__item
+              .tick__icon
+                svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-check")
+              .tick__info
+                h3.tick__name=name
+                if text
+                  .tick__text=text

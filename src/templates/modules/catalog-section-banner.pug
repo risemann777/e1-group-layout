@@ -1,0 +1,33 @@
+include ../mixins/banner
+
+section(id="banner").section.section--animate
+  .section__intersect.section__intersect--top
+  .section__intersect.section__intersect--bottom
+  +banner({
+    title: ['Безопасность', 'превыше всего'],
+    image: 'images/lift_service_root_banner_w1280.jpg',
+    imageSources: [
+      {
+        media: '3840',
+        src: "images/lift_service_root_banner_w4096.jpg"
+      },
+      {
+        media: '2560',
+        src: "images/lift_service_root_banner_w3840.jpg"
+      },
+      {
+        media: '1920',
+        src: "images/lift_service_root_banner_w2560.jpg"
+      },
+      {
+        media: '1280',
+        src: "images/lift_service_root_banner_w1920.jpg"
+      }
+    ],
+    description: ['Лифты FRANZ строго соответствуют высоким стандартам производства домашних лифтов. Мы добросовестно относимся к каждому этапу, добиваясь надежного качества на высшем уровне, чтобы обеспечить безопасность клиентов.'],
+    button: {
+      name: 'Обсудить проект',
+      toggle: 'modal',
+      target: '#discussModal'
+    }
+  })

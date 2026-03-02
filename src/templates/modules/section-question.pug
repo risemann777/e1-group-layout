@@ -1,0 +1,44 @@
+include ../mixins/form
+
+section.section.section--question.section--animate
+  .section__intersect.section__intersect--top
+  .section__intersect.section__intersect--bottom
+  .question
+    h2.question__title.visually-hidden Остались вопросы? Менеджер все расскажет
+    .question__container.container
+      .question__info
+        .question__title
+          div
+            | Остались вопросы?
+            br
+            | Менеджер все расскажет
+        .question__description
+          p Менеджер свяжется с вами в ближайшее время и ответит на все интересующие вас вопросы
+
+      .question__form
+        +form({
+          modifiers: ["form--static"],
+          fields: [
+            {
+              type: 'text',
+              name: 'name',
+              label: 'Имя / Огранизация',
+              placeholder: 'Имя / Огранизация',
+              required: false
+            },
+            {
+              type: 'tel',
+              name: 'phone',
+              label: 'Телефон',
+              placeholder: 'Телефон',
+              required: true,
+            },
+            {
+              type: 'text',
+              name: 'email',
+              label: 'E-mail',
+              placeholder: 'E-mail',
+              required: false,
+            }
+          ]
+        })

@@ -1,0 +1,43 @@
+mixin alike-product(data)
+  - list = data?.list || null
+  - title = data?.title || "View other products"
+  - modifier = data?.modifier || null
+  - showAll = data?.showAll || null
+
+  .alike-product(class=modifier)
+    .alike-product__container
+      h2.alike-product__title=title
+      .alike-product__slider.swiper#alikeProductSlider
+        .swiper-wrapper
+          if list && list.length
+            each item, index in list
+              - name = item?.name || `Model-${index + 1}`
+              - image = item?.image || null
+              - props = item?.props || null
+              - link = item?.link || `#${index + 1}`
+              .swiper-slide
+                .product-card.alike-product__item
+                  .product-card__image
+                    a(href=link).product-card__clickable
+                    if image
+                      picture
+                        img(src=image)
+                  .product-card__info
+                    h3.product-card__name=name
+                    .product-card__middle
+                      if props && props.length
+                        .product-property
+                          .product-property__list
+                            each prop in props
+                              .product-property__item
+                                span!=prop
+                    .product-card__bottom
+                      .product-card__price От 6 500 000 ₽
+                      .product-card__link
+                        a(href=link).btn-arrow
+                          span Подробнее
+                          svg(class="svg-icon btn-arrow__icon" viewBox="0 0 20 20" width="20" height="20"): use(xlink:href="#svg-catalog-segment-arrow")
+        .swiper-pagination
+      if showAll
+        .alike-product__button
+          a(href="catalog.html").btn.btn--primary Все модели

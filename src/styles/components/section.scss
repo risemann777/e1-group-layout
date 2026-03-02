@@ -1,0 +1,101 @@
+.section {
+  --mi-section-overflow: initial;
+  --mi-section-padding: 0;
+  --mi-section-container-position: relative;
+  --mi-section-container-z-index: initial;
+  --mi-section-container-double-gap: initial;
+  --mi-section-container-display: initial;
+  --mi-section-container-flex-direction: initial;
+  --mi-section-container-gap: initial;
+  --mi-section-container-justify-content: initial;
+  --mi-section-container-padding: initial;
+  --mi-section-description-font-size: 1rem;
+  --mi-section-content-padding: 0;
+  --mi-section-content-margin: 0;
+  --mi-section-content-max-width: initial;
+  --mi-section-title-font-size: 1.5rem;
+  --mi-section-title-margin: 0 0 1rem;
+  --mi-section-title-text-transform: none;
+  --mi-section-title-font-family: var(--mi-heading-font-family);
+  --mi-section-subtitle-font-size: 1rem;
+  --mi-section-text-font-size: 0.875rem;
+  --mi-section-font-size: 1.25rem;
+  --mi-section-subtitle-color: rgb(255 255 255 / 30%);
+  --mi-section-image-padding: 110%;
+  --mi-section-image-position: relative;
+  --mi-section-image-cover-bg: rgb(0 0 0 / 40%);
+
+  position: relative;
+  overflow: var(--mi-section-overflow);
+  padding: var(--mi-section-padding);
+
+  @media(width >= 1280px) {
+    --mi-section-title-font-size: 3rem;
+    --mi-section-description-font-size: 20px;
+  }
+
+  &--about {
+    --mi-section-padding: 4rem 0;
+    --mi-section-container-double-gap: 2rem;
+    --mi-section-title-font-size: 3rem;
+
+    @media(width >= 1024px) {
+      --mi-section-container-padding: 0 2.5rem;
+    }
+
+    @media(width >= 1280px) {
+      --mi-section-title-font-size: 4.5rem;
+    }
+  }
+
+  &__container {
+    position: var(--mi-section-container-position);
+    z-index: var(--mi-section-container-z-index);
+    display: var(--mi-section-container-display);
+    flex-direction: var(--mi-section-container-flex-direction);
+    justify-content: var(--mi-section-container-justify-content);
+    gap: var(--mi-section-container-gap);
+    padding: var(--mi-section-container-padding);
+
+    &--double {
+      display: grid;
+      gap: var(--mi-section-container-double-gap);
+      grid-template-columns: initial;
+      
+      @media(width >= 1024px) {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+      }
+    }
+  }
+
+  &__col {
+    width: 100%;
+  }
+
+  &__content {
+    max-width: var(--mi-section-content-max-width);
+    padding: var(--mi-section-content-padding);
+    margin: var(--mi-section-content-margin);
+  }
+
+  &__title {
+    margin: var(--mi-section-title-margin);
+    font-family: var(--mi-section-title-font-family);
+    font-size: var(--mi-section-title-font-size);
+    line-height: 1.17;
+    font-weight: 600;
+    text-transform: var(--mi-section-title-text-transform);
+  }
+  
+  &__subtitle {
+    margin: 0 0 1rem;
+    color: var(--mi-section-subtitle-color);
+    font-family: var(--mi-section-title-font-family);
+    font-size: var(--mi-section-subtitle-font-size);
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: var(--mi-section-description-font-size);
+  }
+}

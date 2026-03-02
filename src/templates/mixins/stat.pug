@@ -1,0 +1,23 @@
+mixin stat(data)
+  - items = data?.items || null
+  - modifiers = data?.modifiers || null
+  - strModifier = ''
+
+  if (modifiers && modifiers.length)
+    - strModifier = modifiers.join(" ")
+
+  .stat(class=`${strModifier}`)
+    if (items && items.length)
+      .stat__list
+        each item, index in items
+          - num = item?.num || 'N+'
+          - text = item?.text || 'Item description'
+          .stat__item
+            h3.stat__item-title.visually-hidden=`${num} ${text}`
+            .stat__num(class=`animation animation--text animation--del${index+5}00`)
+              span=num
+            .stat__text(class=`animation animation--text animation--del${index+5}00`)
+              span=text
+      .stat__bottom.animation.animation--button.animation--del900
+        .animation__item
+          button(type="button" class="btn btn--primary" data-toggle="modal" data-target="#catalogModal") Получить каталог FRANZLIFT

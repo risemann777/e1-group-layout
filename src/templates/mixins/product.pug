@@ -1,0 +1,18 @@
+include product-card
+
+mixin product(data)
+  -list = data?.list || null
+
+  .product
+    .product__list
+      if list && list.length
+        each item, index in list
+          - name = item?.name || `Model-${index + 1}`
+          - image = item?.image || null
+          - props = item?.props || null
+          - link = item?.link || `#${index + 1}`
+          +product-card({
+            card: item,
+            index: index,
+            modifier: 'product__item'
+          })

@@ -1,0 +1,12 @@
+mixin faq-list(data)
+  - list = data?.list || null
+  .faq
+    .faq__container
+      .faq__list
+        if list && list.length
+          each item, index in list
+            - name = item?.name || `Faq item name #${index+1}`
+            - text = item?.text || `Lorem isum sit amet`
+            .faq__item
+              .faq__name=name
+              .faq__text!=text

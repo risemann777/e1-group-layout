@@ -1,0 +1,43 @@
+include ../mixins/modal
+include ../mixins/form
+
++modal({
+  id: "contactModal",
+  title: "Мы свяжитемя с вами",
+  modalModifiers: ["modal--zoom"],
+  dialogModifiers: ["modal__dialog--centered"]
+})
+  +form({
+    common_errors: ["Похоже вы робот!"],
+    fields: [
+      {
+        name: 'user_name',
+        label: 'Имя / Организация',
+      },
+      {
+        name: 'user_phone',
+        label: 'Телефон',
+      },
+      {
+        name: 'user_email',
+        label: 'E-mail',
+        error: 'E-mail обязательное поле'
+      },
+      {
+        name: 'comment',
+        label: 'Комментарий',
+        type: 'textarea',
+      }
+    ]
+  })
+
+
++modal({
+  id: 'expertiseModal',
+  modalModifiers: ["modal--zoom", "modal--video", "modal--xl"],
+  dialogModifiers: ["modal__dialog--centered"]
+})
+  .embed-responsive.embed-responsive--16by9
+    .embed-responsive__item
+      video.video.video--16by9(width="1920" height="1080" controls poster="")
+        source(type="video/mp4" src="")

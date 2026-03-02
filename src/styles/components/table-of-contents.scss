@@ -1,0 +1,41 @@
+.table-of-contents {
+  --mi-table-of-contents-title-font-size: calc(1.325rem + .9vw);
+  --mi-table-of-contents-font-size: 1rem;
+
+  margin: 3rem 0;
+
+  @media(width >= 1024px) {
+    --mi-table-of-contents-title-font-size: 2.5rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-table-of-contents-font-size: 1.25rem;
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-table-of-contents-title-font-size);
+  }
+
+  &__wrapper {
+    ul {
+      li {
+        color: var(--mi-color-gray);
+        font-size: var(--mi-table-of-contents-font-size);
+
+        a {
+          color: inherit;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+
+        ul {
+          margin: 0.275rem 0 0.5rem;
+        }
+      }
+    }
+  }
+}

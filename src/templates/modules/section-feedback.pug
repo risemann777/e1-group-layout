@@ -1,0 +1,40 @@
+include ../mixins/form
+
+section(id="feedback").section.section--feedback.section--animate
+  .section__intersect.section__intersect--top
+  .section__intersect.section__intersect--bottom
+  .feedback
+    .container.feedback__container
+      .feedback__image: img(data-src="images/director_w2000.jpg")
+      .feedback__info
+        .feedback__top
+          .feedback__title Свяжитесь с нами
+          .feedback__subtitle Оперативная и бесплатная консультация по любым вопросам, связанным с подъемным оборудованием.
+        +form({
+          modifiers: ["form--static"],
+          common_errors: ["Похоже вы робот!"],
+          fields: [
+            {
+              type: 'text',
+              name: 'name',
+              label: 'Имя / Огранизация',
+              placeholder: 'Имя / Огранизация',
+              required: false
+            },
+            {
+              type: 'tel',
+              name: 'phone',
+              label: 'Телефон',
+              placeholder: 'Телефон',
+              required: true,
+            },
+            {
+              type: 'text',
+              name: 'email',
+              label: 'E-mail',
+              placeholder: 'E-mail',
+              required: false,
+              error: 'Обязательное поле'
+            }
+          ]
+        })

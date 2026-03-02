@@ -1,0 +1,11 @@
+.cabin-design-slider {
+  overflow: visible;
+
+  &__slide {
+    width: 280px;
+
+    @media (width >= 576px) {
+      width: auto;
+    }
+  }
+}

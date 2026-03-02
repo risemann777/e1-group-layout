@@ -1,0 +1,58 @@
+mixin alike-news(data)
+  - list = data?.list || null
+  - title = data?.title || "Заголовок блока"
+  - modifier = data?.modifier || null
+  - button = data?.button || null
+
+  .alike-news(class=modifier)
+    .alike-news__container
+      .alike-news__title=title
+      .alike-news__list
+        if list && list.length
+          each item, index in list
+            - title = item?.title || `News item title #${index+1}`
+            - description = item?.description || `Lorem ipsum sit amet`
+            - image = item?.image || null
+            - date = item?.date || `31.12.9999`
+            - link = item?.link || `news-detail.html#${index+1}`
+            .news-card.alike-news__item
+              if image
+                .news-card__media
+                  .news-card__image
+                    img(src=image alt=title)
+                    a(href=link).news-card__clickable
+              .news-card__info
+                .news-card__main
+                  .news-card__date=date
+                  .news-card__title=title
+                .news-card__bottom
+                  a(href=link class="news-card__link") Подробнее
+      .alike-news__slider.swiper#alikeNewsSlider
+        .swiper-wrapper
+          if list && list.length
+            each item, index in list
+              - title = item?.title || `News item title #${index+1}`
+              - description = item?.description || `Lorem ipsum sit amet`
+              - image = item?.image || null
+              - date = item?.date || `31.12.9999`
+              - link = item?.link || `news-detail.html#${index+1}`
+              .swiper-slide
+                .news-card.alike-news__item
+                  if image
+                    .news-card__media
+                      .news-card__image
+                        img(src=image alt=title)
+                        a(href=link).news-card__clickable
+                  .news-card__info
+                    .news-card__main
+                      .news-card__date=date
+                      .news-card__title=title
+                    .news-card__bottom
+                      a(href=link class="news-card__link") Подробнее
+        .swiper-pagination
+
+      if button
+        .alike-news__button
+          - name = button?.name || `Button name`
+          - link = button?.link || `#`
+          a(href=link class="btn btn--primary"): span=name

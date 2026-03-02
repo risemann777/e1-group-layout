@@ -1,0 +1,23 @@
+mixin engineering-card(data)
+  - icon = data?.icon || null
+  - title = data?.title || null
+  - image = data?.image || null
+  - imageWebp = data?.imageWebp || null
+  - description = data?.description || null
+
+  .engineering-card
+    .engineering-card__image
+      picture
+        if (imageWebp)
+          source(srcset=imageWebp type="image/webp")
+        if (image)
+          img(src=image)
+    .engineering-card__container
+      .engineering-card__info
+        if (icon)
+          .engineering-card__icon
+            svg(class="svg-icon" viewBox="0 0 60 60" width="60" height="60"): use(xlink:href=`#svg-${icon}`)
+        if (title)
+          .engineering-card__title=title
+        if (description)
+          .engineering-card__description!=description

@@ -1,0 +1,106 @@
+.contact {
+  --mi-contact-container-grid-template-columns: initial;
+  --mi-contact-info-order: 2;
+  --mi-contact-info-padding-y: 0;
+  --mi-contact-title-font-size: 1.5rem;
+  --mi-contact-main-margin-y: 2rem;
+  --mi-contact-instant-font-size: 1.75rem;
+  --mi-contact-details-font-size: 1.25rem;
+  --mi-contact-media-order: 1;
+  --mi-contact-map-height: 320px;
+  --mi-contact-chips-justify-content: initial;
+
+  @media(width >= 576px) {
+    --mi-contact-map-height: 400px;
+  }
+
+  @media(width >= 720px) {
+    --mi-contact-map-height: 600px;
+    --mi-contact-chips-justify-content: center;
+  }
+
+  @media(width >= 1024px) {
+    --mi-contact-container-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-contact-info-order: initial;
+    --mi-contact-info-padding-y: 2rem;
+    --mi-contact-title-font-size: 2.5rem;
+    --mi-contact-instant-font-size: 2.25rem;
+    --mi-contact-media-order: initial;
+  }
+
+  @media(width >= 1280px) {
+    --mi-contact-title-font-size: 3.25rem;
+    --mi-contact-instant-font-size: 3.25rem;
+    --mi-contact-details-font-size: 1.75rem;
+    --mi-contact-map-height: 800px;
+    --mi-contact-main-margin-y: 2rem;
+  }
+
+  &__container {
+    display: grid;
+    width: var(--mi-container-width);
+    gap: 2.5rem;
+    grid-template-columns: var(--mi-contact-container-grid-template-columns);
+    margin-inline: auto;
+  }
+
+  &__info {
+    order: var(--mi-contact-info-order);
+    padding-top: var(--mi-contact-info-padding-y);
+  }
+
+  &__title {
+    margin: 0 0 1.25rem;
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-contact-title-font-size);
+    line-height: 1.2;
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: var(--mi-contact-chips-justify-content);
+    gap: 0.5rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--mi-contact-main-margin-y);
+    gap: 1.25rem;
+  }
+  
+  &__bottom {
+    width: var(--mi-container-width);
+    padding-top: 3.75rem;
+    margin-inline: auto;
+  }
+
+  &__instant {
+    font-family: var(--mi-heading-font-family);
+    font-feature-settings: 'lnum';
+    font-size: var(--mi-contact-instant-font-size);
+    line-height: 1.2;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+  }
+
+  &__details {
+    font-family: var(--mi-heading-font-family);
+    font-feature-settings: "lnum";
+    font-size: var(--mi-contact-details-font-size);
+    line-height: 1.3;
+  }
+
+  &__media {
+    order: var(--mi-contact-media-order);
+  }
+
+  &__map {
+    height: var(--mi-contact-map-height);
+  }
+}

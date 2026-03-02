@@ -1,0 +1,47 @@
+mixin modal(data)
+  - id = data?.id || "exampleModal"
+  - title = data?.title || null
+  - subtitle = data?.subtitle ||null
+  - footerButtons = data?.footerButtons || null
+
+  - blockClass = 'modal'
+  - closeCls = `${blockClass}__close`
+  - backdropClass = `${blockClass}__backdrop`
+  - dialogClass = `${blockClass}__dialog`
+  - contentClass = `${blockClass}__content`
+  - headerClass = `${blockClass}__header`
+  - titleClass = `${blockClass}__title`
+  - subtitleClass = `${blockClass}__subtitle`
+  - bodyCls = `${blockClass}__body`
+  - footerCls = `${blockClass}__footer`
+
+  - modalModifiers = data?.modalModifiers || null
+  - modalModifierStr = ''
+
+  if (modalModifiers && modalModifiers.length > 0)
+    - modalModifierStr = modalModifiers.join(" ")
+
+  - dialogModifiers = data?.dialogModifiers || null
+  - dialogModifierStr = ''
+
+  if (dialogModifiers && dialogModifiers.length > 0)
+    - dialogModifierStr = dialogModifiers.join(" ")
+
+  div(class=`${blockClass}${modalModifierStr && " "+modalModifierStr}` id=id tabindex="-1" aria-labelledby=`${id}Label` aria-hidden="true" data-lenis-prevent="true")
+    div(class=`${backdropClass}` data-dismiss="modal")
+    div(class=`${dialogClass}${dialogModifierStr && " "+dialogModifierStr}`)
+      div(class=`${contentClass}`)
+        button(class=`${closeCls}` type="button" data-dismiss="modal" aria-label="close")
+        if (title || subtitle)
+          div(class=`${headerClass}`)
+            h3(class=`${titleClass}` id=`${id}Label`)=title
+            if (subtitle)
+              div(class=`${subtitleClass}`)=subtitle
+
+        if block
+          div(class=`${bodyCls}`)
+            block
+        if (footerButtons)
+          div(class=`${footerCls}`)
+            button(type="button" class="btn btn--secondary") Close
+            button(type="button" class="btn btn--primary") Save changes

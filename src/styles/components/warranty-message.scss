@@ -1,0 +1,33 @@
+.warranty-message {
+  --mi-warranty-message-text-font-size: 1.25rem;
+  --mi-warranty-message-year-font-size: 1.5rem;
+
+  font-family: var(--mi-heading-font-family);
+  font-feature-settings: "lnum";
+
+  @media(width >= 1024px) {
+    --mi-warranty-message-text-font-size: 1.5rem;
+    --mi-warranty-message-year-font-size: 1.75rem;
+  }
+
+  @media(width >= 1366px) {
+    --mi-warranty-message-text-font-size: 1.75rem;
+    --mi-warranty-message-year-font-size: 2.25rem;
+  }
+
+  @media(width >= 1600px) {
+    --mi-warranty-message-text-font-size: 2.5rem;
+    --mi-warranty-message-year-font-size: 3.125rem;
+  }
+
+  &__text {
+    font-size: var(--mi-warranty-message-text-font-size);
+    line-height: 1.2;
+  }
+
+  &__years {
+    margin: 1rem 0 0;
+    color: var(--mi-corporate-orange);
+    font-size: var(--mi-warranty-message-year-font-size);
+  }
+}

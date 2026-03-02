@@ -1,0 +1,121 @@
+.cabin {
+  --mi-cabin-title-font-size: 1.5rem;
+  --mi-cabin-description-font-size: 1rem;
+  --mi-cabin-grid-template-columns: repeat(2, minmax(0, 1fr));
+  --mi-cabin-grid-gap: 1.25rem;
+  --mi-cabin-cards-margin: 0;
+  --mi-cabin-card-height: 524px;
+  --mi-cabin-design-overflow: hidden;
+
+  @media(width >= 576px) {
+    --mi-cabin-grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media(width >= 720px) {
+    --mi-cabin-grid-template-columns: repeat(4, minmax(0, 1fr));
+    --mi-cabin-cards-margin: 0 0 1.25rem;
+  }
+
+  @media(width >= 1024px) {
+    --mi-cabin-title-font-size: 1.75rem;
+    --mi-cabin-description-font-size: 1.25rem;
+    --mi-cabin-grid-template-columns: repeat(5, minmax(0, 1fr));
+    --mi-cabin-design-overflow: initial;
+  }
+
+  @media(width >= 1280px) {
+    --mi-cabin-title-font-size: 2.25rem;
+  }
+
+  @media(width >= 1600px) {
+    --mi-cabin-cards-margin: 0 0 60px;
+  }
+
+  &__headline {
+    display: flex;
+    width: var(--mi-container-width);
+    flex-direction: column;
+    margin: 0 0 2.5rem;
+    gap: 0.5rem;
+    margin-inline: auto;
+  }
+
+  &__cards {
+    overflow: hidden;
+    margin: var(--mi-cabin-cards-margin);
+  }
+
+  &__slider {
+    width: var(--mi-container-width);
+    margin: 0 0 1.5rem;
+    background-color: var(--mi-card-bg);
+    margin-inline: auto;
+
+    @media (width >= 1024px) {
+      aspect-ratio: 60 / 17;
+    }
+
+    .swiper-wrapper {
+      opacity: 0;
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    &.swiper-initialized {
+      background-color: initial;
+
+      .swiper-wrapper {
+        opacity: 1;
+
+        @media (width >= 1024px) {
+          aspect-ratio: auto;
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--mi-cabin-title-font-size);
+    line-height: 1.1;
+  }
+
+  &__description {
+    font-size: var(--mi-cabin-description-font-size);
+  }
+
+  &__list {
+    display: grid;
+    width: var(--mi-container-width);
+    margin: 0 0 1.5rem;
+    gap: var(--mi-cabin-grid-gap);
+    grid-template-columns: var(--mi-cabin-grid-template-columns);
+    margin-inline: auto;
+  }
+
+  &__trims {
+    width: var(--mi-container-width-narrow);
+    margin-inline: auto;
+  }
+
+  &__design {
+    overflow: var(--mi-cabin-design-overflow);
+  }
+}
+
+.cabin-slider {
+  --mi-cabin-slider-card-width: 172px;
+
+  overflow: visible;
+
+  @media (width >= 1024px) {
+    --mi-cabin-slider-card-width: auto;
+  }
+
+  &__slide {
+    width: var(--mi-cabin-slider-card-width);
+
+    .cabin-card {
+      width: var(--mi-cabin-slider-card-width);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.city-chip {
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,135 @@
+.cabin-design {
+  --mi-cabin-design-padding-y: 2.5rem;
+  --mi-cabin-design-grid-template-columns: repeat(12, minmax(0, 1fr));
+  --mi-cabin-design-main-gap: initial;
+  --mi-cabin-design-info-grid-column: initial;
+  --mi-cabin-design-media-grid-column: initial;
+  --mi-cabin-design-image-position: relative;
+  --mi-cabin-design-image-top: auto;
+  --mi-cabin-design-info-padding: 2.5rem 0 1.25rem;
+  --mi-cabin-design-info-justify-content: initial;
+  --mi-cabin-design-title-font-size: 1.75rem;
+  --mi-cabin-design-description-font-size: 1rem;
+  --mi-cabin-design-btn-width: 100%;
+  --mi-cabin-design-details-grid-template-columns: repeat(2, minmax(0, 1fr));
+  --mi-cabin-design-details-gap: 1.25rem;
+  --mi-cabin-design-details-display: none;
+  --mi-cabin-design-slider-display: block;
+  --mi-cabin-design-slider-margin: 2.5rem 0 0;
+
+  padding: var(--mi-cabin-design-padding-y) 0;
+
+  @media (width >= 720px) {
+    --mi-cabin-design-main-gap: 2.5rem;
+    --mi-cabin-design-btn-width: auto;
+    --mi-cabin-design-info-grid-column: 7/13;
+    --mi-cabin-design-media-grid-column: 1/7;
+    --mi-cabin-design-info-justify-content: center;
+  }
+
+  @media (width >= 1024px) {
+    --mi-cabin-design-padding-y: 3.75rem;
+    --mi-cabin-design-main-gap: 1.25rem;
+    --mi-cabin-design-info-padding: 0;
+    --mi-cabin-design-info-grid-column: 7/13;
+    --mi-cabin-design-media-grid-column: 1/6;
+    --mi-cabin-design-image-position: sticky;
+    --mi-cabin-design-image-top: 60px;
+    --mi-cabin-design-info-justify-content: space-between;
+    --mi-cabin-design-details-display: grid;
+    --mi-cabin-design-slider-display: none;
+    --mi-cabin-design-slider-margin: 0;
+  }
+
+  @media (width >= 1280px) {
+    --mi-cabin-design-padding-y: 5rem;
+    --mi-cabin-design-title-font-size: 2.25rem;
+    --mi-cabin-design-description-font-size: 1.24rem;
+  }
+
+  &__main {
+    width: var(--mi-container-width-narrow);
+    gap: var(--mi-cabin-design-main-gap);
+    margin-inline: auto;
+
+    @media (width >= 720px) {
+      display: grid;
+      grid-template-columns: var(--mi-cabin-design-grid-template-columns);
+    }
+  }
+
+  &__media {
+    grid-column: var(--mi-cabin-design-media-grid-column);
+    grid-row: 1;
+  }
+
+  &__image {
+    position: var(--mi-cabin-design-image-position);
+    top: var(--mi-cabin-design-image-top);
+    aspect-ratio: 2 / 3;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--mi-cabin-design-info-justify-content);
+    padding: var(--mi-cabin-design-info-padding);
+    gap: 2.5rem;
+
+    @media (width >= 720px) {
+      grid-column: var(--mi-cabin-design-info-grid-column);
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    margin: 0 0 1.25rem;
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-cabin-design-title-font-size);
+  }
+
+  &__description {
+    color: var(--mi-color-gray);
+    font-size: var(--mi-cabin-design-description-font-size);
+    line-height: 1.2;
+
+    span {
+      white-space: nowrap;
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__details {
+    display: var(--mi-cabin-design-details-display);
+    gap: var(--mi-cabin-design-details-gap);
+    grid-template-columns: var(--mi-cabin-design-details-grid-template-columns);
+  }
+
+  &__slider {
+    display: var(--mi-cabin-design-slider-display);
+    width: var(--mi-container-width-narrow);
+    margin: var(--mi-cabin-design-slider-margin);
+    margin-inline: auto;
+  }
+
+  &__button {
+    margin-top: 2.5rem;
+
+    .btn {
+      width: var(--mi-cabin-design-btn-width);
+    }
+  }
+}

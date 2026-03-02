@@ -1,0 +1,25 @@
+mixin advantage(data)
+  - title = data?.title || null
+  - description = data?.description || null
+  - list = data?.list || null
+
+  .advantage
+    .advantage__container
+      .advantage__col
+        .advantage__info
+          if title
+            .advantage__title
+              span=title
+          if description
+            .advantage__description!=description
+        .advantage__controls
+          button(type="button" class="btn btn--primary header__button" data-toggle="modal" data-target="#contactModal") Оставить заявку
+      .advantage__col
+        if (list && list.length)
+          .advantage__list
+            each item, index in list
+              - name = item?.name || `Advantage ${index+1}`
+              - text = item?.text || `Lorem imsum sit amet`
+              .advantage__item
+                .advantage__item-name=name
+                .advantage__item-text!=text

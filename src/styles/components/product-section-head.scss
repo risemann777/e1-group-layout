@@ -1,0 +1,87 @@
+.product-section-head {
+  --mi-product-section-head-min-height: initial;
+  --mi-product-section-head-gap: 2rem;
+  --mi-product-section-head-padding-y: 0;
+  --mi-product-section-head-grid-template-columns: initial;
+  --mi-product-section-head-info-padding: 0;
+  --mi-product-section-head-name-max-with: initial;
+  --mi-product-section-head-description-max-with: initial;
+  --mi-product-section-head-name-font-size: 1.5rem;
+  --mi-product-section-head-description-font-size: var(--mi-plane-text-font-size);
+  --mi-product-section-image-margin: 0 calc(var(--mi-container-padding) / -2);
+
+  overflow: hidden;
+  padding-bottom: var(--mi-product-section-head-padding-y);
+
+  @media(width >= 1024px) {
+    --mi-product-section-head-gap: 3rem;
+    --mi-product-section-head-padding-y: 2.5rem;
+    --mi-product-section-head-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-product-section-head-name-font-size: 2.5rem;
+    --mi-product-section-head-min-height: 600px;
+    --mi-product-section-image-margin: 0 calc(var(--mi-container-padding) * -1) 0 0;
+  }
+
+  @media(width >= 1280px) {
+    --mi-product-section-head-gap: 3.75rem;
+    --mi-product-section-head-padding-y: 5rem;
+    --mi-product-section-head-name-font-size: 3.25rem;
+    --mi-product-section-head-name-max-with: 700px;
+    --mi-product-section-head-description-max-with: 800px;
+  }
+
+  &__container {
+    display: grid;
+    width: var(--mi-container-width);
+    min-height: var(--mi-product-section-head-min-height);
+    gap: var(--mi-product-section-head-gap);
+    grid-template-columns: var(--mi-product-section-head-grid-template-columns);
+    margin-inline: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.25rem;
+  }
+
+  &__name {
+    max-width: var(--mi-product-section-head-name-max-with);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-product-section-head-name-font-size);
+    line-height: 1.2;
+  }
+
+  &__description {
+    max-width: var(--mi-product-section-head-description-max-with);
+    color: var(--mi-color-gray);
+    font-size: var(--mi-product-section-head-description-font-size);
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    margin: var(--mi-product-section-image-margin);
+
+    img {
+      max-width: 100%;
+    }
+
+    @media(width >= 1024px) {
+      position: relative;
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+      }
+    }
+  }
+}

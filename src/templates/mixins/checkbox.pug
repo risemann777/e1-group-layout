@@ -1,0 +1,11 @@
+mixin checkbox(data)
+  - obData = data || null
+  - checked = data?.checked || false
+  - name = data?.name || null
+  - text = data?.text || `Я даю согласие на обработку`
+  - modifier = data?.modifier || null
+  .checkbox(class=modifier)
+    label
+      input(type="checkbox" name=name checked=checked)
+      .checkbox__cr
+      .checkbox__text!=text

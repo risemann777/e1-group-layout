@@ -1,0 +1,10 @@
+mixin mixin-template(data)
+  - mClass = 'mixin-template'
+  - modifiers = data.modifiers || null
+  - strModifier = ''
+
+  if (modifiers && modifiers.length > 0)
+    each modifier, index in modifiers
+      - strModifier += index === 0 ? `${mClass}--${modifier}`: ` ${mClass}--${modifier}`
+
+  div(class=`${mClass}${strModifier ? ` `+strModifier:``}`)

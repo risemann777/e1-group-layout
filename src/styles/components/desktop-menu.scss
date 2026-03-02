@@ -1,0 +1,75 @@
+.desktop-menu {
+  --mi-desktop-menu-container-display: block;
+  --mi-desktop-menu-container-grid-template-columns: initial;
+  --mi-desktop-menu-container-gap: 3rem;
+  --mi-desktop-menu-column-count: initial;
+
+  pointer-events: auto;
+  
+  &--columns {
+    --mi-desktop-menu-column-count: 3;
+    
+    @media (width >= 1366px) {
+      --mi-desktop-menu-column-count: 4;
+    }
+
+    @media (width >= 1600px) {
+      --mi-desktop-menu-column-count: 5;
+    }
+  }
+  
+  &--grid {
+    --mi-desktop-menu-container-display: grid;
+    --mi-desktop-menu-container-grid-template-columns: repeat(3, minmax(0, 1fr));
+    
+    @media (width >= 1366px) {
+      --mi-desktop-menu-container-grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media (width >= 1600px) {
+      --mi-desktop-menu-container-grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+
+  &__container {
+    display: var(--mi-desktop-menu-container-display);
+    column-count: var(--mi-desktop-menu-column-count);
+    gap: var(--mi-desktop-menu-container-gap);
+    grid-template-columns: var(--mi-desktop-menu-container-grid-template-columns);
+  }
+
+  &__group {
+    padding: 0.5rem 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  &__caption {
+    margin: 0 0 0.4rem;
+    font-family: var(--mi-heading-font-family);
+    font-size: 1.5rem;
+
+    a {
+      display: inline-block;
+      padding: 3px 0;
+      color: var(--mi-color-gray);
+      transition: color 0.25s ease-in-out;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0.5rem 0;
+    font-family: var(--mi-heading-font-family);
+    font-size: 1.25rem;
+    line-height: 1.35rem;
+
+    &:hover {
+      color: var(--mi-color-gray);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+mixin error-page(data)
+  - number = data?.number || `NUM`
+  - title = `${number} ошибка`
+  - description = data?.description || `Lorem ipsum sit amet`
+  .error-page
+    .error-page__container
+      .error-page__title=title
+      .error-page__description!=description

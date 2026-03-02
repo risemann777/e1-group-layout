@@ -1,0 +1,26 @@
+mixin news(data)
+  - list = data.list || null
+
+  .news
+    .news__container
+      .news__list
+        if list && list.length
+          each item, index in list
+            - title = item?.title || `News item title #${index+1}`
+            - description = item?.description || `Lorem ipsum sit amet`
+            - image = item?.image || null
+            - date = item?.date || `31.12.9999`
+            - link = item?.link || `news-detail.html#${index+1}`
+            .news-card.news__item
+              if image
+                .news-card__media
+                  .news-card__image
+                    img(src=image alt=title)
+                    a(href=link aria-label=`Переход на страницу новости: ${title}`).news-card__clickable
+              .news-card__info
+                .news-card__main
+                  .news-card__date=date
+                  .news-card__title=title
+                .news-card__bottom
+                  a(href=link class="news-card__link") Подробнее
+      .load-more: a(href="#").btn.btn--primary Показать ещё

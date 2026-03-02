@@ -1,0 +1,19 @@
+extends layouts/main/layout
+include mixins/stat
+include mixins/catalog-teaser
+include mixins/form
+include mixins/popover
+include mixins/banner
+
+block vars
+  - layoutMofifiers = 'layout--pb-0'
+  - isIndexPage = true
+  - notShowPageTitle = false
+  - notShowNavChain = 'Y'
+  - notShowHeadline = 'Y'
+  - breadcrumb = []
+  - headerClass = 'header--sticky'
+
+block content
+  include modules/hero
+  include modules/section-about

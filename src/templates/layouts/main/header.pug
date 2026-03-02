@@ -1,0 +1,15 @@
+header.layout__header.header(class=`${headerClass}`)
+  .header__container
+    .header__navbar
+      a.logo.header__logo(href="/" aria-label="Переход на главную страницу")
+        svg(class="svg-icon" viewBox="0 0 182 29" width="182" height="29"): use(xlink:href="#svg-logo")
+      nav.nav.header__nav
+        ul.nav__list
+          li.nav__item: a(href="models-e-plus.html").nav__link О компании
+          li.nav__item: a(href="catalog.html").nav__link Карьера
+          li.nav__item: a(href="uslugi.html").nav__link Медиа
+          li.nav__item: a(href="contacts.html").nav__link Контакты
+    .header__controls
+      // .header__phone: a(href="tel:+7 (499) 344-40-12") +7 (499) 344-40-12
+      button(type="button" class="btn btn--primary header__button" data-toggle="modal" data-target="#contactModal") Свяжитесь с нами
+    .hamburger.hamburger--mobile.header__hamburger(data-toggle="menu" data-target="mobile-menu")

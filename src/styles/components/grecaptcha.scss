@@ -1,0 +1,8 @@
+.grecaptcha-badge {
+  bottom: 50px !important;
+  visibility: hidden;
+
+  .page--mobile & {
+    bottom: 90px !important;
+  }
+}

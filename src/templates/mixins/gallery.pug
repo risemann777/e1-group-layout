@@ -1,0 +1,18 @@
+mixin gallery(data)
+  - list = data?.list || null
+  - galleryID = data?.galleryID || 'idNotSpecified'
+
+  .gallery
+    if list && list.length
+      .gallery__list
+        each item, index in list
+          - image = item?.image || null
+          - caption = item?.caption || null
+          .gallery__item
+            figure.gallery__figure
+              picture.gallery__picture
+                if image
+                  a(href=image data-fancybox=galleryID data-caption=caption)
+                    img(src=image)
+              if caption
+                figcaption(class=`${mClass}__caption`)=caption

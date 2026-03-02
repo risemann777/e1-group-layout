@@ -1,0 +1,13 @@
+mixin catalog-segment(data)
+  - list = data?.list || null
+
+  .catalog-segment
+    .catalog-segment__list
+      if list && list.length
+        each item, index in list
+          - name = item?.name || `Link ${index + 1}`
+          - link = item?.link || `#${index + 1}`
+          .catalog-segment__item
+            a(href=link).catalog-segment__link
+              span=name
+              svg(class="svg-icon catalog-segment__arrow" viewBox="0 0 20 20" width="20" height="20"): use(xlink:href="#svg-catalog-segment-arrow")

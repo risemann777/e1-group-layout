@@ -1,0 +1,36 @@
+mixin banner(data)
+  - image = data?.image || null
+  - imageSources = data?.imageSources || null
+  - title = data?.title || null
+  - titleFull = title.length ? title.join(" ") : `Banner title full`
+  - description = data?.description || null
+  - button = data?.button || null
+  - animationIndex = null
+
+  .banner
+    if image
+      .banner__image
+        picture
+          if imageSources.length
+            each source in imageSources
+              source(media=`(min-width:${source.media}px)` data-srcset=`${source.src}`)
+          img(data-src=image)
+    .banner__container
+      .banner__content
+        .banner__text
+          h2.banner__title.visually-hidden=titleFull
+          if title.length
+            .banner__title
+              each titlePart, index in title
+                - animationIndex = index+1
+                div.animation.animation--text(class=`animation--del${animationIndex}00`)
+                  span=titlePart
+            if description
+              - animationIndex = animationIndex + 1
+              .banner__description.animation.animation--text.bd-content(class=`animation--del${animationIndex}00`)!=description
+        if button
+          - animationIndex = animationIndex + 1
+          - buttonName = button?.name || `Button name`
+          .banner__button.animation.animation--button(class=`animation--del${animationIndex}00`)
+            .animation__item
+              button(type="button" class="btn btn--primary" data-toggle=button.toggle data-target=button.target)=buttonName

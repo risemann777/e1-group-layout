@@ -1,0 +1,84 @@
+include ../../mixins/media-card
+
+.extra-config
+  .extra-config__container
+    .extra-config__head
+      .extra-config__title Дополнительные конфигурации
+      .extra-config__description
+        p Бесключевой доступ, дизайнерские панели, RGB-подсветка и стильные кнопки вызова.
+        p Функции перестают быть просто функциями — каждая опция задаёт атмосферу, формирует настроение и подчеркивает характер дома.
+    .extra-config__body
+      .extra-config__slider.swiper
+        .swiper-wrapper
+          .swiper-slide
+            +media-card({
+              image: 'images/models/e_plus/extra_config_e_plus_1_w1024.jpg',
+              imageWebp: 'images/models/e_plus/extra_config_e_plus_1_w1024.webp',
+              title: 'Задняя панель с LED-подсветкой',
+              description: 'Выбирайте атмосферу под настроение: мягкий свет для уюта, яркий — для акцента. Варианты дизайна превращают панель в арт-объект.'
+            })
+          .swiper-slide
+            +media-card({
+              image: 'images/models/e_plus/extra_config_e_plus_2_w1024.jpg',
+              imageWebp: 'images/models/e_plus/extra_config_e_plus_2_w1024.webp',
+              title: 'Блок вызова',
+              description: 'Разные формы. Разные материалы. Но всегда — один эффект: вы касаетесь детали, которая подчеркивает статус.'
+            })
+          .swiper-slide
+            +media-card({
+              image: 'images/models/e_plus/extra_config_e_plus_3_w1024.jpg',
+              imageWebp: 'images/models/e_plus/extra_config_e_plus_3_w1024.webp',
+              title: 'Напольное покрытие',
+              description: 'Пол не просто поверхность, а основа композиции: его оттенки и фактуры гармонируют со светом кабины и придают пространству особый шарм'
+            })
+          .swiper-slide
+            +media-card({
+              image: 'images/models/e_plus/extra_config_e_plus_4_w1024.jpg',
+              imageWebp: 'images/models/e_plus/extra_config_e_plus_4_w1024.webp',
+              title: 'Панель управления',
+              description: 'Ассортимент решений — от минимализма до акцентных моделей. Это не просто кнопки. Это язык взаимодействия, где каждое касание — диалог человека и пространства.'
+            })
+          .swiper-slide
+            +media-card({
+              image: 'images/models/e_plus/extra_config_e_plus_5_w1024.jpg',
+              imageWebp: 'images/models/e_plus/extra_config_e_plus_5_w1024.webp',
+              title: 'Двери',
+              description: 'Ассортимент вариантов под любой интерьер. Каждая дверь — акцент в архитектуре лифта: она встречает вас первой и завершает впечатление.'
+            })
+        .swiper-pagination
+      .extra-config__list
+        .extra-config__item
+          +media-card({
+            image: 'images/models/e_plus/extra_config_e_plus_1_w1024.jpg',
+            imageWebp: 'images/models/e_plus/extra_config_e_plus_1_w1024.webp',
+            title: 'Задняя панель с LED-подсветкой',
+            description: 'Выбирайте атмосферу под настроение: мягкий свет для уюта, яркий — для акцента. Варианты дизайна превращают панель в арт-объект.'
+          })
+        .extra-config__item
+          +media-card({
+            image: 'images/models/e_plus/extra_config_e_plus_2_w1024.jpg',
+            imageWebp: 'images/models/e_plus/extra_config_e_plus_2_w1024.webp',
+            title: 'Блок вызова',
+            description: 'Разные формы. Разные материалы. Но всегда — один эффект: вы касаетесь детали, которая подчеркивает статус.'
+          })
+        .extra-config__item
+          +media-card({
+            image: 'images/models/e_plus/extra_config_e_plus_3_w1024.jpg',
+            imageWebp: 'images/models/e_plus/extra_config_e_plus_3_w1024.webp',
+            title: 'Напольное покрытие',
+            description: 'Пол не просто поверхность, а основа композиции: его оттенки и фактуры гармонируют со светом кабины и придают пространству особый шарм'
+          })
+        .extra-config__item
+          +media-card({
+            image: 'images/models/e_plus/extra_config_e_plus_4_w1024.jpg',
+            imageWebp: 'images/models/e_plus/extra_config_e_plus_4_w1024.webp',
+            title: 'Панель управления',
+            description: 'Ассортимент решений — от минимализма до акцентных моделей. Это не просто кнопки. Это язык взаимодействия, где каждое касание — диалог человека и пространства.'
+          })
+        .extra-config__item
+          +media-card({
+            image: 'images/models/e_plus/extra_config_e_plus_5_w1024.jpg',
+            imageWebp: 'images/models/e_plus/extra_config_e_plus_5_w1024.webp',
+            title: 'Двери',
+            description: 'Ассортимент вариантов под любой интерьер. Каждая дверь — акцент в архитектуре лифта: она встречает вас первой и завершает впечатление.'
+          })

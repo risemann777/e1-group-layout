@@ -1,0 +1,65 @@
+.attitude {
+  --mi-attitude-padding: 3rem 0;
+  --mi-attitude-font-size: 20px;
+  --mi-attitude-text-align: center;
+  --mi-attitude-text-margin-left: 0.6rem;
+  --mi-attitude-text-display: inline-block;
+  --mi-attitude-text-indent-first: 0;
+  --mi-attitude-text-indent-second: 0;
+  --mi-attitude-text-indent-third: 0;
+
+  padding: var(--mi-block-padding-y) 0;
+
+  @media (width >= 1024px) {
+    --mi-attitude-font-size: 1.875rem;
+    --mi-attitude-text-align: left;
+    --mi-attitude-text-display: block;
+    --mi-attitude-text-indent-first: 5%;
+    --mi-attitude-text-indent-second: 62%;
+    --mi-attitude-text-indent-third: 33%;
+  }
+
+  @media (width >= 1280px) {
+    --mi-attitude-font-size: 2.5rem;
+    --mi-attitude-text-indent-first: 0;
+    --mi-attitude-text-indent-second: 40%;
+    --mi-attitude-text-indent-third: 53%;
+  }
+
+  @media (width >= 1600px) {
+    --mi-attitude-text-indent-first: 10%;
+    --mi-attitude-text-indent-second: 37%;
+    --mi-attitude-text-indent-third: 55%;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+  &__content {
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-attitude-font-size);
+    text-align: var(--mi-attitude-text-align);
+
+    & > div {
+      display: var(--mi-attitude-text-display);
+
+      &:not(:first-child) {
+        margin-left: var(--mi-attitude-text-margin-left);
+      }
+
+      &:nth-child(1) {
+        padding-left: var(--mi-attitude-text-indent-first);
+      }
+
+      &:nth-child(2) {
+        padding-left: var(--mi-attitude-text-indent-second);
+      }
+
+      &:nth-child(3) {
+        padding-left: var(--mi-attitude-text-indent-third);
+      }
+    }
+  }
+}

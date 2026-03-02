@@ -1,0 +1,19 @@
+mixin media-card(data)
+  - image = data?.image || null
+  - imageWebp = data?.imageWebp || null
+  - title = data?.title || null
+  - description = data?.description || null
+
+  .media-card
+    .media-card__image
+      picture
+        if (imageWebp)
+          source(srcset=imageWebp type="image/webp")
+        if (image)
+          img(src=image)
+    .media-card__container
+      .media-card__info
+        if (title)
+          .media-card__title=title
+        if (description)
+          .media-card__description!=description

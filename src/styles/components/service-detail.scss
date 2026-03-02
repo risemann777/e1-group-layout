@@ -1,0 +1,15 @@
+.service-detail {
+  .textmedia {
+    @media(width >= 1024px) {
+      min-height: 720px;
+    }
+
+    @media(width >= 1280px) {
+      min-height: 760px;
+    }
+
+    @media(width >= 1650px) {
+      min-height: 900px;
+    }
+  }
+}

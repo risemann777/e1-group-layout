@@ -1,0 +1,30 @@
+.error-page {
+  --mi-error-page-container-padding-y: 4rem;
+  --mi-error-page-title-font-size: calc(1.2rem + 1.6vw);
+
+  @media(width >= 1024px) {
+    --mi-error-page-title-font-size: 3.25rem;
+  }
+
+  &__container {
+    display: flex;
+    width: var(--mi-container-width-narrow);
+    flex-direction: column;
+    padding: var(--mi-error-page-container-padding-y) 0;
+    gap: 2rem;
+    margin-inline: auto;
+  }
+
+  &__title {
+    font-family: var(--mi-heading-font-family);
+    font-feature-settings: 'lnum';
+    font-size: var(--mi-error-page-title-font-size);
+    text-align: center;
+  }
+
+  &__description {
+    color: var(--mi-color-gray);
+    font-size: var(--mi-plane-text-font-size);
+    text-align: center;
+  }
+}

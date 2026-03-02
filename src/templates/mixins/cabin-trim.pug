@@ -1,0 +1,48 @@
+mixin cabin-trim(data)
+  - id = data?.id || `defaultID`
+  - title = data?.title || `Title`
+  - description = data?.description || `Lorem ipsum sit amet...`
+  - image = data?.image || null
+  - imageWebp = data?.imageWebp || null
+  - details = data?.details || null
+
+  .cabin-trim(id=id)
+    .cabin-trim__common
+      .cabin-trim__media
+        if (image || imageWebp)
+          .cabin-trim__image
+            a(href=image data-fancybox=`${id}_img` data-caption=`Общий вид кабины ${title}`)
+              picture
+                if (imageWebp)
+                  source(srcset=imageWebp type="image/webp")
+                if (image)
+                  img(src=image alt=title)
+      .cabin-trim__info
+        if (title)
+          .cabin-trim__title!=title
+        if (description)
+          .cabin-trim__description!=description
+        .cabin-trim__button
+          button(type="button" data-toggle="modal" data-target="#discussModal").btn.btn--primary.btn--lg Обсудить проект
+    if (details && details.length)
+      .cabin-trim__details
+        each detail, index in details
+          - dTitle = detail?.title || `Title #${index+1}`
+          - dImage = detail?.image || null
+          - dImageWebp = detail?.imageWebp || null
+          - dDescription = detail?.description || `Lorem ipsum sit amet...`
+          .cabin-trim-detail.cabin-trim-detail--alternate
+            .cabin-trim-detail__info
+              if (dTitle)
+                .cabin-trim-detail__title!=dTitle
+              if (dDescription)
+                .cabin-trim-detail__description!=dDescription
+            .cabin-trim-detail__media
+              if (dImage || dImageWebp)
+                .cabin-trim-detail__image
+                  a(href=dImage data-fancybox=`${id}_img` data-caption=`${dTitle} кабины ${title}`)
+                    picture
+                      if (dImageWebp)
+                        source(srcset=dImageWebp type="image/webp")
+                      if (dImage)
+                        img(src=dImage)

@@ -1,0 +1,88 @@
+.service-head {
+  --mi-service-head-min-height: initial;
+  --mi-service-head-gap: 2rem;
+  --mi-service-head-padding-y: 0;
+  --mi-service-head-grid-template-columns: initial;
+  --mi-service-head-info-padding: 0;
+  --mi-service-head-name-max-with: initial;
+  --mi-service-head-description-max-with: initial;
+  --mi-service-head-name-font-size: 1.5rem;
+  --mi-service-head-description-font-size: var(--mi-plane-text-font-size);
+  --mi-service-image-margin: 0 calc(var(--mi-container-padding) / -2);
+
+  overflow: hidden;
+  padding-bottom: var(--mi-service-head-padding-y);
+
+  @media(width >= 1024px) {
+    --mi-service-head-gap: 3rem;
+    --mi-service-head-padding-y: 2.5rem;
+    --mi-service-head-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-service-head-name-font-size: 2.5rem;
+    --mi-service-head-min-height: 600px;
+    --mi-service-image-margin: 0 calc(var(--mi-container-padding) * -1) 0 0;
+  }
+
+  @media(width >= 1280px) {
+    --mi-service-head-gap: 3.75rem;
+    --mi-service-head-padding-y: 5rem;
+    --mi-service-head-name-font-size: 3.25rem;
+    --mi-service-head-name-max-with: 700px;
+    --mi-service-head-description-max-with: 800px;
+  }
+  
+  &__container {
+    display: grid;
+    width: var(--mi-container-width);
+    min-height: var(--mi-service-head-min-height);
+    gap: var(--mi-service-head-gap);
+    grid-template-columns: var(--mi-service-head-grid-template-columns);
+    margin-inline: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.25rem;
+  }
+
+  &__name {
+    max-width: var(--mi-service-head-name-max-with);
+    margin: 0;
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-service-head-name-font-size);
+    line-height: 1.2;
+  }
+
+  &__description {
+    max-width: var(--mi-service-head-description-max-with);
+    color: var(--mi-color-gray);
+    font-size: var(--mi-service-head-description-font-size);
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    margin: var(--mi-service-image-margin);
+
+    img {
+      max-width: 100%;
+    }
+
+    @media(width >= 1024px) {
+      position: relative;
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+      }
+    }
+  }
+}

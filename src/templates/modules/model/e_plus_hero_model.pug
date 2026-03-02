@@ -1,0 +1,33 @@
+include ../../mixins/breadcrumb
+
+.hero-model
+  h1.hero-model__title.visually-hidden «Платформа Е-PLUS» — Вы не слышите его — вы чувствуете пространство
+  .hero-model__image
+    picture
+      source(media="(min-width:1920px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w2048.webp" type="image/webp")
+      source(media="(min-width:1280px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w1920.webp" type="image/webp")
+      source(media="(min-width:1024px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w1280.webp" type="image/webp")
+      source(media="(min-width:768px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w1024.webp" type="image/webp")
+      source(srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w768.webp" type="image/webp")
+      source(media="(min-width:1920px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w2048.jpg" type="image/jpeg")
+      source(media="(min-width:1280px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w1920.jpg" type="image/jpeg")
+      source(media="(min-width:1024px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w1280.jpg" type="image/jpeg")
+      source(media="(min-width:768px)" srcset="" data-srcset="images/models/e_plus/hero_model_e_plus_w1024.jpg" type="image/jpeg")
+      img(src="" data-src="images/models/e_plus/hero_model_e_plus_w768.jpg" role="presentation")
+  .hero-model__container
+    .scroll-help.hero-model__help
+      .scroll-help__handle
+      .scroll-help__text Скрольте вниз
+    +breadcrumb({
+      items: breadcrumb
+    })
+    .hero-model__content
+      .hero-model__info
+        .hero-model__title
+          div
+            span «Платформа Е-PLUS» — Вы не слышите его — вы чувствуете пространство.
+        .hero-model__description
+          p Чистые линии, мягкий свет, бесшумное движение. Лифт, который становится частью вашего интерьера.
+      .hero-model__buttons
+        button(type="button" class="btn btn--secondary btn--lg header__button" data-toggle="modal" data-target="#offerModal") Получить предожение
+        button(type="button" class="btn btn--primary btn--lg header__button" data-toggle="modal" data-target="#contactModal") Записаться на визит

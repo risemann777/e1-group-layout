@@ -1,0 +1,21 @@
+mixin cabin-design-card(data, id, title)
+  - parentId = id
+  - parentTitle = title || `ParentTitle`
+  - title = data?.title || `Title`
+  - image = data?.image || null
+  - imageWebp = data?.imageWebp || null
+  - description = data?.description || `Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...`
+
+  .cabin-design-card
+    .cabin-design-card__image
+      picture
+        if (imageWebp)
+          source(srcset=imageWebp type="image/webp")
+        if (image)
+          img(src=image alt=`${title} кабины ${parentTitle}`)
+    .cabin-design-card__container
+      .cabin-design-card__info
+        if (title)
+          .cabin-design-card__title=title
+        if (description)
+          .cabin-design-card__description!=description

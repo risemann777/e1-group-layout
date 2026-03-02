@@ -1,0 +1,31 @@
+.info-price {
+  --mi-product-head-price-font-size: 1.5rem;
+  --mi-info-price-button-width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem 2.5rem;
+
+  @media(width >= 1024px) {
+    --mi-product-head-price-font-size: 1.75rem;
+    --mi-info-price-button-width: auto;
+  }
+
+  @media(width >= 1280px) {
+    --mi-product-head-price-font-size: 2.25rem;
+  }
+
+  &__value {
+    font-family: var(--mi-heading-font-family);
+    font-feature-settings: "lnum";
+    font-size: var(--mi-product-head-price-font-size);
+    white-space: nowrap;
+  }
+
+  &__button {
+    .btn {
+      width: var(--mi-info-price-button-width);
+    }
+  }
+}

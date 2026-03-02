@@ -1,0 +1,17 @@
+mixin gallery-slider(data)
+  - list = data?.list || null
+  - galleryID = data?.galleryID || 'idNotSpecified'
+  .swiper.gallery-slider
+    .swiper-wrapper.gallery-slider__wrapper
+      if list && list.length
+        each item, index in list
+          - image = item?.image || null
+          - caption = item?.caption || null
+          if image
+            .swiper-slide.gallery-slider__slide
+              .swiper-slide.gallery-slider__item
+                a(href=image data-fancybox = galleryID data-caption=caption).gallery-slider__link
+                  img(src=image).gallery-slider__image
+    .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
