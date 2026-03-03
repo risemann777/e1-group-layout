@@ -32,6 +32,7 @@
 
 
   &__content {
+    position: relative;
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -41,7 +42,19 @@
     gap: 48px;
   }
 
+  &__decor {
+    position: absolute;
+    top: 50%;
+    right: -740px;
+    transform: translateY(-50%);
+
+    @media(width >= 860px) {
+      right: -610px;
+    }
+  }
+
   &__info {
+    position: relative;
     max-width: var(--mi-partnership-info-width);
     color: var(--mi-color-white, white);
   }
@@ -70,7 +83,12 @@
     }
   }
 
+  &__controls {
+    position: relative;
+  }
+
   &__list {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
