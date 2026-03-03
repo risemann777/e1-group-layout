@@ -3,7 +3,8 @@ include ../mixins/form
 
 +modal({
   id: "contactModal",
-  title: "Мы свяжитемя с вами",
+  title: "Мы свяжемся с вами",
+  subtitle: 'Оставьте ваши контакты и мы свяжемся с вами в ближайшее время',
   modalModifiers: ["modal--zoom"],
   dialogModifiers: ["modal__dialog--centered"]
 })
@@ -12,7 +13,7 @@ include ../mixins/form
     fields: [
       {
         name: 'user_name',
-        label: 'Имя / Организация',
+        label: 'Ваше имя',
       },
       {
         name: 'user_phone',

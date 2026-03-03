@@ -1,50 +1,48 @@
+include ../../mixins/form
+
 footer.footer.layout__footer
-  .footer__main
-    .footer__navbar
-      a.footer__logo(href="/" aria-label="Переход на главную страницу")
-        svg(class="svg-icon" viewBox="0 0 187 40" width="187" height="40"): use(xlink:href="#svg-logo")
-      .footer__nav
-        .footer-menu.footer__menu
-          ul.footer-menu__list
-            li.footer-menu__item: a(href="catalog.html").footer-menu__link Каталог
-            li.footer-menu__item: a(href="uslugi.html").footer-menu__link Услуги
-            li.footer-menu__item: a(href="price.html").footer-menu__link Цены
-            li.footer-menu__item: a(href="company.html").footer-menu__link О Franzlift
-            li.footer-menu__item: a(href="news.html").footer-menu__link Новости
-            li.footer-menu__item: a(href="blog.html").footer-menu__link Блог
-            li.footer-menu__item: a(href="sertifikati.html").footer-menu__link Сертификаты
-            li.footer-menu__item: a(href="coop.html").footer-menu__link Сотрудничество
-            li.footer-menu__item: a(href="faq.html").footer-menu__link Вопросы и ответы
-            li.footer-menu__item: a(href="contacts.html").footer-menu__link Контакты
-    .footer__info
-      .footer__contact
-        .footer-contact
-          .footer-contact__item: a(href="tel:+7 499 344 40 12") +7 499 344 40 12
-          .footer-contact__item: a(href="mailto:info@lift-home.ru") info@lift-home.ru
-        .social.footer__social
-          a(href="https://t.me/FRANZ_LIFT" class="social__item" target="_blank")
-            svg(class="svg-icon social__icon" viewBox="0 0 14 14" width="14" height="14"): use(xlink:href="#svg-social-telegram")
-            span Telegram
-          a(href="https://wa.me/+79258233442" class="social__item" target="_blank")
-            svg(class="svg-icon social__icon" viewBox="0 0 14 14" width="14" height="14"): use(xlink:href="#svg-social-whatsapp")
-            span Whats`App
-          a(href="https://vk.com/franzlift" class="social__item" target="_blank")
-            svg(class="svg-icon social__icon" viewBox="0 0 16 16" width="16" height="16"): use(xlink:href="#svg-social-vk")
-            span Вконтакте
-          a(href="https://rutube.ru/channel/33279052/" class="social__item" target="_blank")
-            svg(class="svg-icon social__icon" viewBox="0 0 66 12" width="66" height="12"): use(xlink:href="#svg-social-rutube")
-          a(href="https://pin.it/6sJ25UwZl" class="social__item" target="_blank")
-            svg(class="svg-icon social__icon" viewBox="0 0 14 14" width="14" height="14"): use(xlink:href="#svg-social-pinterest")
-            span pinterest
-      .footer__details
-        p Офис: 127106, г. Москва, Нововладыкинский проезд, 1к2
-        p График работы: Пн-Пт с 9:00 до 18:00; Сб-Вс выходной
-        p Звонки и обращения принимаются в рабочее время.
+  .footer__connect
+    .footer__connect-info
+      .footer__connect-cta Узнайте о сотрудничестве или задайте вопрос, заполнив форму.
+      .footer__connect-contact
+        span Или напишите нам на почту
+        br
+        a(href="mailto:e1group-info@mail.com") e1group-info@mail.com
+    .footer__connect-form
+      +form({
+        modifiers: ["form--static"],
+        common_errors: ["Похоже вы робот!"],
+        theme: 'light',
+        fields: [
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Выше имя',
+            placeholder: 'Имя / Огранизация',
+            required: false
+          },
+          {
+            type: 'tel',
+            name: 'phone',
+            label: 'Телефон',
+            placeholder: 'Телефон',
+            required: true
+          },
+          {
+            type: 'text',
+            name: 'email',
+            label: 'E-mail',
+            placeholder: 'E-mail',
+            required: false,
+            error: 'Обязательное поле'
+          }
+        ]
+      })
 
   .footer__bottom
-    .footer-description
-      .footer-description__copyright
-        p &copy; 2024 Интерол ООО, все права защищены
-        p Официальный представитель FRANZLIFT в России
-      .footer-description__links
-        a(href="policy.html") Политика конфиденциальности
+    .footer__bottom-info
+      .footer__bottom-copyright Copyright © ООО «ДК РУ»
+      .footer__bottom-address 125371, Россия, г. Москва, вн. тер. г. Муниципальный округ Покровское-Стрешнево, ш. Волоколамское, д. 116, офис 40
+    .footer__bottom-links
+      a(href="privacy.html") Политика конфиденциальности
+      a(href="approve.html") Согласие на обработку персональных данных

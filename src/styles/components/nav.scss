@@ -1,4 +1,10 @@
 .nav {
+  --mi-nav-link-font-size: 1rem;
+  
+  @media(width >= 1280px) {
+    --mi-nav-link-font-size: 1.25rem;
+  }
+
   &__list {
     display: flex;
     padding: 0;
@@ -17,7 +23,8 @@
     padding: 0.1rem 0;
     color: var(--mi-foreground);
     font-family: var(--mi-heading-font-family);
-    font-size: 1rem;
+    font-size: var(--mi-nav-link-font-size);
+    font-weight: 500;
     text-decoration: none;
     
     &::after {

@@ -4,22 +4,27 @@
   --mi-form-policy-font-size: 0.875rem;
   --mi-form-control-border-radius: 0;
   --mi-form-control-border-width: 1px;
-  --mi-form-control-border-focus-color: var(--mi-color-orange);
+  --mi-form-control-border-color: var(--mi-color-black, black);
+  --mi-form-control-border-focus-color: var(--mi-color-black, black);
   --mi-form-control-padding: 0.5rem 0 0.85rem;
   --mi-form-control-font-size: 1rem;
-  --mi-form-control-placeholder-color: rgb(255 255 255 / 20%);
-  --mi-form-control-hover-placeholder-color: rgb(255 255 255 / 50%);
-  --mi-form-control-border-error-color: var(--mi-color-red);
-  --mi-form-control-input-error-color: var(--mi-color-red);
+  --mi-form-control-color: var(--mi-color-black, black);
+  --mi-form-control-placeholder-color: rgba(34 34 34 / 50%);
+  --mi-form-control-hover-placeholder-color: rgba(34 34 34 / 70%);
+  --mi-form-control-border-error-color: var(--mi-color-red-error, red);
+  --mi-form-control-input-error-color: var(--mi-color-red-error, red);
   --mi-form-control-input-error-font-size: 0.875rem;
 
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
 
+  @media(width >= 720px) {
+    --mi-form-control-font-size: 1.25rem;
+  }
+
   @media(width >= 1024px) {
     --mi-form-title-font-size: 1.75rem;
-    --mi-form-control-font-size: 1.25rem;
   }
 
   @media(width >= 1366px) {
@@ -29,6 +34,14 @@
 
   @media(width >= 1920px) {
     --mi-form-title-font-size: 3.25rem;
+  }
+
+  &--theme-light {
+    --mi-form-control-color: var(--mi-color-white, white);
+    --mi-form-control-border-color: #fff;
+    --mi-form-control-border-focus-color: var(--mi-color-white, white);
+    --mi-form-control-placeholder-color: rgb(255 255 255 / 50%);
+    --mi-form-control-hover-placeholder-color: rgb(255 255 255 / 70%);
   }
 
   &__header {
@@ -102,12 +115,12 @@
     padding: var(--mi-form-control-padding);
     border-width: var(--mi-form-control-border-width);
     border-style: solid;
-    border-color: transparent transparent var(--mi-input-border-color) transparent;
+    border-color: transparent transparent var(--mi-form-control-border-color) transparent;
     border-radius: var(--mi-form-control-border-radius);
     appearance: none;
     background-clip: padding-box;
     background-color: transparent;
-    color: var(--mi-foreground);
+    color: var(--mi-form-control-color);
     font-size: var(--mi-form-control-font-size);
     font-weight: var(--mi-body-font-weight);
     line-height: 1.5;

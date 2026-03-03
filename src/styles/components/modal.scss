@@ -31,11 +31,12 @@
   --mi-modal-header-flex-direction: column;
   --mi-modal-header-gap: 1rem;
   --mi-modal-body-padding: 1rem var(--mi-modal-padding-x) 2.5rem var(--mi-modal-padding-x);
+  --mi-modal-title-font-weight: 600;
   --mi-modal-title-line-height: 1.2;
   --mi-modal-title-font-size: 2.5rem;
   --mi-modal-subtitle-font-size: 1rem;
   --mi-modal-subtitle-line-height: 1.2;
-  --mi-modal-subtitle-color: var(--mi-color-gray);
+  --mi-modal-subtitle-color: #222;
   --mi-modal-subtitle-text-align: initial;
   --mi-modal-footer-gap: 0.5rem;
   --mi-modal-footer-border-width: var(--mi-border-width);
@@ -55,10 +56,6 @@
     width: 0;
   }
 
-  @media(width >= 576px) {
-    --mi-modal-subtitle-text-align: center;
-  }
-
   @media(width >= 730px) {
     --mi-modal-margin-x: auto;
     --mi-modal-margin-y: 1.75rem;
@@ -67,6 +64,7 @@
   }
 
   @media (width >= 1024px) {
+    --mi-modal-title-font-size: 3rem;
     --mi-modal-subtitle-font-size: 1.25rem;
   }
 
@@ -197,7 +195,9 @@
 
   &__title {
     margin: 0 0 1rem;
+    color: var(--mi-color-primary);
     font-size: var(--mi-modal-title-font-size);
+    font-weight: var(--mi-modal-title-font-weight);
     line-height: var(--mi-modal-title-line-height);
   }
 

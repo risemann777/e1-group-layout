@@ -95,7 +95,14 @@
 
   &__slider {
     overflow: var(--mi-news-slider-overflow);
-    padding-bottom: 4rem;
+    aspect-ratio: 60 / 20;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+    &.swiper-initialized {
+      aspect-ratio: auto;
+      opacity: 1;
+    }
   }
 
   .swiper-slide {
