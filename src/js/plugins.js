@@ -4,21 +4,24 @@ import { Fancybox } from '@fancyapps/ui'
 import inputMask from "./modules/inputMask.js"
 
 document.addEventListener('DOMContentLoaded', () => {
-  const alikeNewsSlider = document.querySelector('.alike-news__slider')
 
-  if (alikeNewsSlider) {
-    new Swiper(".alike-news__slider", {
-      modules: [Pagination],
-      spaceBetween: 30,
-      pagination: {
-        el: '.swiper-pagination',
+  const newsSlider = document.querySelector('.news__slider')
+
+  if (newsSlider) {
+    new Swiper(".news__slider", {
+      modules: [Navigation],
+      slidesPerView: "auto",
+      spaceBetween: 16,
+      navigation: {
+        nextEl: '.news__nav-next',
+        prevEl: '.news__nav-prev',
       },
       breakpoints: {
-        1024: {
-          slidesPerView: 2,
-        },
         1280: {
           slidesPerView: 3,
+        },
+        1600: {
+          slidesPerView: 4,
         }
       }
     })

@@ -1,0 +1,49 @@
+section.news.news--index.news--slider(id="news")
+  .news__container
+    .news__heading
+      .news__title Медиа компании
+      .news__controls
+        .news__nav.news__nav-prev
+          svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-arrow-left")
+        .news__nav.news__nav-next
+          svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-arrow-right")
+    .news__slider.swiper#newsSlider
+      .swiper-wrapper
+        .swiper-slide
+          .news-card.news__item
+            .news-card__media
+              .news-card__image
+                a(href="#newsDetail").news-card__clickable
+                picture
+                  img(src="images/news/news-item-1.jpg")
+            .news-card__info
+              .news-card__date 20.02.26
+              .news-card__title «ЭНГЕЛЬС» вместо Bosch: в Саратовской области возрождается производство отечественного профессионального электроинструмента
+        .swiper-slide
+          .news-card.news__item
+            .news-card__media
+              .news-card__image
+                a(href="#newsDetail").news-card__clickable
+                picture
+                  img(src="images/news/news-item-2.jpg")
+            .news-card__info
+              .news-card__date 20.02.26
+              .news-card__title «ЭНГЕЛЬС» вместо Bosch: в Саратовской области возрождается производство отечественного профессионального электроинструмента
+        .swiper-slide
+          .news-card.news__item
+            .news-card__media
+              .news-card__image
+                picture
+                  img(src="images/news/news-item-3.jpg")
+            .news-card__info
+              .news-card__date 20.02.26
+              .news-card__title «ЭНГЕЛЬС» вместо Bosch: в Саратовской области возрождается производство отечественного профессионального электроинструмента
+        .swiper-slide
+          .news-card.news__item
+            .news-card__media
+              .news-card__image
+                picture
+                  img(src="images/news/news-item-4.jpg")
+            .news-card__info
+              .news-card__date 20.02.26
+              .news-card__title «ЭНГЕЛЬС» вместо Bosch: в Саратовской области возрождается производство отечественного профессионального электроинструмента

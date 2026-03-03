@@ -54,8 +54,8 @@
     display: var(--mi-section-container-display);
     flex-direction: var(--mi-section-container-flex-direction);
     justify-content: var(--mi-section-container-justify-content);
-    gap: var(--mi-section-container-gap);
     padding: var(--mi-section-container-padding);
+    gap: var(--mi-section-container-gap);
 
     &--double {
       display: grid;
@@ -82,8 +82,8 @@
     margin: var(--mi-section-title-margin);
     font-family: var(--mi-section-title-font-family);
     font-size: var(--mi-section-title-font-size);
-    line-height: 1.17;
     font-weight: 600;
+    line-height: 1.17;
     text-transform: var(--mi-section-title-text-transform);
   }
   

@@ -1,5 +1,6 @@
 .advantage {
   --mi-advantage-padding: 4.5rem 0;
+  --mi-advantage-margin: 4.5rem 0;
   --mi-advantage-container-padding: 0;
   --mi-advantage-title-font-size: 3rem;
   --mi-advantage-list-display: grid;
@@ -11,7 +12,8 @@
   --mi-advantage-list-item-name-font-size: 1.5rem;
   --mi-advantage-list-item-text-font-size: 1rem;
 
-  padding: var(--mi-advantage-padding);
+  // padding: var(--mi-advantage-padding);
+  margin: var(--mi-advantage-margin);
 
   @media(width >= 720px) {
     --mi-advantage-list-grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -23,6 +25,7 @@
 
   @media(width >= 1280px) {
     --mi-advantage-padding: 7.5rem 0;
+    --mi-advantage-margin: 7.5rem 0;
     --mi-advantage-title-font-size: 4.5rem;
   }
 
@@ -31,12 +34,12 @@
   }
 
   &__container {
-    width: var(--mi-container-width);
-    margin-inline: auto;
     display: grid;
+    width: var(--mi-container-width);
+    padding: var(--mi-advantage-container-padding);
     gap: 4rem 2rem;
     grid-template-columns: initial;
-    padding: var(--mi-advantage-container-padding);
+    margin-inline: auto;
 
     @media(width >= 1280px) {
       grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
@@ -44,12 +47,12 @@
   }
 
   &__title {
-    font-weight: 600;
-    line-height: 1.2;
-    font-family: var(--mi-heading-font-family);
-    font-size: var(--mi-advantage-title-font-size);
     margin: 0 0 1rem;
     color: var(--mi-color-primary);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-advantage-title-font-size);
+    font-weight: 600;
+    line-height: 1.2;
   }
 
   &__description {
@@ -57,9 +60,9 @@
   }
 
   &__controls {
-    margin: 3.5rem 0 0;
     display: flex;
     flex-wrap: wrap;
+    margin: 3.5rem 0 0;
     gap: 1rem;
   }
 
@@ -70,18 +73,18 @@
   }
 
   &__item {
-    padding: var(--mi-advantage-list-item-padding);
-    background: var(--mi-advantage-list-item-bg);
-    border-radius: var(--mi-card-border-radius);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     justify-content: space-between;
+    padding: var(--mi-advantage-list-item-padding);
+    border-radius: var(--mi-card-border-radius);
+    background: var(--mi-advantage-list-item-bg);
+    gap: 1rem;
 
     &-name {
-      font-size: var(--mi-advantage-list-item-name-font-size);
-      font-family: var(--mi-heading-font-family);
       color: var(--mi-color-primary-light);
+      font-family: var(--mi-heading-font-family);
+      font-size: var(--mi-advantage-list-item-name-font-size);
       font-weight: 600;
       line-height: 1.2;
     }

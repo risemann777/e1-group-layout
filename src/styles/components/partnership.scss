@@ -1,26 +1,87 @@
 .partnership {
-  --mi-partnership-title-font-size: 1.5rem;
-  --mi-partnership-description-font-size: 0.875rem;
+  --mi-partnership-margin: 4.5rem 0;
+  --mi-partnership-container-padding: 0;
+  --mi-partnership-content-padding: 1.25rem;
+  --mi-partnership-title-font-size: 1.25rem;
+  --mi-partnership-description-font-size: 1rem;
+  --mi-partnership-info-width: initial;
+
+  margin: var(--mi-partnership-margin);
+
+  @media(width >= 1024px) {
+    --mi-partnership-content-padding: 2rem;
+  }
 
   @media(width >= 1280px) {
-    --mi-partnership-title-font-size: 3.25rem;
-    --mi-partnership-description-font-size: 1.25rem;
+    --mi-partnership-margin: 7.5rem 0;
+    --mi-partnership-content-padding: 4.5rem;
+    --mi-partnership-title-font-size: 3rem;
+    --mi-partnership-description-font-size: 1.5rem;
+    --mi-partnership-info-width: 90%;
+  }
+
+  @media(width >= 1600px) {
+    --mi-partnership-info-width: 80%;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    padding: var(--mi-partnership-container-padding);
+    margin-inline: auto;
+  }
+
+
+  &__content {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    padding: var(--mi-partnership-content-padding);
+    border-radius: 1.25rem;
+    background: var(--mi-color-black, black);
+    gap: 48px;
+  }
+
+  &__info {
+    max-width: var(--mi-partnership-info-width);
+    color: var(--mi-color-white, white);
   }
 
   &__title {
     margin: 0 0 1.25rem;
     font-family: var(--mi-heading-font-family);
     font-size: var(--mi-partnership-title-font-size);
+    font-weight: 600;
     line-height: 1.2;
   }
 
   &__description {
-    color: var(--mi-color-gray);
     font-size: var(--mi-partnership-description-font-size);
+    line-height: 1.2;
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
     strong {
       color: #fff;
       font-weight: 200;
     }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__item {
+    max-width: 370px;
+  }
+
+  &__image {
+    max-width: 100%;
   }
 }
