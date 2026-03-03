@@ -1,5 +1,6 @@
 .news {
   --mi-news-margin: 0;
+  --mi-scroll-margin-top: 0;
   --mi-advantage-container-padding: 0;
   --mi-news-heading-margin: 0 0 2rem;
   --mi-news-title-font-size: 1.5rem;
@@ -10,6 +11,7 @@
   --mi-news-slide-width: 330px;
 
   margin: var(--mi-news-margin);
+  scroll-margin-top: var(--mi-scroll-margin-top);
 
   @media(width >= 1024px) {
     --mi-advantage-container-padding: 0 2.5rem;
@@ -31,14 +33,17 @@
 
   &--index {
     --mi-news-margin: 4.5rem 0;
+    --mi-scroll-margin-top: 5rem;
 
     @media(width >= 1280px) {
       --mi-news-margin: 7.5rem 0;
+      --mi-scroll-margin-top: 8rem;
     }
   }
 
   &--slider {
     overflow: hidden;
+    scroll-margin-top: 7rem;
   }
 
   &__container {

@@ -3,6 +3,7 @@ import lazyLoad from './modules/lazy-load.js'
 import Modal from "./modules/modal"
 import adjustViewportHeight from './lib/adjust-viewport-height.js'
 import inputMask from './modules/inputMask.js'
+import smoothScroll from './modules/smoothScroll.js'
 
 export {inputMask}
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     body.classList.add('page--desktop')
   }
-
+  smoothScroll()
   lazyLoad()
   // adjustViewportHeight()
   new Modal()

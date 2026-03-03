@@ -1,4 +1,4 @@
-export default function smoothScroll(lenis) {
+export default function smoothScroll() {
   const smoothLinks = document.querySelectorAll('a[data-smooth-scroll]')
   if (!smoothLinks) return false
 
@@ -9,7 +9,7 @@ export default function smoothScroll(lenis) {
     if (id && target) {
       link.addEventListener('click', (e) => {
         e.preventDefault()
-        lenis.scrollTo(id)
+        target.scrollIntoView({ behavior: 'smooth' })
       })
     }
   })

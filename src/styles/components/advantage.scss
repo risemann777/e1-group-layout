@@ -1,6 +1,7 @@
 .advantage {
   --mi-advantage-padding: 4.5rem 0;
   --mi-advantage-margin: 4.5rem 0;
+  --mi-advantage-scroll-margin-top: 5rem;
   --mi-advantage-container-padding: 0;
   --mi-advantage-title-font-size: 3rem;
   --mi-advantage-list-display: grid;
@@ -14,6 +15,7 @@
 
   // padding: var(--mi-advantage-padding);
   margin: var(--mi-advantage-margin);
+  scroll-margin-top: var(--mi-advantage-scroll-margin-top);
 
   @media(width >= 720px) {
     --mi-advantage-list-grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -26,6 +28,7 @@
   @media(width >= 1280px) {
     --mi-advantage-padding: 7.5rem 0;
     --mi-advantage-margin: 7.5rem 0;
+    --mi-advantage-scroll-margin-top: 8rem;
     --mi-advantage-title-font-size: 4.5rem;
   }
 

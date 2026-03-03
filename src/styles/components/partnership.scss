@@ -1,5 +1,6 @@
 .partnership {
   --mi-partnership-margin: 4.5rem 0;
+  --mi-partnership-scroll-margin-top: 5rem;
   --mi-partnership-container-padding: 0;
   --mi-partnership-content-padding: 1.25rem;
   --mi-partnership-title-font-size: 1.25rem;
@@ -7,6 +8,7 @@
   --mi-partnership-info-width: initial;
 
   margin: var(--mi-partnership-margin);
+  scroll-margin-top: var(--mi-partnership-scroll-margin-top);
 
   @media(width >= 1024px) {
     --mi-partnership-content-padding: 2rem;
@@ -14,6 +16,7 @@
 
   @media(width >= 1280px) {
     --mi-partnership-margin: 7.5rem 0;
+    --mi-partnership-scroll-margin-top: 8rem;
     --mi-partnership-content-padding: 4.5rem;
     --mi-partnership-title-font-size: 3rem;
     --mi-partnership-description-font-size: 1.5rem;
