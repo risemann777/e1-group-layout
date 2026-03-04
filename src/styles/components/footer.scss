@@ -29,9 +29,6 @@
     gap: 4rem 5rem;
     margin-inline: auto;
 
-    &-info {
-    }
-
     &-cta {
       color: #fff;
       font-family: var(--mi-heading-font-family);
@@ -54,8 +51,14 @@
       }
 
       a {
+        color: #fff;
         font-family: var(--mi-heading-font-family);
         font-size: var(--mi-footer-connect-cta-font-size);
+        transition: opacity 0.25s;
+
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
   }

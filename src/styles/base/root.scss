@@ -23,11 +23,12 @@
   --mi-code-color: #d63384;
   --mi-highlight-color: #000;
   --mi-highlight-bg: var(--mi-color-yellow);
-  --mi-link-color: rgb(255 255 255);
-  --mi-link-hover-color: rgb(255 255 255 / 40%);
+  --mi-link-color: var(--mi-color-primary);
+  --mi-link-hover-color: var(--mi-color-primary);
   --mi-link-visited-color: #681da8;
   --mi-link-opacity: 1;
   --mi-link-decoration: none;
+  --mi-link-hover-decoration: none;
   --mi-border-radius: 0.375rem;
   --mi-dt-font-weight: 500;
   --mi-font-weight-bolder: bolder;
@@ -35,7 +36,6 @@
   --mi-letter-spacing: 0.02rem;
   --mi-mark-padding: .2rem .4rem;
   --mi-sub-sup-font-size: 0.625rem;
-  --mi-link-hover-decoration: none;
   --mi-table-cell-padding-y: 4px;
   --mi-table-caption-color: var(--mi-foreground);
   --mi-table-th-font-weight: 500;

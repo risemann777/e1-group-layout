@@ -1,10 +1,10 @@
 .swiper {
-  --swiper-pagination-bullet-inactive-color: #aaa;
+  --swiper-pagination-bullet-inactive-color: #444;
   --swiper-pagination-bullet-inactive-opacity: 0.4;
   --swiper-pagination-bullet-width: 0.625rem;
   --swiper-pagination-bullet-height: 0.625rem;
   --swiper-pagination-bullet-horizontal-gap: 0.35rem;
-  --swiper-navigation-color: #fff;
+  --swiper-navigation-color: #000;
   --swiper-pagination-bottom: 10px;
   --swiper-navigation-size: 2rem;
 
@@ -17,6 +17,6 @@
 
 .swiper-pagination-bullet {
   &-active {
-    --swiper-pagination-color: #fff;
+    --swiper-pagination-color: #888;
   }
 }

@@ -26,7 +26,6 @@
 @use "stat";
 @use "edge";
 @use "stage";
-@use "tick";
 @use "banner";
 @use "company";
 @use "feedback";
@@ -35,12 +34,9 @@
 @use "service";
 @use "service-detail";
 @use "service-head";
-@use "elevator-type";
-@use "magic-mouse";
 @use "grecaptcha";
 @use "textmedia";
 @use "slider";
-@use "flat-message";
 @use "question";
 @use "news";
 @use "news-detail";
@@ -50,8 +46,6 @@
 @use "gallery-slider";
 @use "text-section";
 @use "picture-section";
-@use "catalog";
-@use "catalog-segment";
 @use "product";
 @use "product-element";
 @use "product-head";
@@ -74,14 +68,8 @@
 @use "model-scheme";
 @use "model-slider";
 @use "nest";
-@use "cabin";
-@use "cabin-card";
-@use "cabin-trim";
-@use "cabin-design";
 @use "cabin-design-card";
 @use "cabin-design-slider";
-@use "showroom-info";
 @use "table-of-contents";
 @use "info-price";
 @use "intro";
-@use "warranty-message";
