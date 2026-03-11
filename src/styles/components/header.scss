@@ -12,23 +12,25 @@
   --mi-header-nav-display: none;
   --mi-header-controls-display: none;
   --mi-header-phone-font-size: 1.25rem;
+  --mi-header-burger-display: block;
 
   position: var(--mi-header-position);
   z-index: var(--mi-header-z-index);
   width: 100%;
   padding: var(--mi-header-padding);
   background: var(--mi-header-background);
-  // pointer-events: none;
+  pointer-events: none;
 
   @media(width >= 1024px) {
     --mi-header-controls-display: flex;
     --mi-header-container-gap: 4.25rem;
     --mi-header-padding: 1rem 0;
     --mi-header-logo-width: 186px;
+    --mi-header-nav-display: block;
+    --mi-header-burger-display: none;
   }
 
   @media(width >= 1280px) {
-    --mi-header-nav-display: block;
     --mi-header-padding: 1.25rem 0;
   }
 
@@ -113,7 +115,8 @@
     }
   }
 
-  &__hamburger {
+  &__burger {
+    display: var(--mi-header-burger-display);
     pointer-events: auto;
   }
 
@@ -123,10 +126,6 @@
     align-items: center;
     gap: 1.25rem;
     pointer-events: auto;
-  }
-
-  &__phone {
-    font-size: var(--mi-header-phone-font-size);
   }
 
   &__button {
@@ -139,6 +138,8 @@
   }
 
   &__phone {
+    font-size: var(--mi-header-phone-font-size);
+
     a, span {
       display: inline-block;
       padding: 0.1rem 0;

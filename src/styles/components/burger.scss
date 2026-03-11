@@ -1,18 +1,10 @@
-.hamburger {
-  --mi-hamburger-desktop-display: none;
-  --mi-hamburger-mobile-display: block;
-
+.burger {
   position: relative;
   z-index: 25;
   width: 40px;
   height: 30px;
   flex-shrink: 0;
   cursor: pointer;
-
-  @media(width >= 1024px) {
-    --mi-hamburger-desktop-display: block;
-    --mi-hamburger-mobile-display: none;
-  }
 
   &::before, &::after {
     position: absolute;
@@ -27,14 +19,6 @@
     transition: all 0.2s;
   }
 
-  &--desktop {
-    display: var(--mi-hamburger-desktop-display);
-  }
-
-  &--mobile {
-    display: var(--mi-hamburger-mobile-display);
-  }
-
   &::before {
     top: 9px;
   }
@@ -45,7 +29,7 @@
 }
 
 .full-menu-opened {
-  .hamburger {
+  .burger {
     &::before, &::after {
       background: var(--mi-color-orange);
     }

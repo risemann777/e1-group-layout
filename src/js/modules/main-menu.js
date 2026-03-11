@@ -2,8 +2,7 @@ export default function mainMenu() {
   const body = document.body
   const classNames = {
     fullMenu: 'full-menu',
-    fullMenuWrapper: 'full-menu__wrapper',
-    hamburger: 'hamburger',
+    burger: 'burger',
     bodyMenuOpened: 'full-menu-opened',
     menuShow: 'full-menu--show',
     mobileNav: 'mobile-nav',
@@ -14,15 +13,13 @@ export default function mainMenu() {
     mobileNavSub: 'mobile-nav__sub',
   }
   const fullMenu = body.querySelector(`.${classNames.fullMenu}`)
-  const hamburgers = body.querySelectorAll(`.${classNames.hamburger}`)
+  const burger = body.querySelector(`.${classNames.burger}`)
 
   if (!fullMenu) return console.warn(`Element with class "${classNames.fullMenu}" does not exist`)
-  if (!hamburgers) return console.warn(`Element(s) with class "${classNames.hamburger}" does not exist`)
+  if (!burger) return console.warn(`Element with class "${classNames.burger}" does not exist`)
 
-  hamburgers.forEach(hamburger => {
-    hamburger.addEventListener('click', () => {
-      toggle()
-    })
+  burger.addEventListener('click', () => {
+    toggle()
   })
 
   const switchBodyOverflow = (fixed) => {

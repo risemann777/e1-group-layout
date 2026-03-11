@@ -1,0 +1,80 @@
+.full-menu {
+  --mi-full-menu-z-index: 400;
+  --mi-full-menu-bg: var(--mi-background);
+  --mi-full-menu-transform: none;
+  --mi-full-menu-transition: none;
+  --mi-full-menu-bg-opacity: 0;
+  --mi-full-menu-panel-padding-top: 5rem;
+  --mi-full-menu-container-margin-y: 2.5rem;
+  --mi-full-menu-mobile-display: block;
+  --mi-full-menu-desktop-display: none;
+
+  position: fixed;
+  z-index: var(--mi-full-menu-z-index);
+  display: none;
+  overflow: hidden auto;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  outline: 0;
+
+  @media (width >= 1024px) {
+    --mi-full-menu-panel-padding-top: 10rem;
+    --mi-full-menu-mobile-display: none;
+    --mi-full-menu-desktop-display: block;
+  }
+
+  &--fall {
+    --mi-full-menu-transform: translateY(-100%);
+    --mi-full-menu-transition: transform 0.3s cubic-bezier(0.61, 0.01, 0.28, 1);
+  }
+
+  &--show {
+    --mi-full-menu-bg-opacity: 1;
+    --mi-full-menu-transform: none;
+  }
+  
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0 0 0 / 40%);
+    inset: 0;
+    opacity: var(--mi-full-menu-bg-opacity);
+    transition: opacity 0.25s;
+  }
+
+  &__panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding-top: var(--mi-full-menu-panel-padding-top);
+    background: var(--mi-full-menu-bg);
+    pointer-events: none;
+    transform: var(--mi-full-menu-transform);
+    transition: var(--mi-full-menu-transition);
+  }
+
+  &__wrapper {
+    border-top: 1px solid #fff;
+    pointer-events: auto;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    max-height: calc(100vh - var(--mi-full-menu-panel-padding-top) - var(--mi-full-menu-container-margin-y) * 2);
+    margin-top: var(--mi-full-menu-container-margin-y);
+    margin-bottom: var(--mi-full-menu-container-margin-y);
+    margin-inline: auto;
+    overflow-y: auto;
+  }
+
+  &__mobile {
+    display: var(--mi-full-menu-mobile-display);
+  }
+
+  &__desktop {
+    display: var(--mi-full-menu-desktop-display);
+  }
+}

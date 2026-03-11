@@ -4,6 +4,7 @@ import Modal from "./modules/modal"
 import adjustViewportHeight from './lib/adjust-viewport-height.js'
 import inputMask from './modules/inputMask.js'
 import smoothScroll from './modules/smoothScroll.js'
+import mainMenu from "./modules/main-menu.js"
 
 export {inputMask}
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // adjustViewportHeight()
   new Modal()
   inputMask()
+  mainMenu()
 
   window.addEventListener('orientationchange', adjustViewportHeight)
 })

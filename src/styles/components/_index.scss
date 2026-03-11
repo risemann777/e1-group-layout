@@ -8,10 +8,9 @@
 @use "headline";
 @use "swiper";
 @use "header";
-@use "hamburger";
+@use "burger";
 @use "logo";
 @use "nav";
-@use "desktop-menu";
 @use "mobile-menu";
 @use "mobile-nav";
 @use "hero";
@@ -40,7 +39,6 @@
 @use "question";
 @use "news";
 @use "news-detail";
-@use "alike-news";
 @use "accordion";
 @use "gallery";
 @use "gallery-slider";
@@ -64,12 +62,14 @@
 @use "engineering-card";
 @use "media-card";
 @use "about-model";
-@use "model-design";
-@use "model-scheme";
 @use "model-slider";
-@use "nest";
-@use "cabin-design-card";
-@use "cabin-design-slider";
-@use "table-of-contents";
-@use "info-price";
-@use "intro";
+@use "full-menu";
+
+// @use "intro";
+// @use "table-of-contents";
+// @use "nest";
+// @use "cabin-design-card";
+// @use "cabin-design-slider";
+// @use "info-price";
+// @use "model-design";
+// @use "model-scheme";
