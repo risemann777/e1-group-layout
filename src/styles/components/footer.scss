@@ -1,8 +1,10 @@
 .footer {
   --mi-footer-connect-cta-font-size: 1.5rem;
-  --mi-footer-connect-padding: 1.5rem 0;
+  --mi-footer-connect-padding: 2.5rem 0;
   --mi-footer-connect-flex-direction: column;
   --mi-footer-bottom-font-size: 0.875rem;
+  --mi-footer-connect-info-width: initial;
+  --footer-connect-grid-template-columns: initial;
 
   background: var(--mi-color-primary, #173957FF);
 
@@ -14,6 +16,7 @@
   @media(width >= 1024px) {
     --mi-footer-connect-padding: 4.5rem 0 2.25rem;
     --mi-footer-connect-flex-direction: row;
+    --footer-connect-grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   
   @media(width >= 1280px) {
@@ -22,12 +25,16 @@
   }
 
   &__connect {
-    display: flex;
+    display: grid;
     width: var(--mi-container-width);
-    flex-direction: var(--mi-footer-connect-flex-direction);
     padding: var(--mi-footer-connect-padding);
     gap: 4rem 5rem;
+    grid-template-columns: var(--footer-connect-grid-template-columns);
     margin-inline: auto;
+
+    &-info {
+      max-width: var(--mi-footer-connect-info-width);
+    }
 
     &-cta {
       color: #fff;
