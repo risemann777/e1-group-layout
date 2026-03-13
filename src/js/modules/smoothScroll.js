@@ -3,7 +3,9 @@ export default function smoothScroll() {
   if (!smoothLinks) return false
 
   smoothLinks.forEach(link => {
-    const id = link.getAttribute('href')
+    const strId = link.getAttribute('href')
+    const id = strId.includes('#') ? strId.substring(strId.indexOf('#')) : ''
+
     const target = document.querySelector(id)
 
     if (id && target) {

@@ -8,7 +8,7 @@ mixin mobile-nav(data)
         - subList = rootItem?.sublist || null
         .mobile-nav__item
           .mobile-nav__head
-            a(href=rootItemHref).mobile-nav__link
+            a(href=rootItemHref data-smooth-scroll="true").mobile-nav__link
               span=rootItemName
             if subList
               .mobile-nav__toggle: svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-mobile-menu-arrow")

@@ -6,12 +6,10 @@
   flex-shrink: 0;
   cursor: pointer;
 
-  &::before, &::after {
+  span, &::before, &::after {
     position: absolute;
-    left: 0;
     display: block;
-    width: 40px;
-    height: 1px;
+    height: 2px;
     border-radius: 1.5px;
     background-color: var(--mi-color-primary);
     content: "";
@@ -19,29 +17,41 @@
     transition: all 0.2s;
   }
 
+  &::before, &::after {
+    left: 0;
+    width: 40px;
+  }
+
+  span {
+    top: 14px;
+    right: 0;
+    width: 30px;
+  }
+
   &::before {
-    top: 9px;
+    top: 4px;
+
   }
 
   &::after {
-    bottom: 9px;
+    bottom: 4px;
   }
 }
 
 .full-menu-opened {
   .burger {
-    &::before, &::after {
-      background: var(--mi-color-orange);
+    span {
+      opacity: 0;
     }
 
     &::before {
       top: 14px;
-      transform: rotate(25deg);
+      transform: rotate(40deg);
     }
 
     &::after {
       bottom: 14px;
-      transform: rotate(-25deg);
+      transform: rotate(-40deg);
     }
   }
 }

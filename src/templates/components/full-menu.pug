@@ -1,6 +1,6 @@
 include ../mixins/mobile-nav
 
-.full-menu.full-menu--fall(data-lenis-prevent="true")
+.full-menu.full-menu--fall
   .full-menu__bg
   .full-menu__panel
     .full-menu__wrapper
@@ -24,7 +24,7 @@ include ../mixins/mobile-nav
                 ]
               })
             .mobile-menu__bottom
-              .mobile-menu__phone
+              // .mobile-menu__phone
                 a(href="tel:+7 (499) 111-22-33"): span +7 (499) 111-22-33
               button(class="btn btn--primary full-menu__button" data-toggle='modal' data-target="#contactModal") Свяжитесь с нами
         .full-menu__desktop Тут десктопное меню

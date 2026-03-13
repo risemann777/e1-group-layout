@@ -1,6 +1,6 @@
 .mobile-nav {
   --mi-mobile-nav-toggle-icon-transform: none;
-  --mi-mobile-nav-toggle-icon-stoke-color: var(--mi-foreground);
+  --mi-mobile-nav-toggle-icon-stoke-color: var(--mi-color-primary, black);
   --mi-mobile-sub-height: 0;
   --mi-mobile-sub-display: none;
   --mi-mobile-sub-opacity: 0;

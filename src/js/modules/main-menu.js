@@ -11,6 +11,7 @@ export default function mainMenu() {
     mobileNavItemHead: 'mobile-nav__head',
     mobileNavToggle: 'mobile-nav__toggle',
     mobileNavSub: 'mobile-nav__sub',
+    mobileNavLink: 'mobile-nav__link',
   }
   const fullMenu = body.querySelector(`.${classNames.fullMenu}`)
   const burger = body.querySelector(`.${classNames.burger}`)
@@ -61,7 +62,7 @@ export default function mainMenu() {
   }
 
   const toggle = () => {
-    if(menuIsVisible()) {
+    if (menuIsVisible()) {
       close()
     } else {
       open()
@@ -74,6 +75,7 @@ export default function mainMenu() {
     mobileNavItems.forEach(item => {
       const toggle = item.querySelector(`.${classNames.mobileNavToggle}`)
       const sub = item.querySelector(`.${classNames.mobileNavSub}`)
+      const link = item.querySelector(`.${classNames.mobileNavLink}`)
 
       if (toggle && sub) {
         toggle.addEventListener('click', () => {
@@ -92,6 +94,15 @@ export default function mainMenu() {
             setTimeout(() => {
               sub.removeAttribute("style")
             }, 300)
+          }
+        })
+      }
+
+      if (link) {
+        link.addEventListener('click', () => {
+          if (link.hasAttribute('data-smooth-scroll')) {
+            // console.log('menu must be closed')
+            close()
           }
         })
       }
