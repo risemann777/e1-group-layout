@@ -1,4 +1,8 @@
 .container {
   width: min(var(--mi-container-width), 100% - var(--mi-container-padding));
   margin-inline: auto;
+
+  &--narrow {
+    width: min(var(--mi-container-width-narrow), 100% - var(--mi-container-padding));
+  }
 }

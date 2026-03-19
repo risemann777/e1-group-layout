@@ -1,4 +1,5 @@
 .footer {
+  --mi-footer-margin: 3rem 0 0;
   --mi-footer-connect-cta-font-size: 1.5rem;
   --mi-footer-connect-padding: 2.5rem 0;
   --mi-footer-connect-flex-direction: column;
@@ -6,6 +7,7 @@
   --mi-footer-connect-info-width: initial;
   --footer-connect-grid-template-columns: initial;
 
+  margin: var(--mi-footer-margin);
   background: var(--mi-color-primary, #173957FF);
 
   @media(width >= 720px) {

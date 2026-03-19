@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   body.classList.add('page--loaded')
 
   if (mobileDetect()) {
-    body.classList.add('page--mobile')
+    body.classList.add('bx-touch')
   } else {
-    body.classList.add('page--desktop')
+    body.classList.add('bx-no-touch')
   }
   smoothScroll()
   lazyLoad()
-  // adjustViewportHeight()
+  adjustViewportHeight()
   new Modal()
   inputMask()
   mainMenu()
