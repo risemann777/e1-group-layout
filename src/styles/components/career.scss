@@ -1,4 +1,5 @@
 .career {
+  --mi-career-scroll-margin-top: 5rem;
   --mi-career-container: 1rem;
   --mi-career-container-padding: 0;
   --mi-career-title-font-size: 1.5rem;
@@ -7,6 +8,7 @@
 
   padding: var(--mi-career-padding);
   background: var(--mi-color-primary-bg-light);
+  scroll-margin-top: var(--mi-career-scroll-margin-top);
 
   @media(width >= 1024px) {
     --mi-career-container-padding: 0 2.5rem;
@@ -16,6 +18,7 @@
     --mi-career-title-font-size: 3rem;
     --mi-career-padding: 4.5rem 0;
     --mi-career-description-font-size: 1.25rem;
+    --mi-career-scroll-margin-top: 8rem;
   }
 
   &__container {

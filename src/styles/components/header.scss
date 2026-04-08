@@ -21,7 +21,7 @@
   background: var(--mi-header-background);
   pointer-events: none;
 
-  @media(width >= 1024px) {
+  @media(width >= 1280px) {
     --mi-header-controls-display: flex;
     --mi-header-container-gap: 4.25rem;
     --mi-header-padding: 1rem 0;
