@@ -2,7 +2,7 @@
   --mi-news-margin: 0;
   --mi-scroll-margin-top: 0;
   --mi-advantage-container-padding: 0;
-  --mi-news-heading-margin: 0 0 2rem;
+  --mi-news-heading-margin: 0 0 1rem;
   --mi-news-title-font-size: 1.5rem;
   --mi-news-list-gap: 2.5rem;
   --mi-news-list-grid-template-columns: initial;
@@ -20,7 +20,7 @@
 
   @media(width >= 1280px) {
     --mi-news-margin: 0;
-    --mi-news-heading-margin: 0 0 1rem;
+    --mi-news-heading-margin: 0 0 2rem;
     --mi-news-title-font-size: 3rem;
     --mi-news-list-grid-template-columns: repeat(3, minmax(0, 1fr));
     --mi-news-slider-overflow: hidden;
