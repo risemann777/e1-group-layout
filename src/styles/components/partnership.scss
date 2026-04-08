@@ -2,17 +2,13 @@
   --mi-partnership-margin: 4.5rem 0;
   --mi-partnership-scroll-margin-top: 7rem;
   --mi-partnership-container-padding: 0;
-  --mi-partnership-content-padding: 1.25rem;
+  --mi-partnership-content-padding: 2rem;
   --mi-partnership-title-font-size: 1.25rem;
   --mi-partnership-description-font-size: 1rem;
   --mi-partnership-info-width: initial;
 
   margin: var(--mi-partnership-margin);
   scroll-margin-top: var(--mi-partnership-scroll-margin-top);
-
-  @media(width >= 1024px) {
-    --mi-partnership-content-padding: 2rem;
-  }
 
   @media(width >= 1280px) {
     --mi-partnership-margin: 7.5rem 0;
@@ -93,27 +89,33 @@
   &__list {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    width: max-content;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 2rem;
-  }
-
-  .swiper-slide {
-    display: flex;
-    width: auto;
-    height: auto;
-    align-items: center;
-  }
-
-  &__item {
-    // max-width: 370px;
-  }
-
-  &__image {
-    // width: 100%;
+    animation: scroll 10s linear infinite;
+    gap: 4rem;
   }
 
   &__slider {
     overflow: visible;
+
+    .swiper-wrapper {
+      align-items: center;
+      transition-timing-function: linear;
+    }
+
+    .swiper-slide {
+      display: flex;
+      width: 400px;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@keyframes scroll {
+  100% {
+    transform: translate(calc(-50% - 30px));
   }
 }

@@ -1,5 +1,5 @@
 import Swiper from "swiper"
-import {Navigation, Pagination, Autoplay} from 'swiper/modules'
+import {Navigation, Pagination, Autoplay, FreeMode} from 'swiper/modules'
 import { Fancybox } from '@fancyapps/ui'
 import inputMask from "./modules/inputMask.js"
 
@@ -24,23 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
           slidesPerView: 4,
         }
       }
-    })
-  }
-
-  const partnershipSlider = document.querySelector('.partnership__slider')
-
-  if (partnershipSlider) {
-    new Swiper(".partnership__slider", {
-      modules: [Navigation],
-      slidesPerView: "auto",
-      spaceBetween: 32,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
-      speed: 3000,
-      freeMode: true,
-      loop: true,
     })
   }
 
