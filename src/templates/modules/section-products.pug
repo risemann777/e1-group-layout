@@ -1,0 +1,31 @@
+include ../mixins/accordion
+
+section.products(id="products")
+  .products__container
+    .products__col
+      .products__title Продукция и услуги
+      .products__description Команда профессионалов с опытом работы на рынке Электроинструментов более 15 лет. Мы оказываем полный спектр услуг по обслуживанию и предоставлению электроинструмента.
+      .solutions
+        .solutions__title Решения от Е1 Групп:
+        .solutions__list
+          .solutions__item: img(src="images/solutions/solution_1.png")
+          .solutions__item: img(src="images/solutions/solution_2.png")
+          .solutions__item: img(src="images/solutions/solution_3.png")
+    .products__col
+      +accordion({
+        sections: [
+          {
+            name: 'DongCheng',
+            content: '<p>DongCheng – бренд профессиональных электроинструментов, ориентированный на качество. Продукция проходит строгий контроль от сырья до безопасности. Компания стремится стать лидером в инновациях и качестве. Миссия – непрерывное совершенствование, инновации и функциональность.</p><p>Сайт: <a target="_blank" href="https://www.dongchengtool.ru">www.dongchengtool.ru</a></p><p>Почта: <a href="mailto:info@dongchengtool.ru">info@dongchengtool.ru</a></p>',
+            expanded: true,
+          },
+          {
+            name: 'ЭНГЕЛЬС',
+            content: '<p>Завод в Энгельсе производит инструменты для России и Европы, соблюдая высокие стандарты качества. Предприятие полностью контролирует производство — от разработки пресс-форм до сборки. Завод с высоким уровнем локализации и повышенным ресурсом на базе бывшего завода Бош в г. Энгельс. Оснащен современным технологическим центром и предлагает надежные, локализованные решения.</p><p>Сайт: <a target="_blank" href="https://engelstool.ru/">engelstool.ru</a></p><p>Почта: <a href="mailto:info@engelstool.ru">info@engelstool.ru</a></p>'
+          },
+          {
+            name: 'Distribution For Construction',
+            content: '<p>Поставщик строительного оборудования, электроинструментов, садово-парковой техники и сервисных услуг. <br>Является эксклюзивным дистрибьютером Международная экспертиза команды Distribution For Construction в области продукта, продаж, маркетинга, процессов, технической и сервисной поддержки продукта в совокупности с 15 летним успешным опытом на рынке делает возможным выведение нового профессионального электроинструмента в России, обеспечивая высокие стандарты качества, надежности и клиентского сервиса.</p><p>Сайт: <a target="_blank" href="https://dctool.ru/">dctool.ru</a></p><p>Почта: <a href="mailto:dcru-info@mail.ru">dcru-info@mail.ru</a></p>'
+          }
+        ]
+      })

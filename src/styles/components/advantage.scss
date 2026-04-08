@@ -1,5 +1,4 @@
 .advantage {
-  --mi-advantage-padding: 4.5rem 0;
   --mi-advantage-margin: 4.5rem 0;
   --mi-advantage-scroll-margin-top: 5rem;
   --mi-advantage-container-padding: 0;
@@ -12,13 +11,16 @@
   --mi-advantage-list-item-bg: var(--mi-color-primary-bg-light, blue);
   --mi-advantage-list-item-name-font-size: 1.5rem;
   --mi-advantage-list-item-text-font-size: 1rem;
+  --mi-advantage-label-font-size: 1.5rem;
+  --mi-advatage-logo-width: 250px;
+  --mi-advatage-controls-flex-direction: column;
 
-  // padding: var(--mi-advantage-padding);
   margin: var(--mi-advantage-margin);
   scroll-margin-top: var(--mi-advantage-scroll-margin-top);
 
   @media(width >= 720px) {
     --mi-advantage-list-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-advatage-controls-flex-direction: row;
   }
 
   @media(width >= 1024px) {
@@ -26,7 +28,6 @@
   }
 
   @media(width >= 1280px) {
-    --mi-advantage-padding: 7.5rem 0;
     --mi-advantage-margin: 7.5rem 0;
     --mi-advantage-scroll-margin-top: 8rem;
     --mi-advantage-title-font-size: 4.5rem;
@@ -49,6 +50,19 @@
     }
   }
 
+  &__label {
+    color: var(--mi-color-primary);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-advantage-label-font-size);
+    font-weight: 600;
+  }
+
+  &__logo {
+    img {
+      max-width: var(--mi-advatage-logo-width);
+    }
+  }
+
   &__title {
     margin: 0 0 1rem;
     color: var(--mi-color-primary);
@@ -59,12 +73,13 @@
   }
 
   &__description {
+    margin: 1.5rem 0 0;
     font-size: var(--mi-plane-text-font-size);
   }
 
   &__controls {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: var(--mi-advatage-controls-flex-direction) wrap;
     margin: 3.5rem 0 0;
     gap: 1rem;
   }

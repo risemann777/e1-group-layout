@@ -1,0 +1,24 @@
+.solutions {
+  --mi-solutions-title-font-size: 1.5rem;
+
+  &__title {
+    margin: 0 0 1.5rem;
+    color: var(--mi-color-primary);
+    font-family: var(--mi-heading-font-family);
+    font-size: var(--mi-solutions-title-font-size);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  &__item {
+    img {
+      max-width: 100%;
+    }
+  }
+}

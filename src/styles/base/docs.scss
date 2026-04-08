@@ -10,7 +10,7 @@
   --bd-content-max-width: initial;
 
   max-width: var(--bd-content-max-width);
-  color: var(--mi-color-gray);
+  color: var(--mi-color-black);
   font-size: var(--mi-plane-text-font-size);
   font-weight: 200;
 
@@ -89,4 +89,8 @@
   .textmedia {
     margin: 1.5rem 0;
   }
+}
+
+.tablebodytext {
+  display: none;
 }

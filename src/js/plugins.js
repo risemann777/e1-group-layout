@@ -27,6 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  const partnershipSlider = document.querySelector('.partnership__slider')
+
+  if (partnershipSlider) {
+    new Swiper(".partnership__slider", {
+      modules: [Navigation],
+      slidesPerView: "auto",
+      spaceBetween: 32,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      speed: 3000,
+      freeMode: true,
+      loop: true,
+    })
+  }
+
   const alikeProductSlider = document.querySelectorAll('.alike-product__slider')
 
   if (alikeProductSlider) {

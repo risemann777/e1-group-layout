@@ -21,22 +21,7 @@ mixin accordion(data)
               .accordion__info
                 .accordion__name=sectionName
               .accordion__arrow
-                svg(class="svg-icon" viewBox="0 0 36 36" width="36" height="36"): use(xlink:href="#svg-accordion-arrow")
+                svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-accordion-arrow")
             .accordion__body
-              .accordion__content
-                - content = section?.contentArray
-                if sectionContentType === 'text'
-                  if (content && content.length > 0)
-                    each item in content
-                      p=item
-                  else
-                    p Specify <b>`contentArray`</b> property inside current section.
-
-                if sectionContentType === 'list'
-                  if (content && content.length > 0)
-                    ul
-                      each item in content
-                        li=item
-                  else
-                    p Specify <b>`contentArray`</b> property inside current section.
-                    p Current contentType=list. So an unsorted list will be drawn from an array of text strings.
+              if (section.content)
+                .accordion__content!=section.content
