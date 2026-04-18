@@ -10,12 +10,13 @@
   --mi-hero-image-padding: 200%;
   --mi-hero-button-width: min(1760px, 100% - 2.5rem);
   --mi-hero-button-margin: 1rem 0 0;
+  --mi-hero-logo-size: 136px;
 
   position: relative;
   overflow: hidden;
   width: var(--mi-container-width);
-  margin-inline: auto;
   border-radius: 1.25rem;
+  margin-inline: auto;
 
   @media(width >= 360px) {
     --mi-hero-image-padding: 170%;
@@ -43,6 +44,7 @@
     --mi-hero-description-font-size: 1.25rem;
     --mi-hero-container-justify-content: flex-end;
     --mi-hero-container-padding: 0 0 9rem;
+    --mi-hero-logo-size: 205px;
   }
 
   @media(width >= 1280px) {
@@ -51,6 +53,11 @@
     --mi-hero-subtitle-font-size: 3rem;
     --mi-hero-description-font-size: 1.5rem;
     --mi-hero-image-padding: 51%;
+    --mi-hero-logo-size: 256px;
+  }
+
+  @media(width >= 1600px) {
+    --mi-hero-logo-size: 380px;
   }
 
   @media(width >= 1800px) {
@@ -101,7 +108,7 @@
       position: absolute;
       display: block;
       backdrop-filter: var(--mi-hero-cover-backdrop-filter);
-      background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+      background: linear-gradient(90deg, rgb(0 0 0 / 40%) 0%, rgb(0 0 0 / 10%) 100%);
       background-blend-mode: multiply;
       content: "";
       inset: 0;
@@ -111,9 +118,9 @@
   }
 
   &__info {
-    color: var(--mi-color-white);
     display: flex;
     flex-direction: column;
+    color: var(--mi-color-white);
     gap: 1rem;
   }
 
@@ -130,8 +137,8 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    gap: 2rem;
     padding: 3rem 0;
+    gap: 2rem;
     
     @media(width >= 720px) {
       flex: initial;
@@ -143,6 +150,14 @@
 
     @media(width >= 1600px) {
       max-width: 50%;
+    }
+  }
+
+  &__logo {
+    width: var(--mi-hero-logo-size);
+
+    img {
+      max-width: 100%;
     }
   }
 
@@ -160,7 +175,7 @@
 
   &__controls {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
   }
 }
