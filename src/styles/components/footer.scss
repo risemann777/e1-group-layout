@@ -5,7 +5,7 @@
   --mi-footer-connect-flex-direction: column;
   --mi-footer-bottom-font-size: 0.875rem;
   --mi-footer-connect-info-width: initial;
-  --footer-connect-grid-template-columns: initial;
+  --mi-footer-connect-grid-template-columns: initial;
 
   margin: var(--mi-footer-margin);
   background: var(--mi-color-primary, #173957FF);
@@ -18,7 +18,7 @@
   @media(width >= 1024px) {
     --mi-footer-connect-padding: 4.5rem 0 2.25rem;
     --mi-footer-connect-flex-direction: row;
-    --footer-connect-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-footer-connect-grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   
   @media(width >= 1280px) {
@@ -31,7 +31,7 @@
     width: var(--mi-container-width);
     padding: var(--mi-footer-connect-padding);
     gap: 4rem 5rem;
-    grid-template-columns: var(--footer-connect-grid-template-columns);
+    grid-template-columns: var(--mi-footer-connect-grid-template-columns);
     margin-inline: auto;
 
     &-info {
@@ -42,7 +42,7 @@
       color: #fff;
       font-family: var(--mi-heading-font-family);
       font-size: var(--mi-footer-connect-cta-font-size);
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.2;
     }
 
@@ -57,12 +57,17 @@
 
       span {
         opacity: 0.5;
+
+        @media(width >= 1280px) {
+          font-size: 1.5rem;
+        }
       }
 
       a {
         color: #fff;
         font-family: var(--mi-heading-font-family);
         font-size: var(--mi-footer-connect-cta-font-size);
+        font-weight: 600;
         transition: opacity 0.25s;
 
         &:hover {
