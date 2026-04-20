@@ -5,6 +5,10 @@
     --mi-breadcrumb-font-size: 1rem;
   }
 
+  @media(width >= 1280px) {
+    padding: 0 2.5rem;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +32,7 @@
     }
 
     & > span {
-      color: var(--mi-corporate-orange);
+      color: var(--mi-color-primary);
     }
 
     &:not(:last-child) {
@@ -37,12 +41,17 @@
       }
 
       &::after {
-        content: "/"
+        color: var(--mi-color-gray-light);
+        content: "/";
       }
     }
 
     a {
       border-bottom: none;
+
+      span {
+        color: var(--mi-color-gray-light);
+      }
     }
   }
 }

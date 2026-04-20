@@ -1,5 +1,6 @@
 .solutions {
   --mi-solutions-title-font-size: 1.5rem;
+  --mi-solutions-list-flex-direction: column;
 
   &__title {
     margin: 0 0 1.5rem;
@@ -12,7 +13,7 @@
 
   &__list {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: var(--mi-solutions-list-flex-direction) wrap;
     gap: 1.25rem;
   }
 

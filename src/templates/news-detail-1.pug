@@ -1,0 +1,16 @@
+extends layouts/main/layout
+include mixins/error-page
+
+block vars
+  - layoutMofifiers = 'layout--inner layout--hidden-title'
+  - browserTitle = 'Страница 404'
+  - description = 'Адрес и телефон компании FranzLift поставщика лифтов по РФ'
+  - pageTitle = 'Страница 404';
+  - breadcrumb = [{name: 'Страница 404'}]
+  - notShowPageTitle = true
+  - notShowHeadline = true
+
+block content
+  .news-detail
+    .news-detail__container
+      h1 «ЭНГЕЛЬС» вместо Bosch: в Саратовской области возрождается производство отечественного профессионального электроинструмента

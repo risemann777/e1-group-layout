@@ -133,12 +133,9 @@
   }
 
   &__button {
-    height: 48px;
+    height: 56px;
+    min-height: 56px;
     flex-shrink: 0;
-
-    @media(width >= 1800px) {
-      height: 60px;
-    }
   }
 
   &__phone {
