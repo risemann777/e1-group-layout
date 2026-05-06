@@ -65,8 +65,7 @@
 
   &__title {
     margin: 0 0 1rem;
-    color: var(--mi-color-primary);
-    font-family: var(--mi-heading-font-family);
+    color: var(--mi-color-primary, #222);
     font-size: var(--mi-advantage-title-font-size);
     font-weight: 600;
     line-height: 1.2;
@@ -100,15 +99,14 @@
     gap: 1rem;
 
     &-name {
-      color: var(--mi-color-primary-light);
-      font-family: var(--mi-heading-font-family);
+      color: var(--mi-color-primary-light, #222);
       font-size: var(--mi-advantage-list-item-name-font-size);
       font-weight: 600;
       line-height: 1.2;
     }
 
     &-text {
-      color: var(--mi-color-primary-light);
+      color: var(--mi-color-primary-light, #222);
       font-size: var(--mi-advantage-list-item-text-font-size);
     }
   }

@@ -61,7 +61,7 @@
   }
 
   &__title {
-    font-family: var(--mi-heading-font-family);
+    color: var(--mi-color-primary, #222);
     font-size: var(--mi-news-title-font-size);
     font-weight: 600;
     line-height: 1.2;

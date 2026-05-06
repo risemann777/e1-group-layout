@@ -19,6 +19,10 @@
     --mi-partnership-info-width: 90%;
   }
 
+  @media(width >= 1400px) {
+    --mi-partnership-info-width: 80%;
+  }
+
   @media(width >= 1600px) {
     --mi-partnership-info-width: 80%;
   }
@@ -64,6 +68,10 @@
     font-size: var(--mi-partnership-title-font-size);
     font-weight: 600;
     line-height: 1.2;
+
+    span {
+      white-space: nowrap;
+    }
   }
 
   &__description {
