@@ -1,25 +1,62 @@
-.solutions {
-  --mi-solutions-title-font-size: 1.5rem;
-  --mi-solutions-list-flex-direction: column;
+.solution {
+  --mi-advantage-title-font-size: 1.5rem;
+  --mi-advantage-title-margin: 0 0 1rem;
+  --mi-advantage-list-display: grid;
+  --mi-advantage-list-gap: 1rem;
+  --mi-advantage-list-grid-template-columns: initial;
+  --mi-advantage-item-padding: 1.25rem;
+  --mi-advantage-item-bg: var(--mi-color-primary-bg-light, blue);
+  --mi-advantage-item-name-font-size: 1.5rem;
+  --mi-advantage-item-text-font-size: 1rem;
+
+  @media(width >= 720px) {
+    --mi-advantage-list-grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media(width >= 1280px) {
+    --mi-advantage-title-margin: 0 0 1.5rem;
+  }
+
+  @media(width >= 1600px) {
+    --mi-advantage-item-text-font-size: 1.25rem;
+  }
 
   &__title {
-    margin: 0 0 1.5rem;
-    color: var(--mi-color-primary);
-    font-family: var(--mi-heading-font-family);
-    font-size: var(--mi-solutions-title-font-size);
+    margin: var(--mi-advantage-title-margin);
+    color: var(--mi-color-primary, #222);
+    font-size: var(--mi-advantage-title-font-size);
+    font-weight: 600;
+  }
+
+  &__list {
+    display: var(--mi-advantage-list-display);
+    gap: var(--mi-advantage-list-gap);
+    grid-template-columns: var(--mi-advantage-list-grid-template-columns);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: var(--mi-advantage-item-padding);
+    border-radius: var(--mi-card-border-radius);
+    background: var(--mi-advantage-item-bg);
+    gap: 1rem;
+  }
+
+  &__name {
+    color: var(--mi-color-primary-light, #222);
+    font-size: var(--mi-advantage-item-name-font-size);
     font-weight: 600;
     line-height: 1.2;
   }
 
-  &__list {
-    display: flex;
-    flex-flow: var(--mi-solutions-list-flex-direction) wrap;
-    gap: 1.25rem;
+  &__text {
+    color: var(--mi-color-primary-light, #222);
+    font-size: var(--mi-advantage-item-text-font-size);
   }
 
-  &__item {
-    img {
-      max-width: 100%;
-    }
+  &__description {
+    margin: 1.5rem 0 0;
+    font-size: var(--mi-plane-text-font-size);
   }
 }

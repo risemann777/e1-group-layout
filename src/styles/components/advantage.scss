@@ -31,6 +31,7 @@
     --mi-advantage-margin: 7.5rem 0;
     --mi-advantage-scroll-margin-top: 8rem;
     --mi-advantage-title-font-size: 4.5rem;
+    --mi-advatage-logo-width: 340px;
   }
 
   @media(width >= 1600px) {
@@ -52,7 +53,6 @@
 
   &__label {
     color: var(--mi-color-primary);
-    font-family: var(--mi-heading-font-family);
     font-size: var(--mi-advantage-label-font-size);
     font-weight: 600;
   }
@@ -81,33 +81,5 @@
     flex-flow: var(--mi-advatage-controls-flex-direction) wrap;
     margin: 3.5rem 0 0;
     gap: 1rem;
-  }
-
-  &__list {
-    display: var(--mi-advantage-list-display);
-    gap: var(--mi-advantage-list-gap);
-    grid-template-columns: var(--mi-advantage-list-grid-template-columns);
-  }
-
-  &__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: var(--mi-advantage-list-item-padding);
-    border-radius: var(--mi-card-border-radius);
-    background: var(--mi-advantage-list-item-bg);
-    gap: 1rem;
-
-    &-name {
-      color: var(--mi-color-primary-light, #222);
-      font-size: var(--mi-advantage-list-item-name-font-size);
-      font-weight: 600;
-      line-height: 1.2;
-    }
-
-    &-text {
-      color: var(--mi-color-primary-light, #222);
-      font-size: var(--mi-advantage-list-item-text-font-size);
-    }
   }
 }

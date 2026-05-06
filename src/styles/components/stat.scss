@@ -2,8 +2,8 @@
   --mi-stat-grid-template-colums: repeat(2, 1fr);
   --mi-stat-list-gap: 2rem 2.5rem;
   --mi-stat-text-color: rgb(255 255 255 / 40%);
-  --mi-stat-num-font-size: 3.5rem;
-  --mi-stat-text-font-size: 1rem;
+  --mi-stat-label-font-size: 1rem;
+  --mi-stat-value-font-size: 4.5rem;
 
   display: flex;
   flex-direction: column;
@@ -17,21 +17,21 @@
     --mi-stat-grid-template-colums: repeat(2, 1fr);
   }
 
-  @media(width >= 1366px) {
-    --mi-stat-num-font-size: 3.75rem;
-    --mi-stat-text-font-size: 1.25rem;
-    --mi-stat-list-gap: 2rem 3.5rem;
+  @media(width >= 1280px) {
+    --mi-stat-label-font-size: 1.5rem;
+    --mi-stat-value-font-size: 5rem;
+    --mi-stat-list-gap: 2rem 5rem;
   }
 
-  @media(width >= 1920px) {
-    --mi-stat-num-font-size: 5rem;
-    --mi-stat-list-gap: 2rem 4.75rem;
+  @media(width >= 1600px) {
+    --mi-stat-value-font-size: 6.25rem;
+    --mi-stat-list-gap: 2rem 6rem;
   }
 
   &__list {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--mi-stat-list-gap);
-    grid-template-columns: var(--mi-stat-grid-template-colums);
   }
 
   &__item {
@@ -40,28 +40,17 @@
     gap: 0.625rem;
   }
 
-  &__num {
-    font-family: var(--mi-heading-font-family);
-    font-feature-settings: "lnum";
-    font-size: var(--mi-stat-num-font-size);
+  &__label {
+    color: var(--mi-color-gray, #777);
+    font-size: var(--mi-stat-label-font-size);
     font-weight: 400;
     line-height: 1;
   }
 
-  &__text {
-    color: var(--mi-color-gray);
-    font-family: var(--mi-heading-font-family);
-    font-size: var(--mi-stat-text-font-size);
-    line-height: 1.1;
-  }
-
-  &__bottom {
-    .btn {
-      width: 100%;
-
-      @media(width >= 720px) {
-        width: auto;
-      }
-    }
+  &__value {
+    color: var(--mi-color-primary-light, #333);
+    font-size: var(--mi-stat-value-font-size);
+    font-weight: 500;
+    line-height: 1;
   }
 }

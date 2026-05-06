@@ -15,12 +15,9 @@ mixin news(data)
               if image
                 .news-card__media
                   .news-card__image
-                    img(src=image alt=title)
+                    picture: img(src=image alt=title)
                     a(href=link aria-label=`Переход на страницу новости: ${title}`).news-card__clickable
               .news-card__info
-                .news-card__main
-                  .news-card__date=date
-                  .news-card__title=title
-                .news-card__bottom
-                  a(href=link class="news-card__link") Подробнее
+                .news-card__date=date
+                .news-card__title=title
       .load-more: a(href="#").btn.btn--primary Показать ещё

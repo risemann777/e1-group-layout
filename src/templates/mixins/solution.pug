@@ -1,0 +1,16 @@
+mixin solution(data)
+  - title = data?.title || null
+  - description = data?.description || null
+  - list = data?.list || null
+
+  .solution
+    if (title)
+      .solution__title!=title
+    if (list && list.length)
+      .solution__list
+        each item, index in list
+          - name = item?.name || `Advantage ${index+1}`
+          - text = item?.text || `Lorem imsum sit amet`
+          .solution__item
+            .solution__name=name
+            .solution__text!=text

@@ -1,0 +1,26 @@
+.social {
+  --mi-social-size: 2.25rem;
+
+  @media (width >= 1280px) {
+    --mi-social-size: 3rem;
+  }
+
+  &__title {
+    margin: 0 0 0.5rem;
+    color: var(--mi-color-gray);
+  }
+
+  &__list {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    display: block;
+
+    img {
+      width: var(--mi-social-size);
+      height: var(--mi-social-size);
+    }
+  }
+}

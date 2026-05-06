@@ -2,12 +2,23 @@
   --mi-layout-width: var(--mi-container-width);
   --mi-layout-lines-transition: opacity 0.6s ease-in;
   --mi-layout-padding-bottom: 5rem;
+  --mi-headline-container-padding: 0;
+  --mi-headline-margin-bottom: 1rem;
 
   position: relative;
   display: flex;
   width: 100%;
   min-height: var(--mi-viewport-height);
   flex-direction: column;
+
+  @media(width >= 720px) {
+    --mi-headline-margin-bottom: 3rem;
+  }
+
+  @media(width >= 1024px) {
+    --mi-headline-container-padding: 0 2.5rem;
+    --mi-headline-margin-bottom: 4rem;
+  }
 
   &--narrow {
     --mi-layout-width: var(--mi-container-width-narrow);
@@ -29,6 +40,14 @@
   &__breadcrumb {
     width: var(--mi-layout-width);
     margin-bottom: 2.5rem;
+    margin-inline: auto;
+  }
+
+  &__headline {
+    width: var(--mi-layout-width);
+    padding: var(--mi-headline-container-padding);
+    margin-top: var(--mi-layout-headline-margin-top);
+    margin-bottom: var(--mi-headline-margin-bottom);
     margin-inline: auto;
   }
 

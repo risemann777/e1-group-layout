@@ -43,6 +43,11 @@
 
   &__content {
     margin: 0 0 5rem;
+
+    p {
+      color: var(--mi-color-gray);
+      font-size: var(--mi-plane-text-font-size);
+    }
   }
 
   &__text {
@@ -50,8 +55,15 @@
   }
 
   &__container {
-    width: var(--mi-news-detail-container-width);
+    width: var(--mi-container-width-narrow);
     margin-inline: auto;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0 0;
+    gap: 1rem;
   }
 
   .gallery {
