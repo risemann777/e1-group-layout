@@ -98,7 +98,14 @@
     height: var(--mi-news-nav-size);
     align-items: center;
     justify-content: center;
+    color: var(--mi-color-primary);
     cursor: pointer;
+
+    .svg-icon {
+      use {
+        stroke: currentcolor;
+      }
+    }
   }
 
   &__slider {

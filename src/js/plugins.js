@@ -27,6 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  const massMediaSlider = document.querySelector('#massMediaSlider')
+
+  if(massMediaSlider) {
+    new Swiper("#massMediaSlider", {
+      modules: [Navigation],
+      slidesPerView: "auto",
+      spaceBetween: 16,
+      navigation: {
+        nextEl: '.mass-media__nav-next',
+        prevEl: '.mass-media__nav-prev',
+      },
+    })
+  }
+
   const alikeProductSlider = document.querySelectorAll('.alike-product__slider')
 
   if (alikeProductSlider) {

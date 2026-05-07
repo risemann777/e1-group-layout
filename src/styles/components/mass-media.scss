@@ -1,0 +1,112 @@
+.mass-media {
+  --mi-mass-media-padding: 4.5rem 0;
+  --mi-mass-media-container-padding: 0;
+  --mi-mass-media-title-font-size: 1.5rem;
+  --mi-mass-media-head-margin: 0 0 1rem;
+  --mi-mass-media-title-color: #fff;
+  --mi-mass-media-nav-size: 56px;
+
+  padding: var(--mi-mass-media-padding);
+  background-color: var(--mi-color-primary-light);
+
+  @media(width >= 1024px) {
+    --mi-mass-media-container-padding: 0 2.5rem;
+  }
+  
+  @media(width >= 1280px) {
+    --mi-mass-media-padding: 7.5rem 0;
+    --mi-mass-media-title-font-size: 3rem;
+    --mi-mass-media-head-margin: 0 0 1rem;
+  }
+
+  &__head {
+    display: flex;
+    width: var(--mi-container-width);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--mi-mass-media-container-padding);
+    margin: var(--mi-mass-media-head-margin);
+    gap: 2rem;
+    margin-inline: auto;
+  }
+  
+  &__title {
+    color: var(--mi-mass-media-title-color);
+    font-size: var(--mi-mass-media-title-font-size);
+    font-weight: 500;
+  }
+
+  &__controls {
+    display: flex;
+  }
+
+  &__nav {
+    display: flex;
+    width: var(--mi-mass-media-nav-size);
+    height: var(--mi-mass-media-nav-size);
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+
+    .svg-icon {
+      use {
+        stroke: currentcolor;
+      }
+    }
+  }
+
+  &__slider {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+    &.swiper-initialized {
+      aspect-ratio: auto;
+      opacity: 1;
+    }
+  }
+}
+
+.mass-media-card {
+  --mass-media-card-font-size: 1rem;
+  --mass-media-card-logo-width: 50%;
+
+  display: flex;
+  padding: 24px 40px;
+  background: #fff;
+  gap: 3rem;
+
+  @media (width >= 720px) {
+    --mass-media-card-logo-width: 30%;
+  }
+
+  @media (width >= 1280px) {
+    --mass-media-card-font-size: 1.5rem;
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: var(--mass-media-card-logo-width);
+    flex-shrink: 0;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__text {
+    font-size: var(--mass-media-card-font-size);
+  }
+
+  &__link {
+    color: var(--mi-color-primary);
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
