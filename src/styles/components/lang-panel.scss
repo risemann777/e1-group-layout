@@ -1,0 +1,26 @@
+.lang-panel {
+  --mi-lang-panel-font-size: 1rem;
+  --mi-lang-panel-item-size: 2rem;
+
+  display: flex;
+  
+  @media(width >= 1024px) {
+    --mi-lang-panel-item-size: 3rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-lang-panel-item-size: 3rem;
+    --mi-lang-panel-font-size: 1.25rem;
+  }
+
+  &__item {
+    display: flex;
+    width: var(--mi-lang-panel-item-size);
+    height: var(--mi-lang-panel-item-size);
+    align-items: center;
+    justify-content: center;
+    font-size: var(--mi-lang-panel-font-size);
+    font-weight: 500;
+    line-height: 1;
+  }
+}

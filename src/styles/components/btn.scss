@@ -2,7 +2,7 @@
   --mi-btn-height: 3.5rem;
   --mi-btn-padding-x: 2rem;
   --mi-btn-padding-y: 5px;
-  --mi-btn-font-family: var(--mi-heading-font-family);
+  --mi-btn-font-family: var(--mi-body-font-family);
   --mi-btn-font-size: 0.875rem;
   --mi-btn-font-weight: 500;
   --mi-btn-font-line-height: 1.25;
@@ -141,10 +141,10 @@
 
   &--outline-primary {
     --mi-btn-color: #173957;
-    --mi-btn-border-color: #173957;
+    --mi-btn-border-color: #DEEAF5;
     --mi-btn-hover-color: #2D5D87;
     --mi-btn-hover-bg: #fff;
-    --mi-btn-hover-border-color: #0d6efd;
+    --mi-btn-hover-border-color: #2D5D87;
   }
 
   &--secondary {
@@ -274,4 +274,10 @@
     transform: var(--mi-btn-arrow-icon-transform);
     transition: var(--mi-btn-arrow-transition);
   }
+}
+
+.btn-search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }

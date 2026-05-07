@@ -10,7 +10,7 @@
   --mi-header-logo-width: 75px;
   --mi-header-navbar-align-items: center;
   --mi-header-nav-display: none;
-  --mi-header-controls-display: none;
+  --mi-header-controls-display: flex;
   --mi-header-phone-font-size: 1.25rem;
   --mi-header-burger-display: block;
 
@@ -21,8 +21,14 @@
   background: var(--mi-header-background);
   pointer-events: none;
 
-  @media(width >= 360px) {
-    --mi-header-logo-width: 150px;
+  @media(width >= 720px) {
+    --mi-header-logo-width: 90px;
+  }
+
+  @media(width >= 1050px) {
+    --mi-header-logo-width: 120px;
+    --mi-header-nav-display: block;
+    --mi-header-burger-display: none;
   }
 
   @media(width >= 1280px) {
@@ -30,8 +36,6 @@
     --mi-header-container-gap: 4.25rem;
     --mi-header-padding: 1rem 0;
     --mi-header-logo-width: 160px;
-    --mi-header-nav-display: block;
-    --mi-header-burger-display: none;
   }
 
   @media(width >= 1280px) {
@@ -106,6 +110,7 @@
 
   &__nav {
     display: var(--mi-header-nav-display);
+    flex-shrink: 0;
     pointer-events: auto;
   }
 
@@ -128,14 +133,46 @@
     display: var(--mi-header-controls-display);
     flex-shrink: 0;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
     pointer-events: auto;
   }
 
-  &__button {
+  &__search-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+
+    @media(width >= 1024px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__feedback-btn {
+    display: none;
+    width: 56px;
     height: 56px;
     min-height: 56px;
     flex-shrink: 0;
+    padding: 6px;
+
+    @media(width >= 1050px) {
+      display: inline-flex;
+    }
+
+    @media(width >= 1560px) {
+      width: auto;
+      padding: 5px 32px;
+    }
+
+    span {
+      display: none;
+
+      @media(width >= 1560px) {
+        display: block;
+      }
+    }
   }
 
   &__phone {
