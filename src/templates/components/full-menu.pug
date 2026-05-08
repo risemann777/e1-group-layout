@@ -1,7 +1,7 @@
 include ../mixins/mobile-nav
 
 .full-menu.full-menu--fall
-  .full-menu__bg
+  .full-menu__bg(data-toggle="menu")
   .full-menu__panel
     .full-menu__wrapper
       .full-menu__container
@@ -10,15 +10,20 @@ include ../mixins/mobile-nav
             .mobile-menu__body
               +mobile-nav({
                 list: [
-                  {name: 'Продукция и услуги', href: '#products'},
+                  {
+                    name: 'Продукция и услуги',
+                    href: '#products',
+                    sublist: [
+                      {name: 'Решения для строительства', href: '#sub1'},
+                      {name: 'Решения по управлению парком инструментов', href: '#sub2'},
+                      {name: 'Производство и разработка продукта', href: '#sub3'},
+                      {name: 'Гарантийное обслуживание', href: '#sub4'},
+                    ]
+                  },
                   {name: 'Партнеры', href: '#partnership'},
                   {
                     name: 'О компании',
-                    href: '#advantage',
-                    sublist: [
-                      {name: 'Подпункт 1', href: '#sub1'},
-                      {name: 'Подпункт 2', href: '#sub2'},
-                    ]
+                    href: '#advantage'
                   },
                   {name: 'Карьера', href: '#career'},
                   {name: 'Медиа', href: '#news'},
@@ -29,4 +34,10 @@ include ../mixins/mobile-nav
               // .mobile-menu__phone
                 a(href="tel:+7 (499) 111-22-33"): span +7 (499) 111-22-33
               button(class="btn btn--primary full-menu__button" data-toggle='modal' data-target="#contactModal") Свяжитесь с нами
-        .full-menu__desktop Тут десктопное меню
+        .full-menu__desktop
+          .product-menu
+            ul.product-menu__list
+              li.product-menu__item: a(href="#").product-menu__link Решения для строительства
+              li.product-menu__item: a(href="#").product-menu__link Решения по управлению парком инструментов
+              li.product-menu__item: a(href="#").product-menu__link Производство и разработка продукта
+              li.product-menu__item: a(href="#").product-menu__link Гарантийное обслуживание

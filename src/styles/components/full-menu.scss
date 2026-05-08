@@ -5,9 +5,11 @@
   --mi-full-menu-transition: none;
   --mi-full-menu-bg-opacity: 0;
   --mi-full-menu-panel-padding-top: 5rem;
-  --mi-full-menu-container-margin-y: 2.5rem;
+  --mi-full-menu-container-margin-top: 2.5rem;
+  --mi-full-menu-container-margin-bottom: 2.5rem;
   --mi-full-menu-mobile-display: block;
   --mi-full-menu-desktop-display: none;
+  --mi-full-menu-desktop-left-margin: 8rem;
 
   position: fixed;
   z-index: var(--mi-full-menu-z-index);
@@ -18,10 +20,19 @@
   inset: 0;
   outline: 0;
 
-  @media (width >= 1280px) {
-    --mi-full-menu-panel-padding-top: 10rem;
+  @media (width >= 1080px) {
     --mi-full-menu-mobile-display: none;
     --mi-full-menu-desktop-display: block;
+    --mi-full-menu-panel-padding-top: 5.5rem;
+    --mi-full-menu-desktop-left-margin: 10.2rem;
+  }
+
+  @media (width >= 1280px) {
+    --mi-full-menu-desktop-left-margin: 15.3rem;
+  }
+
+  @media (width >= 1320px) {
+    --mi-full-menu-panel-padding-top: 6.5rem;
   }
 
   &--fall {
@@ -38,6 +49,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     background: rgba(0 0 0 / 40%);
     inset: 0;
     opacity: var(--mi-full-menu-bg-opacity);
@@ -51,7 +64,6 @@
     width: 100vw;
     padding-top: var(--mi-full-menu-panel-padding-top);
     background: var(--mi-full-menu-bg);
-    pointer-events: none;
     transform: var(--mi-full-menu-transform);
     transition: var(--mi-full-menu-transition);
   }
@@ -63,18 +75,18 @@
 
   &__container {
     width: var(--mi-container-width);
-    max-height: calc(100vh - var(--mi-full-menu-panel-padding-top) - var(--mi-full-menu-container-margin-y) * 2);
-    margin-top: var(--mi-full-menu-container-margin-y);
-    margin-bottom: var(--mi-full-menu-container-margin-y);
+    max-height: calc(100vh - var(--mi-full-menu-panel-padding-top));
     margin-inline: auto;
     overflow-y: auto;
   }
 
   &__mobile {
     display: var(--mi-full-menu-mobile-display);
+    margin: 2.5rem 0;
   }
 
   &__desktop {
     display: var(--mi-full-menu-desktop-display);
+    margin: 1rem 0 3rem var(--mi-full-menu-desktop-left-margin);
   }
 }

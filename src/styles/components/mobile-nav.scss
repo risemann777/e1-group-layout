@@ -31,8 +31,9 @@
     display: flex;
     overflow: hidden;
     padding: 0.4rem 0;
-    font-family: var(--mi-heading-font-family);
+    color: var(--mi-color-primary-light, blue);
     font-size: 1.5rem;
+    font-weight: 600;
     gap: 0.5rem;
     line-height: 1.2;
     text-decoration: none;
@@ -69,13 +70,13 @@
       list-style: none;
 
       li {
-        font-family: var(--mi-heading-font-family);
-        font-size: 1rem;
+        font-size: 1.25rem;
+        line-height: 1.2;
 
         a {
           display: block;
           padding: 0.5rem 0;
-          color: var(--mi-foreground);
+          color: var(--mi-color-primary-light, blue);
 
           &:hover {
             text-decoration: none;

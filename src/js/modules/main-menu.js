@@ -14,13 +14,15 @@ export default function mainMenu() {
     mobileNavLink: 'mobile-nav__link',
   }
   const fullMenu = body.querySelector(`.${classNames.fullMenu}`)
-  const burger = body.querySelector(`.${classNames.burger}`)
+  const togglers = body.querySelectorAll(`[data-toggle="menu"]`)
 
   if (!fullMenu) return console.warn(`Element with class "${classNames.fullMenu}" does not exist`)
-  if (!burger) return console.warn(`Element with class "${classNames.burger}" does not exist`)
+  if (!togglers) return console.warn(`Element with class "${classNames.burger}" does not exist`)
 
-  burger.addEventListener('click', () => {
-    toggle()
+  togglers.forEach((toggler) => {
+    toggler.addEventListener('click', () => {
+      toggle()
+    })
   })
 
   const switchBodyOverflow = (fixed) => {

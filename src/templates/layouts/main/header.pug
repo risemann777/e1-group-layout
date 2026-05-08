@@ -5,6 +5,7 @@ header.layout__header.header(class=`${headerClass}`)
         img(src="images/logo_writing_black.svg")
       nav.nav.header__nav
         ul.nav__list
+          li.nav__item: .nav__btn(data-toggle="menu"): svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-menu-dots")
           li.nav__item: a(href="#products" data-smooth-scroll="true").nav__link Продукция и услуги
           li.nav__item: a(href="#partnership" data-smooth-scroll="true").nav__link Партнеры
           li.nav__item: a(href="#advantage" data-smooth-scroll="true").nav__link О компании
@@ -19,4 +20,4 @@ header.layout__header.header(class=`${headerClass}`)
       button(type="button" class="btn btn--primary header__feedback-btn" data-toggle="modal" data-target="#contactModal")
         svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-edit")
         span Свяжитесь с нами
-      .burger.header__burger(data-toggle="menu" data-target="mobile-menu"): span
+      .burger.header__burger(data-toggle="menu"): span

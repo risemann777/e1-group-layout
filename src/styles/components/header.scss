@@ -2,7 +2,7 @@
   --mi-header-position: static;
   --mi-header-z-index: 200;
   --mi-header-width: initial;
-  --mi-header-padding: 1.25rem 0;
+  --mi-header-padding: 1rem 0;
   --mi-header-background: #fff;
   --mi-header-container-width: var(--mi-container-width);
   --mi-header-container-gap: 2rem;
@@ -19,13 +19,12 @@
   width: 100%;
   padding: var(--mi-header-padding);
   background: var(--mi-header-background);
-  pointer-events: none;
 
   @media(width >= 720px) {
     --mi-header-logo-width: 90px;
   }
 
-  @media(width >= 1050px) {
+  @media(width >= 1080px) {
     --mi-header-logo-width: 120px;
     --mi-header-nav-display: block;
     --mi-header-burger-display: none;
@@ -39,7 +38,7 @@
   }
 
   @media(width >= 1280px) {
-    --mi-header-padding: 1.25rem 0;
+    --mi-header-padding: 1rem 0;
   }
 
   @media(width >= 1366px) {
@@ -157,7 +156,7 @@
     flex-shrink: 0;
     padding: 6px;
 
-    @media(width >= 1050px) {
+    @media(width >= 1080px) {
       display: inline-flex;
     }
 
