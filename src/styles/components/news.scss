@@ -101,6 +101,11 @@
     color: var(--mi-color-primary);
     cursor: pointer;
 
+    &.swiper-button-disabled {
+      cursor: default;
+      opacity: 0.4;
+    }
+
     .svg-icon {
       use {
         stroke: currentcolor;
