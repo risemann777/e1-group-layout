@@ -1,0 +1,60 @@
+.about-banner {
+  --mi-about-banner-padding-y: 5rem;
+  --mi-about-banner-title-font-size: 1.5rem;
+  --mi-about-banner-content-height: initial;
+
+  position: relative;
+
+  @media (width >= 720px) {
+    --mi-about-banner-title-font-size: 2rem;
+    --mi-about-banner-content-height: 360px;
+  }
+
+  @media (width >= 1024px) {
+    --mi-about-banner-title-font-size: 3rem;
+    --mi-about-banner-content-height: 560px;
+  }
+
+  @media (width >= 1280px) {
+    --mi-about-banner-content-height: 760px;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 10%);
+    inset: 0;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    max-width: 1200px;
+    min-height: var(--mi-about-banner-content-height);
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--mi-about-banner-padding-y) 0;
+    gap: 2rem;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: var(--mi-about-banner-title-font-size);
+    font-weight: 600;
+    line-height: 1.14;
+  }
+}

@@ -5,10 +5,6 @@
     --mi-breadcrumb-font-size: 1rem;
   }
 
-  @media(width >= 1280px) {
-    padding: 0 2.5rem;
-  }
-
   &__list {
     display: flex;
     flex-wrap: wrap;

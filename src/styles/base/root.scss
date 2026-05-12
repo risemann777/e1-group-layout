@@ -11,9 +11,11 @@
   --mi-base-color: #222;
   --mi-foreground: var(--mi-base-color);
   --mi-background: var(--mi-color-white);
-  --mi-container-size: 1860px;
+  --mi-container-size-wide: 1860px;
+  --mi-container-size: 1776px;
   --mi-container-size-narrow: 1324px;
   --mi-container-width: min(var(--mi-container-size), 100% - var(--mi-container-padding));
+  --mi-container-width-wide: min(var(--mi-container-size-wide), 100% - var(--mi-container-padding));
   --mi-container-width-narrow: min(var(--mi-container-size-narrow), 100% - var(--mi-container-padding));
   --mi-container-padding: 2rem;
   --mi-corporate-red: var(--mi-color-carmine);

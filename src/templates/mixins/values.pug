@@ -1,0 +1,14 @@
+mixin values (data)
+  - list = data?.list || null
+
+  .values
+    if (list)
+      .values__list
+        each item in list
+          - title = item?.title || 'Item title'
+          - text = item?.text || `Lorem ipsum sit amet`
+          .values__item
+            .values__num
+            .values__info
+              .values__title=title
+              .values__text=text

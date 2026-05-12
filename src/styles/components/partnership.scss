@@ -1,7 +1,6 @@
 .partnership {
   --mi-partnership-margin: 4.5rem 0;
   --mi-partnership-scroll-margin-top: 7rem;
-  --mi-partnership-container-padding: 0;
   --mi-partnership-content-padding: 2rem;
   --mi-partnership-title-font-size: 1.25rem;
   --mi-partnership-description-font-size: 1rem;
@@ -28,8 +27,7 @@
   }
 
   &__container {
-    width: var(--mi-container-width);
-    padding: var(--mi-partnership-container-padding);
+    width: var(--mi-container-width-wide);
     margin-inline: auto;
   }
 

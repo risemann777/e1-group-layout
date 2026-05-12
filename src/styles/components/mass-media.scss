@@ -1,6 +1,5 @@
 .mass-media {
   --mi-mass-media-padding: 4.5rem 0;
-  --mi-mass-media-container-padding: 0;
   --mi-mass-media-title-font-size: 1.5rem;
   --mi-mass-media-head-margin: 0 0 1rem;
   --mi-mass-media-title-color: #fff;
@@ -21,10 +20,6 @@
     --mi-mass-media-slider-padding: 0;
     --mi-mass-media-slide-width: 80%;
     --mi-mass-media-slider-cover-width: 10%;
-  }
-
-  @media(width >= 1024px) {
-    --mi-mass-media-container-padding: 0 2.5rem;
   }
   
   @media(width >= 1280px) {
@@ -50,7 +45,6 @@
     width: var(--mi-container-width);
     align-items: center;
     justify-content: space-between;
-    padding: var(--mi-mass-media-container-padding);
     margin: var(--mi-mass-media-head-margin);
     gap: 2rem;
     margin-inline: auto;
@@ -140,6 +134,7 @@
   border-radius: var(--mi-card-border-radius);
   background: #fff;
   gap: 1rem 3rem;
+  user-select: none;
 
   @media (width >= 720px) {
     --mass-media-card-logo-width: 30%;

@@ -1,0 +1,73 @@
+.page-about {
+  --mi-page-about-section-margin-y: 64px;
+  --mi-page-about-section-heading-margin: 24px;
+  --mi-page-about-section-title-font-size: 24px;
+  --mi-page-about-section-description-font-size: 1rem;
+
+  @media (width >= 1024px) {
+    --mi-page-about-section-heading-margin: 48px;
+    --mi-page-about-section-margin-y: 120px;
+    --mi-page-about-section-title-font-size: 32px;
+    --mi-page-about-section-description-font-size: 1.25rem;
+  }
+
+  @media (width >= 1280px) {
+    --mi-page-about-section-margin-y: 160px;
+    --mi-page-about-section-heading-margin: 64px;
+    --mi-page-about-section-title-font-size: 48px;
+    --mi-page-about-section-description-font-size: 1.5rem;
+  }
+
+  &__container {
+    width: var(--mi-container-width);
+    margin-inline: auto;
+  }
+
+  &__text {
+    max-width: 1140px;
+    font-size: 1rem;
+
+    @media (width >= 1024px) {
+      font-size: 1.5rem;
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__stat {
+    margin-top: 4rem;
+  }
+
+  &__top {
+    margin-bottom: var(--mi-page-about-section-margin-y);
+  }
+
+  &__section {
+    margin: var(--mi-page-about-section-margin-y) 0;
+
+    &-heading {
+      max-width: 1170px;
+      margin-bottom: var(--mi-page-about-section-heading-margin);
+      margin-inline: auto;
+    }
+
+    &-title {
+      margin: 0 0 0.5rem;
+      color: var(--mi-color-black);
+      font-size: var(--mi-page-about-section-title-font-size);
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    &-description {
+      color: var(--mi-color-gray);
+      font-size: var(--mi-page-about-section-description-font-size);
+      text-align: center;
+    }
+  }
+}

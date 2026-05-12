@@ -88,15 +88,11 @@
 
   &__container {
     display: flex;
-    width: var(--mi-header-container-width);
+    width: var(--mi-container-width);
     align-items: var(--mi-header-container-align-items);
     justify-content: space-between;
     gap: 0 var(--mi-header-container-gap);
     margin-inline: auto;
-
-    @media(width >= 1280px) {
-      padding: 0 2.5rem;
-    }
   }
 
   &__navbar {
