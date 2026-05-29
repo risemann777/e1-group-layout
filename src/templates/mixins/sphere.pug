@@ -1,0 +1,17 @@
+mixin sphere (data)
+  - list = data?.list || null
+
+  .sphere
+    if (list && list.length)
+      .sphere__list
+        each item in list
+          - type = item?.type || null
+          - title = item?.icon || null
+          - title = item?.title || `Item title`
+          - text = item?.text || `Lorem ipsum sit amet`
+          .sphere-card.sphere__item
+            .sphere-card__icon
+            if (title)
+              .sphere-card__title=title
+            if (text)
+              .sphere-card__text!=text

@@ -1,6 +1,6 @@
 .header {
-  --mi-header-position: static;
-  --mi-header-z-index: 200;
+  --mi-header-position: relative;
+  --mi-header-z-index: 600;
   --mi-header-width: initial;
   --mi-header-padding: 1rem 0;
   --mi-header-background: #fff;
@@ -13,6 +13,8 @@
   --mi-header-controls-display: flex;
   --mi-header-phone-font-size: 1.25rem;
   --mi-header-burger-display: block;
+  --mi-header-products-font-size: 1rem;
+  --mi-header-products-display: none;
 
   position: var(--mi-header-position);
   z-index: var(--mi-header-z-index);
@@ -28,6 +30,7 @@
     --mi-header-logo-width: 120px;
     --mi-header-nav-display: block;
     --mi-header-burger-display: none;
+    --mi-header-products-display: flex;
   }
 
   @media(width >= 1280px) {
@@ -35,6 +38,7 @@
     --mi-header-container-gap: 4.25rem;
     --mi-header-padding: 1rem 0;
     --mi-header-logo-width: 160px;
+    --mi-header-products-font-size: 1.125rem;
   }
 
   @media(width >= 1280px) {
@@ -42,11 +46,11 @@
   }
 
   @media(width >= 1366px) {
-    --mi-header-container-gap: 4.625rem;
+    --mi-header-container-gap: 2rem;
   }
 
   @media(width >= 1600px) {
-    --mi-header-container-gap: 13.375rem;
+    --mi-header-container-gap: 2rem;
     --mi-header-phone-font-size: 1.5rem;
   }
 
@@ -59,7 +63,7 @@
   }
 
   &--fixed, &--sticky {
-    --mi-header-z-index: 500;
+    --mi-header-z-index: 600;
 
     top: 0;
   }
@@ -95,12 +99,59 @@
     margin-inline: auto;
   }
 
-  &__navbar {
+  &__left {
     display: flex;
-    width: 100%;
-    flex: 1 1 auto;
     align-items: var(--mi-header-navbar-align-items);
     gap: 2.5rem;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__products {
+    position: relative;
+    display: var(--mi-header-products-display);
+    align-items: center;
+    padding: 0.1rem 0;
+    color: var(--mi-color-black);
+    cursor: pointer;
+    font-size: var(--mi-header-products-font-size);
+    font-weight: 400;
+    gap: 0.5rem;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: currentcolor;
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    &:hover {
+      color: var(--mi-foreground);
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 
   &__nav {

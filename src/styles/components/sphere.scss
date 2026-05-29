@@ -1,0 +1,20 @@
+.sphere {
+  --mi-spere-grid-template-columns: initial;
+
+  @media(width >= 1280px) {
+    --mi-spere-grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: var(--mi-spere-grid-template-columns);
+  }
+}
+
+.sphere-card {
+  min-height: 100px;
+  padding: 1rem;
+  border-radius: var(--mi-card-border-radius);
+  background: var(--mi-color-primary-bg-light);
+}

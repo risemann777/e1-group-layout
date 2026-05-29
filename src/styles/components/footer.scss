@@ -6,6 +6,8 @@
   --mi-footer-bottom-font-size: 0.875rem;
   --mi-footer-connect-info-width: initial;
   --mi-footer-connect-grid-template-columns: initial;
+  --mi-footer-bg-desktop-display: none;
+  --mi-footer-bg-mobile-display: block;
 
   position: relative;
   margin: var(--mi-footer-margin);
@@ -20,6 +22,8 @@
     --mi-footer-connect-padding: 4.5rem 0 2.25rem;
     --mi-footer-connect-flex-direction: row;
     --mi-footer-connect-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-footer-bg-desktop-display: block;
+    --mi-footer-bg-mobile-display: none;
   }
   
   @media(width >= 1280px) {
@@ -33,13 +37,20 @@
     height: 100%;
     inset: 0;
 
+    &--desktop {
+      display: var(--mi-footer-bg-desktop-display);
+    }
+
+    &--mobile {
+      display: var(--mi-footer-bg-mobile-display);
+    }
+
     img {
       position: absolute;
       width: 100%;
       height: 100%;
       inset: 0;
       object-fit: cover;
-      object-position: left;
     }
   }
 

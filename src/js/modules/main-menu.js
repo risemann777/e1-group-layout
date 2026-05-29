@@ -1,3 +1,5 @@
+import mobileDetect from "../lib/mobile-detect.js"
+
 export default function mainMenu() {
   const body = document.body
   const classNames = {
@@ -25,6 +27,37 @@ export default function mainMenu() {
     })
   })
 
+  const headerProducts = body.querySelector(`.header__products`)
+  const fullMenuPanel = body.querySelector(`.full-menu__panel`)
+  const headerNav = body.querySelector(`.header__nav`)
+  const logo = body.querySelector(`.header__logo`)
+
+  if (headerProducts) {
+    headerProducts.addEventListener('mouseenter', () => {
+      open()
+    })
+  }
+
+  if (fullMenuPanel && !mobileDetect()) {
+    fullMenu.addEventListener('mousemove', () => {
+      if (!fullMenuPanel.matches(':hover')) {
+        close()
+      }
+    })
+  }
+
+  if (headerNav && !mobileDetect()) {
+    headerNav.addEventListener('mouseenter', () => {
+      close()
+    })
+  }
+
+  if (logo && !mobileDetect()) {
+    logo.addEventListener('mouseenter', () => {
+      close()
+    })
+  }
+
   const switchBodyOverflow = (fixed) => {
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
 
@@ -48,18 +81,20 @@ export default function mainMenu() {
   const close = () => {
     fullMenu.classList.remove(classNames.menuShow)
 
-    setTimeout(() => {
+    const timeOut = setTimeout(() => {
       fullMenu.style.display = 'none'
       switchBodyOverflow(false)
-    }, 300)
+      clearTimeout(timeOut)
+    }, 100)
   }
 
   const open = () => {
     fullMenu.style.display = 'block'
     switchBodyOverflow(true)
 
-    setTimeout(() => {
+    const timeOut = setTimeout(() => {
       fullMenu.classList.add(classNames.menuShow)
+      clearTimeout(timeOut)
     }, 150)
   }
 

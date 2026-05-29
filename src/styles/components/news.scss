@@ -42,6 +42,10 @@
       --mi-news-margin: 7.5rem 0;
       --mi-scroll-margin-top: 8rem;
     }
+
+    @media(width >= 1600px) {
+      --mi-news-margin: 10rem 0;
+    }
   }
 
   &--slider {

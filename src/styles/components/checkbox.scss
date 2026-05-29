@@ -1,9 +1,9 @@
 .checkbox {
-  --mi-checkbox-size: 1rem;
+  --mi-checkbox-size: 1.25rem;
   --mi-checkbox-icon-size: 6px;
-  --mi-checkbox-checked-color: var(--mi-corporate-orange);
+  --mi-checkbox-checked-color: #fff;
   --mi-checkbox-border-radius: 0;
-  --mi-checkbox-border-color: var(--mi-corporate-orange);
+  --mi-checkbox-border-color: #fff;
   --mi-checkbox-font-size: var(--mi-plane-text-font-size);
   --mi-checkbox-text-color: var(--mi-color-gray);
 
@@ -63,10 +63,11 @@
 
         &::after {
           display: inline-block;
-          color: #fff;
+          color: var(--mi-color-primary);
           content: "✓";
-          font-size: 10px;
-          line-height: 1.2;
+          font-size: 12px;
+          font-weight: 900;
+          line-height: 1.5;
         }
       }
     }

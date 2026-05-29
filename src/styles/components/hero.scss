@@ -2,6 +2,7 @@
   --mi-hero-container-padding: 5.5rem 0 3rem;
   --mi-hero-container-justify-content: initial;
   --mi-hero-container-min-height: 520px;
+  --mi-hero-content-padding: 3rem 1rem;
   --mi-hero-title-font-size: 3rem;
   --mi-hero-title-line-height: 1;
   --mi-hero-subtitle-font-size: 1.875rem;
@@ -11,6 +12,7 @@
   --mi-hero-button-width: min(1760px, 100% - 2.5rem);
   --mi-hero-button-margin: 1rem 0 0;
   --mi-hero-logo-size: 136px;
+  --mi-hero-btn-width: 100%;
 
   position: relative;
   overflow: hidden;
@@ -26,6 +28,7 @@
   @media(width >= 576px) {
     --mi-hero-image-padding: 135%;
     --mi-hero-container-padding: 7.5rem 0 3rem;
+    --mi-hero-btn-width: auto;
   }
 
   @media(width >= 720px) {
@@ -45,15 +48,16 @@
     --mi-hero-container-justify-content: flex-end;
     --mi-hero-container-padding: 0 0 9rem;
     --mi-hero-logo-size: 205px;
+    --mi-hero-container-min-height: calc(var(--mi-viewport-height) - 15vh);
   }
 
   @media(width >= 1280px) {
-    --mi-hero-container-min-height: calc(var(--mi-viewport-height) - 12vh);
     --mi-hero-title-font-size: 4.5rem;
     --mi-hero-subtitle-font-size: 3rem;
     --mi-hero-description-font-size: 1.5rem;
     --mi-hero-image-padding: 51%;
     --mi-hero-logo-size: 256px;
+    --mi-hero-content-padding: 3rem;
   }
 
   @media(width >= 1600px) {
@@ -137,7 +141,7 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    padding: 3rem 0;
+    padding: var(--mi-hero-content-padding);
     gap: 2rem;
     
     @media(width >= 720px) {
@@ -177,5 +181,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+
+    .btn {
+      width: var(--mi-hero-btn-width);
+    }
   }
 }

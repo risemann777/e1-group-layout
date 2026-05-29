@@ -36,6 +36,7 @@
 
   @media(width >= 1600px) {
     --mi-advantage-list-item-text-font-size: 1.25rem;
+    --mi-advantage-margin: 10rem 0;
   }
 
   &__container {
@@ -71,6 +72,7 @@
   }
 
   &__description {
+    max-width: 700px;
     margin: 1.5rem 0 0;
     font-size: var(--mi-plane-text-font-size);
   }

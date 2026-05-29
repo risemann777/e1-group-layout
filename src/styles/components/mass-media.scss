@@ -125,12 +125,13 @@
   --mass-media-card-font-size: 1rem;
   --mass-media-card-logo-width: 50%;
   --mass-media-card-flex-direction: column;
+  --mass-media-card-padding: 40px 25px;
 
   position: relative;
   display: flex;
   overflow: hidden;
   flex-direction: var(--mass-media-card-flex-direction);
-  padding: 24px 40px;
+  padding: var(--mass-media-card-padding);
   border-radius: var(--mi-card-border-radius);
   background: #fff;
   gap: 1rem 3rem;
@@ -139,6 +140,7 @@
   @media (width >= 720px) {
     --mass-media-card-logo-width: 30%;
     --mass-media-card-flex-direction: row;
+    --mass-media-card-padding: 40px;
   }
 
   @media (width >= 1280px) {

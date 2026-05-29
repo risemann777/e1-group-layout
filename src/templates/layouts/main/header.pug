@@ -1,23 +1,25 @@
 header.layout__header.header(class=`${headerClass}`)
   .header__container
-    .header__navbar
-      a.logo.header__logo(href="/" aria-label="Переход на главную страницу")
-        img(src="images/logo_writing_black.svg")
-      nav.nav.header__nav
-        ul.nav__list
-          li.nav__item: .nav__btn(data-toggle="menu"): svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-menu-dots")
-          li.nav__item: a(href="#products" data-smooth-scroll="true").nav__link Продукция и услуги
-          li.nav__item: a(href="#partnership" data-smooth-scroll="true").nav__link Партнеры
-          li.nav__item: a(href="about.html").nav__link О компании
-          li.nav__item: a(href="#career" data-smooth-scroll="true").nav__link Карьера
-          li.nav__item: a(href="#news" data-smooth-scroll="true").nav__link Медиа
-          li.nav__item: a(href="#contacts").nav__link Контакты
-    .header__controls
-      .header__search
-        button(type="button" data-toggle="search").btn-search.header__search-btn: svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-search")
-      .lang-panel
-        a(href="#").lang-panel__item EN
-      button(type="button" class="btn btn--primary header__feedback-btn" data-toggle="modal" data-target="#contactModal")
-        svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-edit")
-        span Свяжитесь с нами
-      .burger.header__burger(data-toggle="menu"): span
+    .header__left
+      a.logo.header__logo(href="/" aria-label="Переход на главную страницу"): img(src="images/logo_writing_black.svg")
+      .header__links
+        a(href="products.html").header__products
+          svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-menu-dots")
+          span Продукция и услуги
+        nav.nav.header__nav
+          ul.nav__list
+            li.nav__item: a(href="/#partnership" data-smooth-scroll="true").nav__link Партнеры
+            li.nav__item: a(href="about.html").nav__link О компании
+            li.nav__item: a(href="#career" data-smooth-scroll="true").nav__link Карьера
+            li.nav__item: a(href="#news" data-smooth-scroll="true").nav__link Медиа
+            li.nav__item: a(href="#contacts").nav__link Контакты
+    .header__right
+      .header__controls
+        .header__search
+          button(type="button" data-toggle="search").btn-search.header__search-btn: svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-search")
+        .lang-panel
+          a(href="#").lang-panel__item EN
+        button(type="button" class="btn btn--primary header__feedback-btn" data-toggle="modal" data-target="#contactModal")
+          svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-edit")
+          span Свяжитесь с нами
+        .burger.header__burger(data-toggle="menu"): span

@@ -1,6 +1,7 @@
 extends layouts/main/layout
 include mixins/stat
 include mixins/values
+include mixins/sphere
 
 block vars
   - layoutMofifiers = 'layout--inner'
@@ -49,6 +50,15 @@ block content
         .page-about__section-heading
           .page-about__section-title Наша работа построена на профессионализме и представляет работу во множестве сфер
         .page-about__section-content
+          +sphere({
+            list: [
+              {},
+              {},
+              {},
+              {},
+              {},
+            ],
+          })
 
     .page-about__section
       .page-about__container
