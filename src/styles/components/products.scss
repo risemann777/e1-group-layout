@@ -45,9 +45,10 @@
   &__description {
     max-width: 700px;
     font-size: var(--mi-products-description-font-size);
+    line-height: 1.2;
   }
 
   &__stat {
-    margin: 2rem 0 0;
+    margin: 3rem 0 0;
   }
 }

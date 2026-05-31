@@ -4,6 +4,7 @@
   --mi-stat-text-color: rgb(255 255 255 / 40%);
   --mi-stat-label-font-size: 1rem;
   --mi-stat-value-font-size: 4.5rem;
+  --mi-stat-value-term-font-size: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -20,11 +21,13 @@
   @media(width >= 1280px) {
     --mi-stat-label-font-size: 1.5rem;
     --mi-stat-value-font-size: 5rem;
+    --mi-stat-value-term-font-size: 3rem;
     --mi-stat-list-gap: 2rem 5rem;
   }
 
   @media(width >= 1600px) {
     --mi-stat-value-font-size: 6.25rem;
+    --mi-stat-value-term-font-size: 3rem;
     --mi-stat-list-gap: 2rem 6rem;
   }
 
@@ -47,10 +50,19 @@
     line-height: 1;
   }
 
-  &__value {
+  &__info {
     color: var(--mi-color-primary-light, #333);
     font-size: var(--mi-stat-value-font-size);
     font-weight: 500;
     line-height: 1;
+  }
+
+  &__value, &__term {
+    display: inline-flex;
+  }
+
+  &__term {
+    margin-left: 0.5rem;
+    font-size: var(--mi-stat-value-term-font-size);
   }
 }

@@ -12,8 +12,10 @@ mixin stat(data)
         each item, index in items
           - label = item?.label || 'Label text'
           - value = item?.value || '9999+'
+          - term = item?.term || null
           .stat__item
-            .stat__label
-              span=label
-            .stat__value
-              span=value
+            .stat__label!=label
+            .stat__info
+              .stat__value!=value
+              if term
+                .stat__term=term
