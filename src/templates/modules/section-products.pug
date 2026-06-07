@@ -1,26 +1,10 @@
 include ../mixins/accordion
-include ../mixins/stat
 
 section.products(id="products")
   .products__container
     .products__col
       .products__title Продукция и услуги
       .products__description Команда профессионалов с опытом работы на рынке Электроинструментов более 15 лет. Мы оказываем полный спектр услуг по обслуживанию и предоставлению электроинструмента.
-      .products__stat
-        +stat({
-          items: [
-            {
-              label: 'Экспертиза команды<br>на рынке электроинструмента',
-              value: '>30',
-              term: 'лет'
-            },
-            {
-              label: 'Ед. продукции<br>выпускаем в год',
-              value: '>2',
-              term: 'млн.'
-            },
-          ]
-        })
     .products__col
       +accordion({
         sections: [

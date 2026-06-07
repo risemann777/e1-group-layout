@@ -17,6 +17,7 @@ export default function mainMenu() {
   }
   const fullMenu = body.querySelector(`.${classNames.fullMenu}`)
   const togglers = body.querySelectorAll(`[data-toggle="menu"]`)
+  const productMenuToggler = body.querySelector(`[data-toggle="productsMenu"]`)
 
   if (!fullMenu) return console.warn(`Element with class "${classNames.fullMenu}" does not exist`)
   if (!togglers) return console.warn(`Element with class "${classNames.burger}" does not exist`)
@@ -27,34 +28,9 @@ export default function mainMenu() {
     })
   })
 
-  const headerProducts = body.querySelector(`.header__products`)
-  const fullMenuPanel = body.querySelector(`.full-menu__panel`)
-  const headerNav = body.querySelector(`.header__nav`)
-  const logo = body.querySelector(`.header__logo`)
-
-  if (headerProducts) {
-    headerProducts.addEventListener('mouseenter', () => {
-      open()
-    })
-  }
-
-  if (fullMenuPanel && !mobileDetect()) {
-    fullMenu.addEventListener('mousemove', () => {
-      if (!fullMenuPanel.matches(':hover')) {
-        close()
-      }
-    })
-  }
-
-  if (headerNav && !mobileDetect()) {
-    headerNav.addEventListener('mouseenter', () => {
-      close()
-    })
-  }
-
-  if (logo && !mobileDetect()) {
-    logo.addEventListener('mouseenter', () => {
-      close()
+  if (productMenuToggler) {
+    productMenuToggler.addEventListener('click', () => {
+      toggle()
     })
   }
 

@@ -1,0 +1,20 @@
+.statistic {
+  --mi-products-margin: 4.5rem 0;
+
+  margin: var(--mi-products-margin);
+  scroll-margin-top: var(--mi-products-scroll-margin-top);
+
+  @media(width >= 1280px) {
+    --mi-products-margin: 7.5rem 0;
+    --mi-products-scroll-margin-top: 8rem;
+  }
+
+  @media(width >= 1600px) {
+    --mi-products-margin: 10rem 0;
+  }
+
+  &__container {
+    width: min(var(--mi-container-width), 100% - var(--mi-container-padding));
+    margin-inline: auto;
+  }
+}

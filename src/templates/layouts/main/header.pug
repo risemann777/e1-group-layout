@@ -3,9 +3,9 @@ header.layout__header.header(class=`${headerClass}`)
     .header__left
       a.logo.header__logo(href="/" aria-label="Переход на главную страницу"): img(src="images/logo_writing_black.svg")
       .header__links
-        a(href="products.html").header__products
-          svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-menu-dots")
-          span Продукция и услуги
+        .header__products
+          span(data-toggle="productsMenu"): svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(xlink:href="#svg-icon-menu-dots")
+          a(href="products.html") Продукция и услуги
         nav.nav.header__nav
           ul.nav__list
             li.nav__item: a(href="/#partnership" data-smooth-scroll="true").nav__link Партнеры

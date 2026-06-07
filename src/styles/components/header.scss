@@ -121,25 +121,31 @@
     font-weight: 400;
     gap: 0.5rem;
 
-    &::after {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 1px;
-      background-color: currentcolor;
-      content: "";
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    &:hover {
-      color: var(--mi-foreground);
+    a {
+      position: relative;
+      padding: 0.1rem 0;
+      color: var(--mi-color-black);
 
       &::after {
-        transform: scaleX(1);
-        transform-origin: left;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background-color: currentcolor;
+        content: "";
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      &:hover {
+        color: var(--mi-foreground);
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
       }
     }
 

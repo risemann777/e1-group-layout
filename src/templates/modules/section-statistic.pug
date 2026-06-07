@@ -1,0 +1,27 @@
+include ../mixins/stat
+
+section.statistic(id="stat")
+  .statistic__container
+    +stat({
+      items: [
+        {
+          label: 'Экспертиза команды на рынке электроинструмента',
+          value: '>30',
+          term: 'лет'
+        },
+        {
+          label: 'Производственная мощность завода ЭНГЕЛЬС',
+          value: '>1.5',
+          term: 'млн. шт.'
+        },
+        {
+          label: 'Продажи электроинструмента DongCheng по всему миру',
+          value: '>30',
+          term: 'млн. шт.'
+        },
+        {
+          label: 'Брендов для профессионалов в портфолио',
+          value: '>5',
+        }
+      ]
+    })

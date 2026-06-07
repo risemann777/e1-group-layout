@@ -132,6 +132,7 @@
   position: relative;
   display: flex;
   overflow: hidden;
+  height: 100%;
   flex-direction: var(--mass-media-card-flex-direction);
   padding: var(--mass-media-card-padding);
   border-radius: var(--mi-card-border-radius);
