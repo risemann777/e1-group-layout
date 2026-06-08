@@ -1,0 +1,14 @@
+.footer-address {
+  --mi-footer-address-font-size: 0.875rem;
+
+  color: #fff;
+  font-size: var(--mi-footer-address-font-size);
+
+  @media(width >= 720px) {
+    --mi-footer-address-font-size: 1rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-footer-address-font-size: 1.25rem;
+  }
+}

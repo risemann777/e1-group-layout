@@ -1,0 +1,30 @@
+.footer-details {
+  --mi-footer-details-font-size: 0.875rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--mi-footer-details-font-size);
+  gap: 0.5rem 1rem;
+
+  @media(width >= 720px) {
+    --mi-footer-details-font-size: 1rem;
+  }
+
+  @media(width >= 1280px) {
+    --mi-footer-details-font-size: 1.25rem;
+  }
+
+  &__item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    color: #fff;
+    opacity: 0.5;
+  }
+
+  &__value {
+    color: #fff;
+  }
+}
