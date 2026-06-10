@@ -16,6 +16,10 @@
     --mi-footer-contact-value-font-size: 1.5rem;
   }
 
+  @media(width >= 1700px) {
+    --mi-footer-contact-value-font-size: 2rem;
+  }
+
   &__label {
     color: #fff;
     font-size: var(--mi-footer-contact-label-font-size);
