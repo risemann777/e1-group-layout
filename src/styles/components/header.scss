@@ -2,7 +2,7 @@
   --mi-header-position: relative;
   --mi-header-z-index: 600;
   --mi-header-width: initial;
-  --mi-header-padding: 1rem 0;
+  --mi-header-padding: 0.25rem 0;
   --mi-header-background: #fff;
   --mi-header-container-width: var(--mi-container-width);
   --mi-header-container-gap: 2rem;
@@ -15,10 +15,13 @@
   --mi-header-burger-display: block;
   --mi-header-products-font-size: 1rem;
   --mi-header-products-display: none;
+  --mi-header-feedback-btn-size: 48px;
 
   position: var(--mi-header-position);
   z-index: var(--mi-header-z-index);
+  display: flex;
   width: 100%;
+  height: var(--mi-header-height);
   padding: var(--mi-header-padding);
   background: var(--mi-header-background);
 
@@ -39,6 +42,7 @@
     --mi-header-padding: 1rem 0;
     --mi-header-logo-width: 160px;
     --mi-header-products-font-size: 1.125rem;
+    --mi-header-feedback-btn-size: 56px;
   }
 
   @media(width >= 1280px) {
@@ -203,9 +207,9 @@
 
   &__feedback-btn {
     display: none;
-    width: 56px;
-    height: 56px;
-    min-height: 56px;
+    width: var(--mi-header-feedback-btn-size);
+    height: var(--mi-header-feedback-btn-size);
+    min-height: var(--mi-header-feedback-btn-size);
     flex-shrink: 0;
     padding: 6px;
 

@@ -1,7 +1,7 @@
 .hero {
   --mi-hero-container-padding: 5.5rem 0 3rem;
   --mi-hero-container-justify-content: initial;
-  --mi-hero-container-min-height: 520px;
+  --mi-hero-container-min-height: calc(var(--mi-viewport-height) - var(--mi-header-height));
   --mi-hero-content-padding: 3rem 1rem;
   --mi-hero-title-font-size: 3rem;
   --mi-hero-title-line-height: 1;
@@ -45,7 +45,6 @@
     --mi-hero-container-justify-content: flex-end;
     --mi-hero-container-padding: 0 0 9rem;
     --mi-hero-logo-size: 205px;
-    --mi-hero-container-min-height: calc(var(--mi-viewport-height) - 15vh);
   }
 
   @media(width >= 1280px) {
