@@ -1,5 +1,5 @@
 .btn {
-  --mi-btn-height: 3.5rem;
+  --mi-btn-height: 3rem;
   --mi-btn-padding-x: 2rem;
   --mi-btn-padding-y: 5px;
   --mi-btn-font-family: var(--mi-body-font-family);
@@ -41,7 +41,7 @@
   transition: color .15s ease-in-out, background-color .25s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   user-select: none;
 
-  @media(width >= 1280px) {
+  @media(width >= 1024px) {
     --mi-btn-height: 3.75rem;
   }
 
