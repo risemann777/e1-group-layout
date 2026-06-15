@@ -2,6 +2,7 @@ extends layouts/main/layout
 include mixins/stat
 include mixins/values
 include mixins/sphere
+include mixins/brand
 
 block vars
   - layoutMofifiers = 'layout--inner'
@@ -20,12 +21,12 @@ block content
           +stat({
             items: [
               {
-                label: 'Работаем с',
-                value: '2010'
+                label: 'Лет на рынке',
+                value: '30+'
               },
               {
                 label: 'Число сотрудников',
-                value: '1500+'
+                value: '2000+'
               },
               {
                 label: 'Ед. продукции выпускаем в год',
@@ -44,7 +45,7 @@ block content
             img(src="images/about-banner-bg-min.jpg")
         .about-banner__container
           .about-banner__content
-            .about-banner__title Группа Компаний «Е1-Групп» это команда профессионалов с опытом работы на рынке Электроинструментов более 15 лет.
+            .about-banner__title Группа Компаний «Е1-Групп» это команда профессионалов с опытом работы на рынке электроинструментов более 15 лет.
     .page-about__section
       .page-about__container
         .page-about__section-heading
@@ -52,12 +53,33 @@ block content
         .page-about__section-content
           +sphere({
             list: [
-              {},
-              {},
-              {},
-              {},
-              {},
-            ],
+              {
+                icon: 'rocket',
+                title: 'Маркетинг',
+                text: '<p>Развитие брендов</p><p>Поддержка дилерской сети</p><p>Коммуникация с пользователями напрямую и через лидеров мнений</p>'
+              },
+              {
+                icon: 'boat',
+                title: 'Логистика и Операции',
+                text: '<p>Эффективная логистика в партнерстве с Noytech Logistics Rus</p><p>Цифровизация всех процессов оформления заказов</p>',
+              },
+              {
+                icon: 'headset',
+                title: 'Сервисная поддержка',
+                text: '<p>Компактная и эффективная сеть сервисных центров</p><p>Доступ к быстрой сервисной поддержке для всех пользователей  через «Сервис-Онлайн)</p><p>Дополнительные сервисные программы – Полная Гарантия, Подменный фонд и другие.</p>',
+                big: true
+              },
+              {
+                icon: 'memory',
+                title: 'IT решения',
+                text: 'Программа по управлению парком средств малой  строительной механизации на базе RFID меток и программного обеспечения от Softline'
+              },
+              {
+                icon: 'coins',
+                title: 'Финансовые услуги',
+                text: 'Программа по лизингу парка электроинструментов для крупных конечных пользователей'
+              }
+            ]
           })
 
     .page-about__section
@@ -101,3 +123,4 @@ block content
         .page-about__section-heading
           .page-about__section-title Бренды в Группе Компаний «Е1-Групп»
         .page-about__section-content
+          +brand()

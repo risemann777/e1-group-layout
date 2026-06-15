@@ -25,6 +25,7 @@
 
   &__text {
     max-width: 1140px;
+    color: var(--mi-color-gray, #777);
     font-size: 1rem;
 
     @media (width >= 1024px) {

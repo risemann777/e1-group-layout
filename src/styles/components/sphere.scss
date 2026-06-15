@@ -1,20 +1,92 @@
 .sphere {
-  --mi-spere-grid-template-columns: initial;
+  --mi-sphere-grid-template-columns: initial;
+  --mi-sphere-item-big-grid-row: initial;
+  --mi-sphere-item-big-grid-column: initial;
+  --mi-sphere-item-big-order: 2;
+
+  @media(width >= 720px) {
+    --mi-sphere-grid-template-columns: repeat(2, minmax(0, 1fr));
+    --mi-sphere-item-big-grid-column: span 2;
+  }
 
   @media(width >= 1280px) {
-    --mi-spere-grid-template-columns: repeat(3, minmax(0, 1fr));
+    --mi-sphere-grid-template-columns: repeat(3, minmax(0, 1fr));
+    --mi-sphere-item-big-grid-row: span 2;
+    --mi-sphere-item-big-grid-column: initial;
+    --mi-sphere-item-big-order: initial;
   }
 
   &__list {
     display: grid;
     gap: 1rem;
-    grid-template-columns: var(--mi-spere-grid-template-columns);
+    grid-template-columns: var(--mi-sphere-grid-template-columns);
+  }
+
+  &__item {
+    &--big {
+      order: var(--mi-sphere-item-big-order);
+      grid-column: var(--mi-sphere-item-big-grid-column);
+      grid-row: var(--mi-sphere-item-big-grid-row);
+    }
   }
 }
 
 .sphere-card {
+  --mi-sphere-card-bg: var(--mi-color-primary-bg-light, #dfdfdf);
+  --mi-sphere-card-icon-size: 32px;
+  --mi-sphere-card-icon-color: var(--mi-color-primary-light, #222);
+  --mi-sphere-card-title-color: var(--mi-color-primary-light);
+  --mi-sphere-card-title-font-size: 20px;
+  --mi-sphere-card-text-color: var(--mi-color-black, #000);
+  --mi-sphere-card-text-font-size: 16px;
+
   min-height: 100px;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: var(--mi-card-border-radius);
-  background: var(--mi-color-primary-bg-light);
+  background: var(--mi-sphere-card-bg);
+
+  @media (width >= 720px) {
+    --mi-sphere-card-icon-size: 48px;
+  }
+
+  @media (width >= 1024px) {
+    --mi-sphere-card-title-font-size: 24px;
+    --mi-sphere-card-icon-size: 48px;
+  }
+
+  @media (width >= 1280px) {
+    --mi-sphere-card-title-font-size: 32px;
+    --mi-sphere-card-text-font-size: 20px;
+    --mi-sphere-card-icon-size: 64px;
+  }
+
+  &--black {
+    --mi-sphere-card-bg: var(--mi-color-black, #000);
+    --mi-sphere-card-title-color: #fff;
+    --mi-sphere-card-text-color: #fff;
+    --mi-sphere-card-icon-color: #fff;
+  }
+
+  &__icon {
+    margin: 0 0 1.5rem;
+
+    .svg-icon {
+      width: var(--mi-sphere-card-icon-size);
+      height: var(--mi-sphere-card-icon-size);
+      color: var(--mi-sphere-card-icon-color);
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    color: var(--mi-sphere-card-title-color);
+    font-size: var(--mi-sphere-card-title-font-size);
+    font-weight: 600;
+    line-height: 1.125;
+  }
+
+  &__text {
+    color: var(--mi-sphere-card-text-color);
+    font-size: var(--mi-sphere-card-text-font-size);
+  }
 }

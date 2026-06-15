@@ -6,11 +6,15 @@ mixin sphere (data)
       .sphere__list
         each item in list
           - type = item?.type || null
+          - icon = item?.icon || null
           - title = item?.icon || null
           - title = item?.title || `Item title`
           - text = item?.text || `Lorem ipsum sit amet`
-          .sphere-card.sphere__item
-            .sphere-card__icon
+          - itemBig = item?.big
+          .sphere-card.sphere__item(class=itemBig ? 'sphere-card--black sphere__item--big' : '')
+            if (icon)
+              .sphere-card__icon
+                svg(class="svg-icon" viewBox="0 0 64 64" width="64" height="64"): use(href=`#svg-sphere-${icon}`)
             if (title)
               .sphere-card__title=title
             if (text)
