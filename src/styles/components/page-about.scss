@@ -45,12 +45,12 @@
     margin-top: 4rem;
   }
 
-  &__top {
-    margin-bottom: var(--mi-page-about-section-margin-y);
-  }
-
   &__section {
     margin: var(--mi-page-about-section-margin-y) 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &-heading {
       max-width: 1170px;

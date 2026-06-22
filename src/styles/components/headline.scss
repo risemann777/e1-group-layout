@@ -1,18 +1,22 @@
 .headline {
+  --mi-headline-gap: 2rem;
   --mi-headline-title-font-size: calc(1.2rem + 1.8vw);
-  --mi-headline-text-font-size: 0.875rem;
+  --mi-headline-text-font-size: 1rem;
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--mi-headline-gap);
 
   @media(width >= 1024px) {
+    --mi-headline-gap: 3rem;
     --mi-headline-title-font-size: 3.5rem;
     --mi-headline-text-font-size: 1.25rem;
   }
 
   @media(width >= 1280px) {
+    --mi-headline-gap: 4rem;
     --mi-headline-title-font-size: 5rem;
+    --mi-headline-text-font-size: 24px;
   }
   
   &__title {
@@ -27,7 +31,7 @@
   }
 
   &__text {
-    max-width: 860px;
+    max-width: 1140px;
     color: var(--mi-color-gray);
     font-size: var(--mi-headline-text-font-size);
     line-height: 1.25;
