@@ -1,0 +1,76 @@
+extends layouts/main/layout
+include mixins/stat
+
+block vars
+  - layoutMofifiers = 'layout--inner'
+  - browserTitle = 'Продукция и услуги'
+  - description = 'Продукция и услуги'
+  - pageTitle = 'Продукция и услуги';
+  - breadcrumb = [{name: 'Продукция и услуги'}]
+  - headlineText = 'АО «Е1 Групп» объединяет производство, дистрибуцию и сервис профессионального электроинструмента и строительного оборудования. Ключевые направления: ЭНГЕЛЬС, DongCheng и Distribution for Construction.'
+
+block content
+  .direction.direction--page
+    .direction__container
+      .direction__stat
+        +stat({
+          items: [
+            {
+              label: 'Экспертиза команды на рынке электроинструмента',
+              value: '>30',
+              term: 'лет'
+            },
+            {
+              label: 'Производственная мощность завода ЭНГЕЛЬС',
+              value: '>1.5',
+              term: 'млн.'
+            },
+            {
+              label: 'Продажи электроинструмента DongCheng по всему миру',
+              value: '>30',
+              term: 'млн.'
+            },
+            {
+              label: 'Брендов для профессионалов в портфолио',
+              value: '>5'
+            },
+          ]
+        })
+      .direction__list
+        .direction__item
+          .direction__info
+            .direction__content
+              .direction__logo
+                img(src="images/brands/brand_engels.png")
+              .direction__description Российский бренд профессионального электроинструмента от завода- производителя в г. Энгельс. Производство, разработка продукта, сервис, запчасти и гарантия.
+            .direction__button: a(href="https://engelstool.ru" class="btn btn--outline-primary btn--sm") Подробнее
+          .direction__picture
+            .direction__image
+              a(href="https://engelstool.ru" aria-label="Перейти на сайт Энгельс").direction__clickable
+              picture
+                img(src="images/directions/direction_1.jpg")
+        .direction__item
+          .direction__info
+            .direction__content
+              .direction__logo
+                img(src="images/brands/brand_dong_cheng.png")
+              .direction__description Профессиональный электроинструмент DongCheng. Широкий ассортимент, надежный сервис и гарантийная поддержка на официальном сайте бренда в России.
+            .direction__button: a(href="https://dongchengtool.ru" class="btn btn--outline-primary btn--sm") Подробнее
+          .direction__picture
+            .direction__image
+              a(href="https://dongchengtool.ru" aria-label="Перейти на сайт DongCheng").direction__clickable
+              picture
+                img(src="images/directions/direction_2.jpg")
+        .direction__item
+          .direction__info
+            .direction__content
+              .direction__logo
+                img(src="images/brands/brand_dfc.png")
+              .direction__description Поставщик строительного оборудования, электроинструмента, садово-парковой техники и сервисных услуг для профессионального рынка.
+            .direction__button: a(href="https://dctool.ru" class="btn btn--outline-primary btn--sm") Подробнее
+          .direction__picture
+            .direction__image
+              a(href="https://dctool.ru" aria-label="Перейти на сайт Distribution For Construction").direction__clickable
+              picture
+                img(src="images/directions/direction_3.jpg")
+
