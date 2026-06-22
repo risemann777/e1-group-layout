@@ -23,13 +23,8 @@
     --mi-layout-width: var(--mi-container-width-narrow);
   }
 
-  &--pb-0 {
-    --mi-layout-padding-bottom: 0;
-  }
-
   &__main {
     flex: 1 0 auto;
-    padding-bottom: var(--mi-layout-padding-bottom);
   }
 
   &__header {

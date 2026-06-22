@@ -3,12 +3,14 @@
   --mi-page-about-section-heading-margin: 24px;
   --mi-page-about-section-title-font-size: 24px;
   --mi-page-about-section-description-font-size: 1rem;
+  --mi-page-about-section-bottom-margin: 1rem;
 
   @media (width >= 1024px) {
     --mi-page-about-section-heading-margin: 48px;
     --mi-page-about-section-margin-y: 120px;
     --mi-page-about-section-title-font-size: 32px;
     --mi-page-about-section-description-font-size: 1.25rem;
+    --mi-page-about-section-bottom-margin: 3rem;
   }
 
   @media (width >= 1280px) {
@@ -69,6 +71,10 @@
       color: var(--mi-color-gray);
       font-size: var(--mi-page-about-section-description-font-size);
       text-align: center;
+    }
+
+    &-bottom {
+      margin-top: var(--mi-page-about-section-bottom-margin);
     }
   }
 }

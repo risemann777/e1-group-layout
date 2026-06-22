@@ -123,4 +123,51 @@ block content
         .page-about__section-heading
           .page-about__section-title Бренды в Группе Компаний «Е1-Групп»
         .page-about__section-content
-          +brand()
+          +brand({
+            list: [
+              {
+                logo: 'images/brands/brand_dong_cheng.png',
+                description: '<p>Эксклюзивный дистрибутор бренда DongCheng (DongCheng Professional Power Tools) на Российском рынке.</p>',
+                link: 'www.dongchengtool.ru'
+              },
+              {
+                logo: 'images/brands/brand_engels.png',
+                description: '<p>Профессиональная линейка инструмента, сделанного в России, с высоким уровнем локализации и повышенным ресурсом на базе бывшего завода Бош в г. Энгельс.</p>',
+                link: 'engelstool.ru'
+              },
+              {
+                logo: 'images/brands/brand_dfc.png',
+                description: '<p>Поставщик строительного оборудования, электроинструментов, садово-парковой техники и сервисных услуг.</p>',
+                link: 'dctool.ru'
+              },
+            ]
+          })
+
+    .page-about__section
+      .page-about__container
+        .page-about__section-heading
+          .page-about__section-title Стратегические партнеры
+        .page-about__section-content
+          +brand({
+            columnsCount: 2,
+            list: [
+              {
+                logo: 'images/brands/brand_noytech.png',
+                description: '<p>Эксклюзивный дистрибутор бренда DongCheng (DongCheng Professional Power Tools) на Российском рынке.</p>',
+                link: 'www.dongchengtool.ru'
+              },
+              {
+                logo: 'images/brands/brand_softline.png',
+                description: '<p>Профессиональная линейка инструмента, сделанного в России, с высоким уровнем локализации и повышенным ресурсом на базе бывшего завода Бош в г. Энгельс.</p>',
+                link: 'engelstool.ru'
+              },
+            ]
+          })
+        .page-about__section-bottom
+          .cta-panel
+            .cta-panel__decor: img(src="images/partner_decor.svg")
+            .cta-panel__info
+              .cta-panel__title Хотите стать нашим партнером?
+              .cta-panel__text Мы открыты для новых идей и совместных проектов — свяжитесь с нами!
+            .cta-panel__button: button(type="button" class="btn btn--secondary" data-toggle="modal" data-target="#contactModal") Обсудить сотрудничество
+    include modules/section-career

@@ -1,0 +1,74 @@
+.cta-panel {
+  --mi-cta-panel-padding: 24px;
+  --mi-cta-panel-title-font-size: 24px;
+  --mi-cta-panel-flex-direction: column;
+  --mi-cta-panel-aligh-items: initial;
+  --mi-cta-panel-justify-content: initial;
+  --mi-cta-panel-button-width: 100%;
+
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: var(--mi-cta-panel-flex-direction);
+  align-items: var(--mi-cta-panel-aligh-items);
+  justify-content: var(--mi-cta-panel-justify-content);
+  padding: var(--mi-cta-panel-padding);
+  border-radius: var(--mi-card-border-radius);
+  background: var(--mi-color-primary);
+  gap: 2rem;
+  
+  @media(width >= 1024px)  {
+    --mi-cta-panel-padding: 32px;
+    --mi-cta-panel-flex-direction: row;
+    --mi-cta-panel-aligh-items: center;
+    --mi-cta-panel-justify-content: space-between;
+    --mi-cta-panel-button-width: initial;
+  }
+
+  @media(width >= 1280px)  {
+    --mi-cta-panel-title-font-size: 32px;
+  }
+
+  &__decor {
+    position: absolute;
+    right: -170%;
+    bottom: -210%;
+
+    @media(width >= 460px)  {
+      right: -130%;
+      bottom: -250%;
+    }
+
+    @media(width >= 720px)  {
+      right: -90%;
+      bottom: -250%;
+    }
+
+    @media(width >= 1024px)  {
+      right: -20%;
+      bottom: -350%;
+    }
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: var(--mi-cta-panel-title-font-size);
+    line-height: 1.2;
+  }
+
+  &__text {
+    color: #fff;
+  }
+
+  &__button {
+    position: relative;
+  }
+
+  .btn {
+    width: var(--mi-cta-panel-button-width);
+  }
+}

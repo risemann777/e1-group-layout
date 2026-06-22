@@ -1,2 +1,32 @@
 mixin brand(data)
-  .brand
+  - list = data?.list || null
+  - columnsCount = data?.columnsCount || 3
+
+  if (columnsCount === 1)
+    - columnsCount = 'one'
+
+  if (columnsCount === 2)
+    - columnsCount = 'two'
+
+  if (columnsCount === 3)
+    - columnsCount = 'three'
+
+  if (columnsCount === 4)
+    - columnsCount = 'four'
+
+  .brand(class=columnsCount ? `brand--${columnsCount}-column` : ``)
+    if (list)
+      .brand__list
+        each brand in list
+          - logo = brand?.logo || null
+          - description = brand?.description || 'Lorem ipsum sit amet'
+          - link = brand?.link || null
+          .brand-card.brand__item
+            .brand-card__info
+              .brand-card__logo
+                if (logo)
+                  img(src=logo)
+              .brand-card__description!=description
+            .brand-card__footer
+              if (link)
+                a(href=`https:${link}`).brand-card__link=link

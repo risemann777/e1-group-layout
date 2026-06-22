@@ -88,5 +88,11 @@
   &__text {
     color: var(--mi-sphere-card-text-color);
     font-size: var(--mi-sphere-card-text-font-size);
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
