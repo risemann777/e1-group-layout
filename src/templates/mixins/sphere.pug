@@ -10,8 +10,10 @@ mixin sphere (data)
           - title = item?.icon || null
           - title = item?.title || `Item title`
           - text = item?.text || `Lorem ipsum sit amet`
-          - itemBig = item?.big
+          - itemBig = item?.big || null
           .sphere-card.sphere__item(class=itemBig ? 'sphere-card--black sphere__item--big' : '')
+            if (itemBig)
+              .sphere-card__decor: img(src="images/sphere_decor.svg")
             if (icon)
               .sphere-card__icon
                 svg(class="svg-icon" viewBox="0 0 64 64" width="64" height="64"): use(href=`#svg-sphere-${icon}`)

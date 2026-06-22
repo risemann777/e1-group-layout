@@ -32,6 +32,8 @@
 }
 
 .sphere-card {
+  --mi-sphere-card-position: static;
+  --mi-sphere-card-overflow: initial;
   --mi-sphere-card-bg: var(--mi-color-primary-bg-light, #dfdfdf);
   --mi-sphere-card-icon-size: 32px;
   --mi-sphere-card-icon-color: var(--mi-color-primary-light, #222);
@@ -40,6 +42,8 @@
   --mi-sphere-card-text-color: var(--mi-color-black, #000);
   --mi-sphere-card-text-font-size: 16px;
 
+  position: var(--mi-sphere-card-position);
+  overflow: var(--mi-sphere-card-overflow);
   min-height: 100px;
   padding: 1.5rem;
   border-radius: var(--mi-card-border-radius);
@@ -61,6 +65,8 @@
   }
 
   &--black {
+    --mi-sphere-card-position: relative;
+    --mi-sphere-card-overflow: hidden;
     --mi-sphere-card-bg: var(--mi-color-black, #000);
     --mi-sphere-card-title-color: #fff;
     --mi-sphere-card-text-color: #fff;
@@ -68,6 +74,7 @@
   }
 
   &__icon {
+    position: relative;
     margin: 0 0 1.5rem;
 
     .svg-icon {
@@ -78,6 +85,7 @@
   }
 
   &__title {
+    position: relative;
     margin: 0 0 24px;
     color: var(--mi-sphere-card-title-color);
     font-size: var(--mi-sphere-card-title-font-size);
@@ -86,6 +94,7 @@
   }
 
   &__text {
+    position: relative;
     color: var(--mi-sphere-card-text-color);
     font-size: var(--mi-sphere-card-text-font-size);
 
@@ -93,6 +102,47 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: -160%;
+    bottom: -150%;
+
+    @media(width >= 460px)  {
+      right: -130%;
+      bottom: -150%;
+    }
+
+    @media(width >= 576px)  {
+      right: -110%;
+      bottom: -160%;
+    }
+
+    @media(width >= 768px)  {
+      right: -60%;
+      bottom: -160%;
+    }
+
+    @media(width >= 1024px)  {
+      right: -46%;
+      bottom: -164%;
+    }
+
+    @media(width >= 1280px)  {
+      right: -166%;
+      bottom: -66%;
+    }
+
+    @media(width >= 1440px)  {
+      right: -145%;
+      bottom: -66%;
+    }
+
+    @media(width >= 1600px)  {
+      right: -120%;
+      bottom: -68%;
     }
   }
 }
