@@ -15,10 +15,9 @@ include ../mixins/mobile-nav
                     href: 'products.html',
                     smoothScroll: false,
                     sublist: [
-                      {name: 'Решения для строительства', href: '#sub1'},
-                      {name: 'Решения по управлению парком инструментов', href: '#sub2'},
-                      {name: 'Производство и разработка продукта', href: '#sub3'},
-                      {name: 'Гарантийное обслуживание', href: '#sub4'},
+                      {name: 'ЭНГЕЛЬС', href: 'https://engelstool.ru', target: '_blank'},
+                      {name: 'DongCheng', href: 'https://dongchengtool.ru', target: '_blank'},
+                      {name: 'Distribution for Construction', href: 'https://dctool.ru', target: '_blank'},
                     ]
                   },
                   {
@@ -48,10 +47,10 @@ include ../mixins/mobile-nav
               // .mobile-menu__phone
                 a(href="tel:+7 (499) 111-22-33"): span +7 (499) 111-22-33
               button(class="btn btn--primary full-menu__button" data-toggle='modal' data-target="#contactModal") Свяжитесь с нами
-        .full-menu__desktop
+        .full-menu__desktop(style="background-image:url(images/menu_logo.svg)")
           .product-menu
             ul.product-menu__list
-              li.product-menu__item: a(href="#").product-menu__link Решения для строительства
-              li.product-menu__item: a(href="#").product-menu__link Решения по управлению парком инструментов
-              li.product-menu__item: a(href="#").product-menu__link Производство и разработка продукта
-              li.product-menu__item: a(href="#").product-menu__link Гарантийное обслуживание
+              li.product-menu__item: a(href="https://engelstool.ru" target="_blank").product-menu__link ЭНГЕЛЬС
+              li.product-menu__item: a(href="https://dongchengtool.ru" target="_blank").product-menu__link DongCheng
+              li.product-menu__item: a(href="https://dctool.ru" target="_blank").product-menu__link Distribution for Construction
+

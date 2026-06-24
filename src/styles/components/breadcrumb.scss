@@ -16,7 +16,6 @@
 
   &__item {
     margin-right: 10px;
-    font-family: var(--mi-heading-font-family);
     font-feature-settings: 'lnum';
     font-size: var(--mi-breadcrumb-font-size);
     line-height: 1.2;
@@ -37,8 +36,9 @@
       }
 
       &::after {
-        color: var(--mi-color-gray-light);
+        color: var(--mi-color-primary-light);
         content: "/";
+        opacity: 0.5;
       }
     }
 
@@ -46,7 +46,8 @@
       border-bottom: none;
 
       span {
-        color: var(--mi-color-gray-light);
+        color: var(--mi-color-primary-light);
+        opacity: 0.5;
       }
     }
   }

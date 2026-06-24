@@ -6,6 +6,8 @@ import inputMask from './modules/inputMask.js'
 import smoothScroll from './modules/smoothScroll.js'
 import mainMenu from "./modules/main-menu.js"
 import accordion from "./modules/accordion.js"
+import searchMenu from "./modules/search-menu.js"
+import form from "./modules/form.js"
 
 export {inputMask}
 
@@ -24,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   new Modal()
   inputMask()
   mainMenu()
+  searchMenu()
   accordion()
+  form()
 
   window.addEventListener('orientationchange', adjustViewportHeight)
 })

@@ -1,0 +1,10 @@
+.search-menu.search-menu--fall
+  .search-menu__bg(data-toggle="search")
+  .search-menu__panel
+    .search-menu__wrapper
+      .search-menu__container
+        form(class="form form--search jsSearchForm" action="search.html")
+          .form__field
+            .form__input
+              input(class="form__control" type="text" name="q" placeholder="Поиск" autocomplete="off")
+              button(name="s" type="submit" class="form__search-btn"): svg(class="svg-icon" viewBox="0 0 24 24" width="24" height="24"): use(href="#svg-icon-search")

@@ -19,4 +19,5 @@ mixin mobile-nav(data)
                 each subItem, subIndex in subList
                   - subItemName = subItem?.name || `Sub item #${subIndex+1}`
                   - subItemHref = subItem?.href || `page.html#${subIndex+1}`
-                  li: a(href=subItemHref): span=subItemName
+                  - subTarget = subItem?.target || null
+                  li: a(href=subItemHref target=subTarget): span=subItemName

@@ -1,18 +1,12 @@
-.full-menu {
-  --mi-full-menu-z-index: 400;
-  --mi-full-menu-bg: var(--mi-background);
+.search-menu {
+  --mi-search-menu-z-index: 500;
+  --mi-search-menu-bg-opacity: 0;
   --mi-full-menu-transform: none;
   --mi-full-menu-transition: none;
-  --mi-full-menu-bg-opacity: 0;
   --mi-full-menu-panel-padding-top: 5rem;
-  --mi-full-menu-container-margin-top: 2.5rem;
-  --mi-full-menu-container-margin-bottom: 2.5rem;
-  --mi-full-menu-mobile-display: block;
-  --mi-full-menu-desktop-display: none;
-  --mi-full-menu-desktop-left-margin: 8rem;
 
   position: fixed;
-  z-index: var(--mi-full-menu-z-index);
+  z-index: var(--mi-search-menu-z-index);
   display: none;
   overflow: hidden auto;
   width: 100%;
@@ -21,14 +15,7 @@
   outline: 0;
 
   @media (width >= 1080px) {
-    --mi-full-menu-mobile-display: none;
-    --mi-full-menu-desktop-display: block;
     --mi-full-menu-panel-padding-top: 5.5rem;
-    --mi-full-menu-desktop-left-margin: 10.2rem;
-  }
-
-  @media (width >= 1280px) {
-    --mi-full-menu-desktop-left-margin: 12.5rem;
   }
 
   @media (width >= 1320px) {
@@ -41,10 +28,10 @@
   }
 
   &--show {
-    --mi-full-menu-bg-opacity: 1;
+    --mi-search-menu-bg-opacity: 1;
     --mi-full-menu-transform: none;
   }
-  
+
   &__bg {
     position: absolute;
     width: 100%;
@@ -53,7 +40,7 @@
     backdrop-filter: blur(10px);
     background: rgba(0 0 0 / 40%);
     inset: 0;
-    opacity: var(--mi-full-menu-bg-opacity);
+    opacity: var(--mi-search-menu-bg-opacity);
     transition: opacity 0.25s;
   }
 
@@ -63,7 +50,8 @@
     left: 0;
     width: 100vw;
     padding-top: var(--mi-full-menu-panel-padding-top);
-    background: var(--mi-full-menu-bg);
+    padding-bottom: 2rem;
+    background: #fff;
     transform: var(--mi-full-menu-transform);
     transition: var(--mi-full-menu-transition);
   }
@@ -78,18 +66,5 @@
     max-height: calc(100vh - var(--mi-full-menu-panel-padding-top));
     margin-inline: auto;
     overflow-y: auto;
-  }
-
-  &__mobile {
-    display: var(--mi-full-menu-mobile-display);
-    margin: 2.5rem 0;
-  }
-
-  &__desktop {
-    display: var(--mi-full-menu-desktop-display);
-    margin: 1rem 0 3rem var(--mi-full-menu-desktop-left-margin);
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: contain;
   }
 }

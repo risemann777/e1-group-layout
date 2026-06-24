@@ -1,5 +1,3 @@
-import mobileDetect from "../lib/mobile-detect.js"
-
 export default function mainMenu() {
   const body = document.body
   const classNames = {
@@ -121,4 +119,6 @@ export default function mainMenu() {
       }
     })
   }
+
+  // return { close }
 }
