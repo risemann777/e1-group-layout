@@ -27,6 +27,18 @@
     flex: 1 0 auto;
   }
 
+  &--news {
+    .layout__main {
+      padding-bottom: 4rem;
+    }
+  }
+
+  &--contacts {
+    .layout__main {
+      padding-bottom: 4rem;
+    }
+  }
+
   &__header {
     flex-shrink: 0;
   }

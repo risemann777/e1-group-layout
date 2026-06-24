@@ -12,7 +12,8 @@ include ../mixins/mobile-nav
                 list: [
                   {
                     name: 'Продукция и услуги',
-                    href: '#products',
+                    href: 'products.html',
+                    smoothScroll: false,
                     sublist: [
                       {name: 'Решения для строительства', href: '#sub1'},
                       {name: 'Решения по управлению парком инструментов', href: '#sub2'},
@@ -20,14 +21,27 @@ include ../mixins/mobile-nav
                       {name: 'Гарантийное обслуживание', href: '#sub4'},
                     ]
                   },
-                  {name: 'Партнеры', href: '#partnership'},
+                  {
+                    name: 'Партнеры',
+                    href: '/#partnership',
+                    smoothScroll: true
+                  },
                   {
                     name: 'О компании',
-                    href: '#advantage'
+                    href: 'about.html',
+                    smoothScroll: false
                   },
-                  {name: 'Карьера', href: '#career'},
-                  {name: 'Медиа', href: '#news'},
-                  {name: 'Контакты', href: '#contacts'},
+                  {
+                    name: 'Карьера',
+                    href: '#career',
+                    smoothScroll: true
+                  },
+                  {
+                    name: 'Медиа',
+                    href: 'news.html',
+                    smoothScroll: false
+                  },
+                  {name: 'Контакты', href: 'contacts.html', smoothScroll: false},
                 ]
               })
             .mobile-menu__bottom
