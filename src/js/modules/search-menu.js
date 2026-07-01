@@ -13,7 +13,6 @@ export default function searchMenu() {
 
   const menu = body.querySelector(`.${classNames.searchMenu}`)
   const togglers = body.querySelectorAll(`[data-toggle="search"]`)
-  const form = menu.querySelector(`.${classNames.searchForm}`)
 
   if (!menu) return console.warn(`Element with class "${classNames.searchMenu}" does not exist`)
   if (!togglers) return console.warn(`Elements with attribute [data-toggle="search"] does not exist`)
@@ -25,6 +24,8 @@ export default function searchMenu() {
       })
     })
   }
+
+  const form = menu.querySelector(`.${classNames.searchForm}`)
 
   if (form) {
     form.addEventListener('submit', e => {
