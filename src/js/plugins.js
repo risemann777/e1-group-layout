@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if(massMediaSlider) {
     new Swiper("#massMediaSlider", {
       modules: [Navigation],
+      loop: true,
       slidesPerView: 1,
       spaceBetween: 16,
       navigation: {
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       breakpoints: {
         576: {
-          slidesPerView: "auto",
+          slidesPerView: 'auto',
           initialSlide: 1,
           centeredSlides: true,
         }
