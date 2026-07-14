@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       breakpoints: {
         576: {
           slidesPerView: 'auto',
-          initialSlide: 1,
+          // initialSlide: 1,
           centeredSlides: true,
         }
       },
